@@ -17,5 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// dit is om git te testen
