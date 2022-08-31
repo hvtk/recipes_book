@@ -1,3 +1,7 @@
+@extends('layout')
+
+@section('content')
+
 <h1> {{ $heading }} </h1>
 
 @unless(count($recipes) == 0)
@@ -17,3 +21,5 @@
 <p> No Recipes Found </p>
 
 @endunless
+
+@endsection
