@@ -21,7 +21,6 @@ Route::get('/', function () {
 //All Recipes
 Route::get('/recipes', function() {
     return view('recipes', [
-        'heading' => 'Latest Recipes',
         'recipes' => Recipe::all()
     ]);
 });

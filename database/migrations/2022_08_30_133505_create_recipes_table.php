@@ -19,7 +19,7 @@ class CreateRecipesTable extends Migration
             $table->string('recipe_section');
             $table->string('kitchenware');
             $table->string('ingredients');
-            $table->string('recipe_the_steps_to_follow');
+            $table->longText('recipe_the_steps_to_follow');
             $table->string('recipe_estimated_time');
             $table->string('recipe_image_end_result');
             $table->string('recipe_shelf_life');
