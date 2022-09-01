@@ -18,7 +18,9 @@
         <div class="flex">
             <div>
                 <h3 class="text-2xl">
-                    <a href="show.html">{{ $recipe->recipe_title }} </a>
+                    <a href="/recipes/{{ $recipe->id }}">
+                        {{ $recipe->recipe_title }}
+                    </a>
                 </h3>
                 <div class="text-xl font-bold mb-4">
                     {{ $recipe->recipe_section }}
