@@ -25,11 +25,30 @@ Route::get('/recipes', function() {
     ]);
 });
 
-//Single Recipe
-Route::get('/recipes/{id}', function($id) {
+// //Single Recipe
+// Route::get('/recipes/{id}', function($id) {
+//     return view('recipe', [
+//         'recipe' => Recipe::find($id)
+//     ]);
+// });
+
+// //Single Recipe with abort when id not found
+// Route::get('/recipes/{id}', function($id) {
+    // $recipe = Recipe::find($id);
+
+    // if($recipe) {
+    //     return view('recipe', [
+    //         'recipe' => $recipe
+    //     ]);
+    // } else {
+    //     abort('404');
+// });
+
+
+//Single Recipe with model binding (abort when id not found is integrated)
+Route::get('/recipes/{recipe}', function(Recipe $recipe) {
     return view('recipe', [
-        'recipe' => Recipe::find($id)
+        'recipe' => $recipe
     ]);
 });
-
 
