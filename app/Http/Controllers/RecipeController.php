@@ -9,14 +9,14 @@ class RecipeController extends Controller
 {
     //Show All Recipes
     public function index() {
-        return view('recipes', [
+        return view('recipes.index', [
             'recipes' => Recipe::all()
         ]);
     }
 
     //Show Single Recipe
     public function show(Recipe $recipe) {
-        return view('recipe', [
+        return view('recipes.show', [
             'recipe' => $recipe
         ]); 
     }
