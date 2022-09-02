@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
 
     @unless(count($recipes) == 0)
 
@@ -23,4 +21,6 @@
 
     @endunless  
 
-@endsection
+</x-layout>
+@
+    
