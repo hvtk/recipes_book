@@ -2,6 +2,7 @@
 
 use App\Models\Recipe;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//All Recipes
-Route::get('/recipes', function() {
-    return view('recipes', [
-        'recipes' => Recipe::all()
-    ]);
-});
+// //All Recipes
+// Route::get('/recipes', function() {
+//     return view('recipes', [
+//         'recipes' => Recipe::all()
+//     ]);
+// });
 
 // //Single Recipe
 // Route::get('/recipes/{id}', function($id) {
@@ -45,10 +46,25 @@ Route::get('/recipes', function() {
 // });
 
 
-//Single Recipe with model binding (abort when id not found is integrated)
-Route::get('/recipes/{recipe}', function(Recipe $recipe) {
-    return view('recipe', [
-        'recipe' => $recipe
-    ]);
-});
+// //Single Recipe with model binding (abort when id not found is integrated)
+// Route::get('/recipes/{recipe}', function(Recipe $recipe) {
+//     return view('recipe', [
+//         'recipe' => $recipe
+//     ]);
+// });
+
+// Common Recource Routes:
+// index - Show all listings
+// show - Show single listing
+// create - Show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing
+// update - Update listing
+// destroy - Delete listing
+
+//All Recipes
+Route::get('/recipes', [RecipeController::class, 'index']);
+
+//Single Recipe
+Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 
