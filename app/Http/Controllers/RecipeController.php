@@ -10,7 +10,9 @@ class RecipeController extends Controller
     //Show All Recipes
     public function index() {
         return view('recipes.index', [
-            'recipes' => Recipe::all()
+            'recipes' => Recipe::latest()
+                      ->filter(request(['search']))
+                      ->get()
         ]);
     }
 
@@ -20,4 +22,5 @@ class RecipeController extends Controller
             'recipe' => $recipe
         ]); 
     }
+    
 }
