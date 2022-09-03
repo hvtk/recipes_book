@@ -65,6 +65,14 @@ Route::get('/', function () {
 //All Recipes
 Route::get('/recipes', [RecipeController::class, 'index']);
 
+//Show Create Form
+Route::get('/recipes/create', [RecipeController::class, 'create']);
+
+
+
+
+
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
+
 

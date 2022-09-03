@@ -16,11 +16,16 @@ class RecipeController extends Controller
         ]);
     }
 
+    //Show Create Form
+    public function create() {
+        return view('recipes.create');
+    }
+
     //Show Single Recipe
     public function show(Recipe $recipe) {
         return view('recipes.show', [
             'recipe' => $recipe
         ]); 
     }
-    
+
 }
