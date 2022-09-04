@@ -16,7 +16,7 @@ class RecipeFactory extends Factory
         return [
             'recipe_title' => $this->faker->sentence(),
             'recipe_section' => $this->faker->sentence(),
-            'kitchenware' => $this->faker->sentence(),
+            'kitchenware' => $this->faker->paragraph(5),
             'ingredients' => $this->faker->sentence(),
             'recipe_the_steps_to_follow' => $this->faker->paragraph(5),
             'recipe_estimated_time' => $this->faker->sentence(),

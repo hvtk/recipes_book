@@ -68,7 +68,8 @@ Route::get('/recipes', [RecipeController::class, 'index']);
 //Show Create Form
 Route::get('/recipes/create', [RecipeController::class, 'create']);
 
-
+//Store Recipe Data
+Route::post('/recipes', [RecipeController::class, 'store']);
 
 
 

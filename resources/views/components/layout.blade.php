@@ -172,12 +172,12 @@
                           type="submit"
                         >
                         <svg class="w-5 text-gray-600 h-5 cursor-pointer" 
-                            fill="none" 
-                            stroke-linecap="round" 
-                            stroke-linejoin="round" 
-                            stroke-width="2" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
+                             fill="none" 
+                             stroke-linecap="round" 
+                             stroke-linejoin="round" 
+                             stroke-width="2" 
+                             stroke="currentColor" 
+                             viewBox="0 0 24 24"
                             >
                             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                                 >
@@ -185,10 +185,10 @@
                           </svg>
                   </button>
                   <input type="text" 
-                        name="search" 
-                        id="" 
-                        placeholder="Search" 
-                        class="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent"
+                         name="search" 
+                         id="" 
+                         placeholder="Search" 
+                         class="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent"
                   />
               </div>
             </form>
@@ -199,13 +199,13 @@
                         class="group p-2 transition-colors duration-200 rounded-full shadow-md bg-blue-200 hover:bg-blue-200 dark:bg-gray-50 dark:hover:bg-gray-200 text-gray-900 focus:outline-none"
                       >
                       <svg x-show="isDark"
-                          width="24"
-                          height="24"
-                          class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke=""
+                           width="24"
+                           height="24"
+                           class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke=""
                           >
                           <path stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -214,13 +214,13 @@
                           />
                       </svg>
                       <svg x-show="!isDark"
-                          width="24"
-                          height="24"
-                          class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke=""
+                           width="24"
+                           height="24"
+                           class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke=""
                           >
                           <path stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -241,15 +241,16 @@
                   <span class="inline-flex mr-1"
                       >
                       <svg class="w-5 h-5" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24" 
-                          xmlns="http://www.w3.org/2000/svg"
+                           fill="none" 
+                           stroke="currentColor" 
+                           viewBox="0 0 24 24" 
+                           xmlns="http://www.w3.org/2000/svg"
                           >
                           <path stroke-linecap="round" 
                                 stroke-linejoin="round" 
                                 stroke-width="2" 
-                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                              >
                           </path>
                       </svg>
                   </span>
@@ -453,12 +454,26 @@
 
       <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
 
-          <body>
-              {{-- VIEW OUTPUT --}}
-              {{ $slot }}
-          </body>
+        <body>
+
+          <main>
+            {{-- VIEW OUTPUT --}}
+            {{ $slot }}
+          </main>
+
+          <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-blue-800 text-white h-24 mt-24 opacity-90 md:justify-center"
+                >
+            <a href="/recipes/create"
+               class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
+              >
+              Post Recipe
+    
+            </a>
+          </footer> 
+        </body>
 
       </div>
+
     </div>
   </div>
 
