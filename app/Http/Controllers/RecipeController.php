@@ -35,6 +35,8 @@ class RecipeController extends Controller
         'recipe_commentary' => 'required'
        ]);
 
+       Recipe::create($formFieldsRecipe);
+
        return redirect('/recipes');
     }
 
