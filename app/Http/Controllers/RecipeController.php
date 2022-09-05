@@ -35,6 +35,12 @@ class RecipeController extends Controller
         'recipe_commentary' => 'required'
        ]);
 
+       if($request->hasFile('recipe_image_end_result')) {
+           $formFieldsRecipe['recipe_image_end_result'] = $request
+           ->file('recipe_image_end_result')
+           ->store('recipeImages', 'public');
+       }
+
        Recipe::create($formFieldsRecipe);
 
        return redirect('/recipes')

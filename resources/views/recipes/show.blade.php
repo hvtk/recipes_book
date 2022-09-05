@@ -40,7 +40,10 @@
                     {{ $recipe->recipe_shelf_life }}
                 </div>
                 <div class="text-xl font-bold mb-4">
-                    {{ $recipe->recipe_image_end_result }}
+                    <img class="hidden w-48 mr-6 md:block"
+                         src="{{$recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result)}}"
+                         alt=""
+                    />
                 </div>
                 <div class="text-xl font-bold mb-4">
                     {{ $recipe->recipe_commentary }}

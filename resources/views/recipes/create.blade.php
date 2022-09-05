@@ -79,12 +79,13 @@
                     <form class="p-6 flex flex-col justify-center"
                           method="POST"
                           action="/recipes"  
+                          enctype="multipart/form-data"
                         >
                         @csrf
                         <div class="flex flex-col">
                             <label for="recipe_title"
-                                class="ml-4 text-md tracking-wide font-semibold w-50">
-                                    Recipe title
+                                   class="ml-4 text-md tracking-wide font-semibold w-50">
+                                     Recipe title
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                 type="text" 
@@ -103,8 +104,8 @@
                         </div>
                         <div class="flex flex-col">
                             <label for="recipe_section"
-                                class="ml-4 text-md tracking-wide font-semibold w-50">
-                                    Recipe section
+                                   class="ml-4 text-md tracking-wide font-semibold w-50">
+                                     Recipe section
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                 type="text" 
@@ -123,8 +124,8 @@
                         </div>
                         <div class="flex flex-col">
                             <label for="kitchenware"
-                                class="ml-4 text-md tracking-wide font-semibold w-50">
-                                    Kitchenware
+                                   class="ml-4 text-md tracking-wide font-semibold w-50">
+                                     Kitchenware
                             </label>
                             <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                     type="text" 
@@ -145,8 +146,8 @@
                         </div>
                         <div class="flex flex-col">
                             <label for="ingredients"
-                                class="ml-4 text-md tracking-wide font-semibold w-50">
-                                    Ingredients
+                                   class="ml-4 text-md tracking-wide font-semibold w-50">
+                                     Ingredients
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                 type="text" 
@@ -165,8 +166,8 @@
                         </div>
                         <div class="flex flex-col">
                             <label for="recipe_the_steps_to_follow"
-                                class="ml-4 text-md tracking-wide font-semibold w-50">
-                                    The steps to follow for this recipe
+                                   class="ml-4 text-md tracking-wide font-semibold w-50">
+                                     The steps to follow for this recipe
                             </label>
                             <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                     type="text" 
@@ -187,8 +188,8 @@
                         </div>
                         <div class="flex flex-col">
                             <label for="recipe_estimated_time"
-                                class="ml-4 text-md tracking-wide font-semibold w-50">
-                                    Estimated time for this recipe
+                                   class="ml-4 text-md tracking-wide font-semibold w-50">
+                                     Estimated time for this recipe
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                 type="text" 
@@ -205,18 +206,24 @@
                             @enderror
                             
                         </div> 
-                        {{-- <div class="flex flex-col">
+                        <div class="flex flex-col">
                             <label for="recipe_image_end_result"
-                                class="ml-4 text-md tracking-wide font-semibold w-50">
-                                    Image end result from this recipe
+                                   class="ml-4 text-md tracking-wide font-semibold w-50">
+                                     Image end result from this recipe
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                type="file" 
-                                name="recipe_image_end_result" 
-                                id="" 
-                                placeholder="Image end result from this recipe" 
+                                   type="file" 
+                                   name="recipe_image_end_result" 
+                                   id=""
                             />
-                        </div> --}}
+
+                            @error('recipe_image_end_result')
+                                <p class="text-red-500 text-xs mt-1">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+                            
+                        </div> 
                         <div class="flex flex-col">
                             <label for="recipe_shelf_life"
                                 class="ml-4 text-md tracking-wide font-semibold w-50">
