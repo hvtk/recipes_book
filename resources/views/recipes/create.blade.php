@@ -91,6 +91,7 @@
                                 name="recipe_title" 
                                 id="" 
                                 placeholder="Recipe title" 
+                                value="{{ old('recipe_title') }}"
                             /> 
                             
                             @error('recipe_title')
@@ -110,6 +111,7 @@
                                 name="recipe_section" 
                                 id="" 
                                 placeholder="Recipe section" 
+                                value="{{ old('recipe_section') }}"
                             /> 
                             
                             @error('recipe_section')
@@ -131,6 +133,7 @@
                                     rows="10"
                                     placeholder="Kitchenware" 
                                     >
+                                    {{ old('kitchenware') }}
                             </textarea> 
                             
                             @error('kitchenware')
@@ -150,6 +153,7 @@
                                 name="ingredients" 
                                 id="" 
                                 placeholder="Ingredients" 
+                                value="{{ old('ingredients') }}"
                             /> 
                             
                             @error('ingredients')
@@ -171,6 +175,7 @@
                                     rows="10"
                                     placeholder="The steps to follow for this recipe" 
                                     >
+                                    {{ old('recipe_the_steps_to_follow') }}
                             </textarea> 
                             
                             @error('recipe_the_steps_to_follow')
@@ -190,6 +195,7 @@
                                 name="recipe_estimated_time" 
                                 id="" 
                                 placeholder="Estimated time for this recipe" 
+                                value="{{ old('recipe_estimated_time') }}"
                             /> 
                             
                             @error('recipe_estimated_time')
@@ -221,6 +227,7 @@
                                 name="recipe_shelf_life" 
                                 id="" 
                                 placeholder="Recipe shelf life" 
+                                value="{{ old('recipe_shelf_life') }}"
                             /> 
                             
                             @error('recipe_shelf_life')
@@ -242,6 +249,7 @@
                                     rows="10" 
                                     placeholder="Commentary by this recipe" 
                                     >
+                                    {{ old('recipe_commentary') }}
                             </textarea>  
                             
                             @error('recipe_commentary')
