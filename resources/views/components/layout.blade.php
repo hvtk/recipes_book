@@ -12,6 +12,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     />
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -455,7 +456,7 @@
       <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
         
         <x-flash-message/>
-        
+
         <body>
 
           <main>
