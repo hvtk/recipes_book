@@ -13,6 +13,10 @@
 
     @endunless  
 
+    <div class="mt-0 p-4">
+        {{ $recipes->links() }}
+    </div>
+
 </x-layout>
-@
+
     
