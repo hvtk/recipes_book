@@ -2,6 +2,7 @@
 
 use App\Models\Recipe;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
 
 /*
@@ -82,5 +83,12 @@ Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy']);
 
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
+
+//Show Register/Create Form
+Route::get('/register', [UserController::class, 'create']);
+
+//Create New user
+Route::post('/users', [UserController::class, 'store']);
+
 
 
