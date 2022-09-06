@@ -77,6 +77,13 @@ class RecipeController extends Controller
                ->with('message', 'Recipe updated succesfully!');
      }
 
+    //Delete Recipe
+    public function destroy(Recipe $recipe) {
+        $recipe->delete();
+        return redirect('/recipes')
+               ->with('message', 'Recipe deleted succesfully!');   
+    }
+
 
     //Show Single Recipe
     public function show(Recipe $recipe) {

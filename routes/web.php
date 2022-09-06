@@ -77,6 +77,9 @@ Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit']);
 //Update Recipe
 Route::put('/recipes/{recipe}', [RecipeController::class, 'update']);
 
+//Delete Recipe
+Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy']);
+
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 
