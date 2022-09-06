@@ -74,6 +74,9 @@ Route::post('/recipes', [RecipeController::class, 'store']);
 //Show Edit Form
 Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit']);
 
+//Update Recipe
+Route::put('/recipes/{recipe}', [RecipeController::class, 'update']);
+
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 

@@ -52,6 +52,32 @@ class RecipeController extends Controller
         return view('recipes.edit', ['recipe' => $recipe]);
     }
 
+    //Update Recipe Data
+    public function update(Request $request, Recipe $recipe) {
+        $formFieldsRecipe = $request->validate([
+         'recipe_title' => 'required',
+         'recipe_section' => 'required',
+         'kitchenware' => 'required',
+         'ingredients' => 'required',
+         'recipe_the_steps_to_follow' => 'required',
+         'recipe_estimated_time' => 'required',
+         'recipe_shelf_life' => 'required',
+         'recipe_commentary' => 'required'
+        ]);
+ 
+        if($request->hasFile('recipe_image_end_result')) {
+            $formFieldsRecipe['recipe_image_end_result'] = $request
+            ->file('recipe_image_end_result')
+            ->store('recipeImages', 'public');
+        }
+ 
+        $recipe->update($formFieldsRecipe);
+ 
+        return back()
+               ->with('message', 'Recipe updated succesfully!');
+     }
+
+
     //Show Single Recipe
     public function show(Recipe $recipe) {
         return view('recipes.show', [
