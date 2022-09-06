@@ -42,7 +42,7 @@
         </div>
         <div class="text-xl font-bold mb-4">
             <img class="hidden w-48 mr-6 md:block"
-                 src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) }}"
+                 src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png') }}"
                  alt=""
             />
         </div>
