@@ -71,7 +71,8 @@ Route::get('/recipes/create', [RecipeController::class, 'create']);
 //Store Recipe Data
 Route::post('/recipes', [RecipeController::class, 'store']);
 
-
+//Show Edit Form
+Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit']);
 
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);

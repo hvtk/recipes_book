@@ -41,7 +41,7 @@
                 </div>
                 <div class="text-xl font-bold mb-4">
                     <img class="hidden w-48 mr-6 md:block"
-                         src="{{$recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result)}}"
+                         src="{{$recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png')}}"
                          alt=""
                     />
                 </div>
@@ -49,6 +49,14 @@
                     {{ $recipe->recipe_commentary }}
                 </div>
             </div>
+
+            <x-card class="mt-4 p-s flex space-x-6">
+                <a href="/recipes/{{ $recipe->id }}/edit">
+                    <i class="fa-solid fa-pencil"></i>
+                        Edit
+                </a>
+            </x-card>
+            
         </x-card>
     </div>
 

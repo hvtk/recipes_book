@@ -47,6 +47,11 @@ class RecipeController extends Controller
               ->with('message', 'Recipe created succesfully!');
     }
 
+    //Show Edit Form
+    public function edit(Recipe $recipe) {
+        return view('recipes.edit', ['recipe' => $recipe]);
+    }
+
     //Show Single Recipe
     public function show(Recipe $recipe) {
         return view('recipes.show', [
