@@ -29,135 +29,16 @@
 
   </head>
 
-  <style>
-
-    /* Compiled dark classes from Tailwind */
-    .dark .dark\:divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
-      border-color: rgba(55, 65, 81);
-    }
-    .dark .dark\:bg-gray-50 {
-      background-color: rgba(249, 250, 251);
-    }
-    .dark .dark\:bg-gray-100 {
-      background-color: rgba(243, 244, 246);
-    }
-    .dark .dark\:bg-gray-600 {
-      background-color: rgba(75, 85, 99);
-    }
-    .dark .dark\:bg-gray-700 {
-      background-color: rgba(55, 65, 81);
-    }
-    .dark .dark\:bg-gray-800 {
-      background-color: rgba(31, 41, 55);
-    }
-    .dark .dark\:bg-gray-900 {
-      background-color: rgba(17, 24, 39);
-    }
-    .dark .dark\:bg-red-700 {
-      background-color: rgba(185, 28, 28);
-    }
-    .dark .dark\:bg-green-700 {
-      background-color: rgba(4, 120, 87);
-    }
-    .dark .dark\:hover\:bg-gray-200:hover {
-      background-color: rgba(229, 231, 235);
-    }
-    .dark .dark\:hover\:bg-gray-600:hover {
-      background-color: rgba(75, 85, 99);
-    }
-    .dark .dark\:hover\:bg-gray-700:hover {
-      background-color: rgba(55, 65, 81);
-    }
-    .dark .dark\:hover\:bg-gray-900:hover {
-      background-color: rgba(17, 24, 39);
-    }
-    .dark .dark\:border-gray-100 {
-      border-color: rgba(243, 244, 246);
-    }
-    .dark .dark\:border-gray-400 {
-      border-color: rgba(156, 163, 175);
-    }
-    .dark .dark\:border-gray-500 {
-      border-color: rgba(107, 114, 128);
-    }
-    .dark .dark\:border-gray-600 {
-      border-color: rgba(75, 85, 99);
-    }
-    .dark .dark\:border-gray-700 {
-      border-color: rgba(55, 65, 81);
-    }
-    .dark .dark\:border-gray-900 {
-      border-color: rgba(17, 24, 39);
-    }
-    .dark .dark\:hover\:border-gray-800:hover {
-      border-color: rgba(31, 41, 55);
-    }
-    .dark .dark\:text-white {
-      color: rgba(255, 255, 255);
-    }
-    .dark .dark\:text-gray-50 {
-      color: rgba(249, 250, 251);
-    }
-    .dark .dark\:text-gray-100 {
-      color: rgba(243, 244, 246);
-    }
-    .dark .dark\:text-gray-200 {
-      color: rgba(229, 231, 235);
-    }
-    .dark .dark\:text-gray-400 {
-      color: rgba(156, 163, 175);
-    }
-    .dark .dark\:text-gray-500 {
-      color: rgba(107, 114, 128);
-    }
-    .dark .dark\:text-gray-700 {
-      color: rgba(55, 65, 81);
-    }
-    .dark .dark\:text-gray-800 {
-      color: rgba(31, 41, 55);
-    }
-    .dark .dark\:text-red-100 {
-      color: rgba(254, 226, 226);
-    }
-    .dark .dark\:text-green-100 {
-      color: rgba(209, 250, 229);
-    }
-    .dark .dark\:text-blue-400 {
-      color: rgba(96, 165, 250);
-    }
-    .dark .group:hover .dark\:group-hover\:text-gray-500 {
-      color: rgba(107, 114, 128);
-    }
-    .dark .group:focus .dark\:group-focus\:text-gray-700 {
-      color: rgba(55, 65, 81);
-    }
-    .dark .dark\:hover\:text-gray-100:hover {
-      color: rgba(243, 244, 246);
-    }
-    .dark .dark\:hover\:text-blue-500:hover {
-      color: rgba(59, 130, 246);
-    }
-  
-    /* Custom style */
-    .header-right {
-        width: calc(100% - 3.5rem);
-    }
-    .sidebar:hover {
-        width: 16rem;
-    }
-    @media only screen and (min-width: 768px) {
-        .header-right {
-            width: calc(100% - 16rem);
-        }        
-    }
-
-  </style>
+   {{-- Compiled dark classes from Tailwind  --}}
+  <link href="{{ url('/css/layout.css') }}" rel="stylesheet">
 
   <div x-data="setup()" :class="{ 'dark': isDark }">
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
 
       <header>
-        <div class="fixed w-full flex items-center justify-between h-14 text-white z-10">
+        @include('partials._search')
+        
+        {{-- <div class="fixed w-full flex items-center justify-between h-14 text-white z-10">
           <div class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 dark:bg-gray-800 border-none">
             <img class="w-7 h-7 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden"
                  src="https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar.jpg"
@@ -234,7 +115,7 @@
               <li>
                 <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700">
                 </div>
-              </li>
+              </li> --}}
               @auth
               <li>
                 <span class="inline-flex mr-1"
