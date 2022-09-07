@@ -43,4 +43,26 @@ class UserController extends Controller {
 
         return redirect('/recipes')->with('message', 'You have been logged out!');
     }
+
+    // Show Login Form
+    public function login() {
+        return view('users.login');
+    }
+
+    // Authenticate User
+    public function authenticate(Request $request) {
+        $formFieldsAuthenticate = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required' 
+        ]);
+
+        if(auth()->attempt($formFieldsAuthenticate)) {
+            $request->session()-regenerate();
+
+            return redirect('/recipes')->with('message', 'You are now logged in!');
+        }   
+        
+        return back()->withErrors(['email' => 'Invalid Credentials'])
+                     ->onlyInput('email');
+    }
 }
