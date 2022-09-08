@@ -67,34 +67,43 @@ Route::get('/', function () {
 Route::get('/recipes', [RecipeController::class, 'index']);
 
 //Show Create Form
-Route::get('/recipes/create', [RecipeController::class, 'create']);
+Route::get('/recipes/create', [RecipeController::class, 'create'])
+       ->middleware('auth');
 
 //Store Recipe Data
-Route::post('/recipes', [RecipeController::class, 'store']);
+Route::post('/recipes', [RecipeController::class, 'store'])
+       ->middleware('auth');
 
 //Show Edit Form
-Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit']);
+Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit'])
+       ->middleware('auth'); 
 
 //Update Recipe
-Route::put('/recipes/{recipe}', [RecipeController::class, 'update']);
+Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])
+       ->middleware('auth'); 
 
 //Delete Recipe
-Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy']);
+Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])
+       ->middleware('auth'); 
 
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 
 //Show Register/Create Form
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])
+       ->middleware('guest');
 
 //Create New user
 Route::post('/users', [UserController::class, 'store']);
 
 //Log User Out
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])
+       ->middleware('auth'); 
 
-//Show Login Form
-Route::get('/login', [UserController::class, 'login']);
+//Show Login Form (->name('login') is for the connection with middleware authenticate)
+Route::get('/login', [UserController::class, 'login'])
+       ->name('login')
+       ->middleware('guest');
 
 //Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);

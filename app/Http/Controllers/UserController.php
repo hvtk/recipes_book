@@ -57,7 +57,7 @@ class UserController extends Controller {
         ]);
 
         if(auth()->attempt($formFieldsAuthenticate)) {
-            $request->session()-regenerate();
+            $request->session()->regenerate();
 
             return redirect('/recipes')->with('message', 'You are now logged in!');
         }   
