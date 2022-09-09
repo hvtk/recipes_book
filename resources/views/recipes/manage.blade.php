@@ -82,7 +82,7 @@
                     <tr class="flex flex-col">
                         <td class="ml-4 text-md tracking-wide font-semibold w-50"
                             >
-                            <a href="show.html">
+                            <a href="/recipes/{{ $recipe->id }}">
                                     {{ $recipe->recipe_title }}
                             </a>
                         </td>
