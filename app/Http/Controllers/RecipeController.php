@@ -41,6 +41,9 @@ class RecipeController extends Controller
            ->store('recipeImages', 'public');
        }
 
+       //To connect the recipe data on an user
+       $formFieldsRecipe['user_id'] = auth()->id();
+
        Recipe::create($formFieldsRecipe);
 
        return redirect('/recipes')
