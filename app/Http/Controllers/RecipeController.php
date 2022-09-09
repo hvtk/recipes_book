@@ -52,11 +52,23 @@ class RecipeController extends Controller
 
     //Show Edit Form
     public function edit(Recipe $recipe) {
+
+         // Make sure logged in user is owner
+         if($recipe->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+        
         return view('recipes.edit', ['recipe' => $recipe]);
     }
 
     //Update Recipe Data
     public function update(Request $request, Recipe $recipe) {
+
+        // Make sure logged in user is owner
+        if($recipe->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $formFieldsRecipe = $request->validate([
          'recipe_title' => 'required',
          'recipe_section' => 'required',
@@ -82,6 +94,12 @@ class RecipeController extends Controller
 
     //Delete Recipe
     public function destroy(Recipe $recipe) {
+
+         // Make sure logged in user is owner
+         if($recipe->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $recipe->delete();
         return redirect('/recipes')
                ->with('message', 'Recipe deleted succesfully!');   
