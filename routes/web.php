@@ -86,6 +86,10 @@ Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])
 Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])
        ->middleware('auth'); 
 
+//Manage Recipes
+Route::get('/recipes/manage', [RecipeController::class, 'manage'])
+       ->middleware('auth'); 
+
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 
@@ -107,6 +111,8 @@ Route::get('/login', [UserController::class, 'login'])
 
 //Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
 
 
 

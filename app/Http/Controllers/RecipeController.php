@@ -87,6 +87,10 @@ class RecipeController extends Controller
                ->with('message', 'Recipe deleted succesfully!');   
     }
 
+    // Manage Recipes
+    public function manage() {
+        return view('recipes.manage', ['recipes' => auth()->user()->recipes()->get()]);
+    }
 
     //Show Single Recipe
     public function show(Recipe $recipe) {
