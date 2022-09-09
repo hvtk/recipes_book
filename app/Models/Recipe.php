@@ -26,4 +26,9 @@ class Recipe extends Model
                   ->orWhere('recipe_section', 'like', '%' . request('search') . '%');  
         }
     }
+
+    //Relationship To User
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
