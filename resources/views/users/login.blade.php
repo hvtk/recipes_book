@@ -1,17 +1,14 @@
 <x-layout>
 
-    <div class="mt-8 mx-4">
-        <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
-            <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight"
-               >
-               Login
-            </h1>
-            <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2"
-              >
-                Fill in the form to login into your account
-            </p>
-        </div>
+    <x-card class="p-10 max-w-lg mx-auto mt-24">
+       
+        <header class="text-center">
+            <h2 class="text-2xl font-bold uppercase mb-1">
+                LOGIN
+            </h2>
+            <p class="mb-4">Login into your account to create recipes</p>
+        </header>
+        
         <form class="p-6 flex flex-col justify-center"
               method="POST" 
               action="/users/authenticate"
@@ -77,7 +74,6 @@
             </div>
                     
         </form>
-        </div>
-    </div>
+    </x-card>
 
 </x-layout>
