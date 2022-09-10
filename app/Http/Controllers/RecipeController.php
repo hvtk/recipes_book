@@ -13,7 +13,7 @@ class RecipeController extends Controller
         return view('recipes.index', [
             'recipes' => Recipe::latest()
                       ->filter(request(['search']))
-                      ->paginate(2)
+                      ->paginate(1)
         ]);
     }
 
