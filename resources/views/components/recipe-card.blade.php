@@ -1,17 +1,18 @@
 @props(['recipe'])
  
-<!-- Information fields short -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 p-4 gap-4">
-    <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="text-center">
-            <p class="mb-4">Title recipe</p>
-            <div class="text-xl font-bold mb-4">
-                <a href="/recipes/{{ $recipe->id }}">
-                    {{ $recipe->recipe_title }}
-                </a>
-            </div>
-        </div>
+<header class="text-center">
+    <h2 class="text-xl uppercase mb-1">
+        Title from this recipe
+    </h2>
+    <div class="text-2xl font-bold mb-4">
+        <a href="/recipes/{{ $recipe->id }}">
+            {{ $recipe->recipe_title }}
+        </a>
     </div>
+</header>
+
+<!-- Information fields short -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 p-4 gap-4">
     
     <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
         <div class="text-center">
