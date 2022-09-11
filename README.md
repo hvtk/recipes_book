@@ -25,7 +25,7 @@ Laravel From Sreatch 2022 | 4+ Hour Course  https://www.youtube.com/watch?v=MYyJ
 
 I use tailwindcss from the website, not integrated in the project. So there is a <script> in the layout.blade
 
-(The info behind is in dutch because it is a mnemonic for me)
+(The info behind is in dutch because it is a memonic for me)
 Wat moet er in een receptenboek komen (de eerste opzet):
 - het recept
 - recept rubrieken
