@@ -1,5 +1,5 @@
 <li>
-    <div class="flex items-center mr-4">
+    <div class="flex items-center mr-4 hover:text-blue-100">
         <span class="inline-flex mr-1"
             >
             <svg class="w-5 h-5" 
