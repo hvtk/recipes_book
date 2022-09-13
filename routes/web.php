@@ -101,7 +101,24 @@ Route::get('/register', [UserController::class, 'create'])
 Route::post('/users', [UserController::class, 'store']);
 
 //Show Profile Form
-Route::get('/users/profile', [UserController::class, 'profile']);
+Route::get('/users/profile', [UserController::class, 'profile'])
+       ->middleware('auth');
+
+//Store Profile Data
+Route::post('/profile', [RecipeController::class, 'store'])
+->middleware('auth');
+
+//Show Edit Profile Form
+Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit'])
+->middleware('auth'); 
+
+//Update Profile
+Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])
+->middleware('auth'); 
+
+//Delete Profile
+Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])
+->middleware('auth');      
 
 //Log User Out
 Route::post('/logout', [UserController::class, 'logout'])

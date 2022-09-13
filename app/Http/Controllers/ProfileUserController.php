@@ -2,52 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recipe;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
-class RecipeController extends Controller {
+class ProfileUserController extends Controller {
 
-    //Show All Recipes
-    public function index() {
-        return view('recipes.index', [
-            'recipes' => Recipe::latest()
-                      ->filter(request(['search']))
-                      ->paginate(1)
-        ]);
-    }
-
-    //Show Create Form
+    //Show ProfileUser Form
     public function create() {
-        return view('recipes.create');
+        return view('profile.create');
     }
 
-    //Store Recipe Data
+    //Store ProfileUser Data
     public function store(Request $request) {
-       $formFieldsRecipe = $request->validate([
-        'recipe_title' => ['required', Rule::unique('recipes', 'recipe_title' )],
-        'recipe_section' => 'required',
-        'kitchenware' => 'required',
-        'ingredients' => 'required',
-        'recipe_the_steps_to_follow' => 'required',
-        'recipe_estimated_time' => 'required',
-        'recipe_shelf_life' => 'required',
-        'recipe_commentary' => 'required'
+       $formFieldsProfileUser = $request->validate([
+        'profile_user_first_name' => 'required', 
+        'profile_user_last_name' => 'required',
+        'profile_user_gender' => 'required',
+        'profile_user_street' => 'required',
+        'profile_user_streetnumber' => 'required',
+        'profile_user_postalcode' => 'required',
+        'profile_user_city' => 'required',
+        'profile_user_country' => 'required',
+        'profile_user_birthday' => 'required',
        ]);
 
-       if($request->hasFile('recipe_image_end_result')) {
-           $formFieldsRecipe['recipe_image_end_result'] = $request
-           ->file('recipe_image_end_result')
-           ->store('recipeImages', 'public');
+       if($request->hasFile('profile_user_image')) {
+           $formFieldsProfileUser['profile_user_image'] = $request
+           ->file('profile_user_image')
+           ->store('profileUserImage', 'public');
        }
 
-       //To connect the recipe data on an user
-       $formFieldsRecipe['user_id'] = auth()->id();
+       //To connect the profile user data on an user
+       $formFieldsProfileUser['profile_user_id'] = auth()->id();
 
-       Recipe::create($formFieldsRecipe);
+       ProfileUser::create($formFieldsProfileUser);
 
-       return redirect('/recipes')
-              ->with('message', 'Recipe created succesfully!');
+       return redirect('/users/profile')
+              ->with('message', 'User profile created succesfully!');
     }
 
     //Show Edit Form
@@ -116,5 +106,4 @@ class RecipeController extends Controller {
             'recipe' => $recipe
         ]); 
     }
-
 }

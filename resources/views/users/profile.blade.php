@@ -11,16 +11,53 @@
                 <div class="w-full md:w-3/12 md:mx-2">
                     <!-- Profile Card -->
                     <div class="bg-white p-3 border-t-4 border-green-400">
-                        <div class="image overflow-hidden">
-                            <img class="h-auto w-full mx-auto"
-                                src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
-                                alt="">
+                        <div class="image overflow-hidden h-auto w-full mx-auto">
+
+                            <label for="user_image"
+                                    class="ml-4 text-md tracking-wide font-semibold w-50">
+                                        Image User
+                            </label>
+                            <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                    type="file" 
+                                    name="user_image" 
+                                    id=""
+                            />
+                            {{-- <img class="hidden w-48 mr-6 md:block"
+                            src="{{$user->user_image ? asset('storage/' . $user->user_image) : asset('images/no-image.png')}}"
+                            alt=""
+                               /> --}}
+
+                            @error('user_image')
+                                <p class="text-red-500 text-xs mt-1">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+                        
                         </div>
-                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
-                        <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
-                        <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit.
-                            Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
+                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
+                        <p class="text-gray-600 font-lg text-semibold leading-6">
+                            <label for="user_information"
+                                class="ml-4 text-md tracking-wide font-semibold w-50">
+                                    Information about the user
+                            </label>
+                            <textarea class="text-sm text-gray-500 hover:text-gray-600 leading-6"
+                                    type="text" 
+                                    name="user_information" 
+                                    id=""
+                                    rows="10" 
+                                    placeholder="Information about the user" 
+                                    >
+                                    {{ old('user_information') }}
+                            </textarea>  
+                            
+                            @error('user_information')
+                                <p class="text-red-500 text-xs mt-1">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+        
+                        </p>
+                        
                         <ul
                             class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                             <li class="flex items-center py-3">
