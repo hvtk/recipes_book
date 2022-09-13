@@ -100,6 +100,9 @@ Route::get('/register', [UserController::class, 'create'])
 //Create New user
 Route::post('/users', [UserController::class, 'store']);
 
+//Show Profile Form
+Route::get('/users/profile', [UserController::class, 'profile']);
+
 //Log User Out
 Route::post('/logout', [UserController::class, 'logout'])
        ->middleware('auth'); 

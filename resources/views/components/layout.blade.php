@@ -36,49 +36,9 @@
   <div x-data="setup()" :class="{ 'dark': isDark }">
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
 
-      <header>
-        
-        <div class="fixed w-full flex items-center justify-between h-14 text-white z-10">
-          <div class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 dark:bg-gray-800 border-none">
-          
-          <x-layout.user />
-
-          </div>  
-          <div class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">
-          
-            <x-layout.search />
-
-            <ul class="flex items-center">
-              
-              <x-layout.dark-light />
-              
-              <x-vertical-line />
-
-              @auth
-              
-              <x-layout.welcome />
-
-              <x-layout.manage-recipes />
-
-              <x-layout.logout />
-            
-              @else
-
-              <x-layout.register />
-            
-              <x-layout.login />
-              
-              @endauth
-
-            </ul>
-          </div>
-        </div>
-
-      </header>
-
       @include('partials._sidebar')
       
-      <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+      <div class="h-full ml-14 mt-1 mb-10 md:ml-64">
         
         <x-flash-message/>
 
@@ -88,8 +48,6 @@
             {{-- VIEW OUTPUT --}}
             {{ $slot }}
           </main>
-
-          <x-layout.footer />
 
         </body>
 
