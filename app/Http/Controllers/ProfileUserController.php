@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProfileUser;
 use Illuminate\Http\Request;
 
 class ProfileUserController extends Controller {
 
-    //Show ProfileUser Form
+    //Show Create Form
     public function create() {
-        return view('profile.create');
+        return view('users.profile-create');
     }
 
     //Store ProfileUser Data
@@ -41,69 +42,65 @@ class ProfileUserController extends Controller {
     }
 
     //Show Edit Form
-    public function edit(Recipe $recipe) {
+    public function edit(ProfileUser $recipe) {
 
          // Make sure logged in user is owner
-         if($recipe->user_id != auth()->id()) {
+         if($profile->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
         
-        return view('recipes.edit', ['recipe' => $recipe]);
+        return view('users.profile-edit');
     }
 
     //Update Recipe Data
-    public function update(Request $request, Recipe $recipe) {
+    public function update(Request $request, ProfileUser $profileUser) {
 
         // Make sure logged in user is owner
-        if($recipe->user_id != auth()->id()) {
+        if($profileUser->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
 
-        $formFieldsRecipe = $request->validate([
-         'recipe_title' => 'required',
-         'recipe_section' => 'required',
-         'kitchenware' => 'required',
-         'ingredients' => 'required',
-         'recipe_the_steps_to_follow' => 'required',
-         'recipe_estimated_time' => 'required',
-         'recipe_shelf_life' => 'required',
-         'recipe_commentary' => 'required'
+        $formFieldsProfileUser = $request->validate([
+         'profile_user_first_name' => 'required', 
+         'profile_user_last_name' => 'required',
+         'profile_user_gender' => 'required',
+         'profile_user_street' => 'required',
+         'profile_user_streetnumber' => 'required',
+         'profile_user_postalcode' => 'required',
+         'profile_user_city' => 'required',
+         'profile_user_country' => 'required',
+         'profile_user_birthday' => 'required',
         ]);
  
-        if($request->hasFile('recipe_image_end_result')) {
-            $formFieldsRecipe['recipe_image_end_result'] = $request
-            ->file('recipe_image_end_result')
-            ->store('recipeImages', 'public');
+        if($request->hasFile('profile_user_image')) {
+            $formFieldsProfileUser['profile_user_image'] = $request
+            ->file('profile_user_image')
+            ->store('profileUserImage', 'public');
         }
  
-        $recipe->update($formFieldsRecipe);
+        $recipe->update($formFieldsProfileUser);
  
         return back()
-               ->with('message', 'Recipe updated succesfully!');
+               ->with('message', 'Profile user updated succesfully!');
      }
 
     //Delete Recipe
-    public function destroy(Recipe $recipe) {
+    public function destroy(ProfileUser $profileUser) {
 
          // Make sure logged in user is owner
-         if($recipe->user_id != auth()->id()) {
+         if($profileUser->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
 
-        $recipe->delete();
+        $profileUser->delete();
         return redirect('/recipes')
-               ->with('message', 'Recipe deleted succesfully!');   
+               ->with('message', 'Profile user deleted succesfully!');   
     }
 
-    // Manage Recipes
-    public function manage() {
-        return view('recipes.manage', ['recipes' => auth()->user()->recipes()->get()]);
-    }
-
-    //Show Single Recipe
-    public function show(Recipe $recipe) {
-        return view('recipes.show', [
-            'recipe' => $recipe
+    //Show Profile User
+    public function show(ProfileUser $profileUser) {
+        return view('users.profile-show', [
+            'profileUser' => $profileUser
         ]); 
     }
 }

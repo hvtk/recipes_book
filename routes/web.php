@@ -63,6 +63,8 @@ Route::get('/', function () {
 // update - Update listing
 // destroy - Delete listing
 
+// ALL RECIPES ROUTES
+
 //All Recipes
 Route::get('/recipes', [RecipeController::class, 'index']);
 
@@ -93,44 +95,59 @@ Route::get('/recipes/manage', [RecipeController::class, 'manage'])
 //Single Recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 
+// END ALL RECIPES ROUTES
+
+// ALL AUTHENTICATE ROUTES
+
 //Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])
        ->middleware('guest');
 
+//Show Login Form (->name('login') is for the connection with middleware authenticate)
+Route::get('/login', [UserController::class, 'login'])
+->name('login')
+->middleware('guest');
+
+//Log In User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);    
+
 //Create New user
 Route::post('/users', [UserController::class, 'store']);
 
-//Show Profile Form
-Route::get('/users/profile', [UserController::class, 'profile'])
+//Log User Out
+Route::post('/logout', [UserController::class, 'logout'])
+->middleware('auth'); 
+
+// END ALL AUTHENTICATE ROUTES
+
+// ALL PROFILE USER ROUTES
+
+//Show Profile Create Form
+Route::get('/users/profile-create', [ProfileUserController::class, 'create'])
        ->middleware('auth');
 
 //Store Profile Data
-Route::post('/profile', [RecipeController::class, 'store'])
+Route::post('/users/profile-show', [ProfileUserController::class, 'store'])
 ->middleware('auth');
 
 //Show Edit Profile Form
-Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit'])
+Route::get('/users/profile/edit', [ProfileUserController::class, 'edit'])
 ->middleware('auth'); 
 
 //Update Profile
-Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])
+Route::put('/users/profile-show', [ProfileUserController::class, 'update'])
 ->middleware('auth'); 
 
 //Delete Profile
-Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])
-->middleware('auth');      
+Route::delete('/users/profile-show', [ProfileUserController::class, 'destroy'])
+->middleware('auth');  
 
-//Log User Out
-Route::post('/logout', [UserController::class, 'logout'])
-       ->middleware('auth'); 
+//Show Profile
+Route::get('/users/profile-show', [ProfileUserController::class, 'show']);
 
-//Show Login Form (->name('login') is for the connection with middleware authenticate)
-Route::get('/login', [UserController::class, 'login'])
-       ->name('login')
-       ->middleware('guest');
+//END ALL PROFILE USER ROUTES
 
-//Log In User
-Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
 
 
 
