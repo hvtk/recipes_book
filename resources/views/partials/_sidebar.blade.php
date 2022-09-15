@@ -137,21 +137,21 @@
           </a>
           <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" ">
             <a
-              href="/register"
+              href="/recipes/create"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
               Create
             </a>
             <a
-              href="/login"
+              href="/recipes/{recipe}/edit"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
               Edit
             </a>
             <a
-              href="#"
+              href="/recipes/manage"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
@@ -207,27 +207,29 @@
             </span>
           </a>
           <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" ">
+            
             <a
-              href="/users/profile"
+              href="/users/profile-show"
+              role="menuitem"
+              class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
+              >
+               Show
+            </a>
+            <a
+              href="/users/profile-create"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
-              Profile
+              Create
             </a>
             <a
-              href="/login"
+              href="/users/profile/edit"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
               Edit
             </a>
-            <a
-              href="#"
-              role="menuitem"
-              class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
-            >
-              Manage
-            </a>
+           
           </div>
         </div>
         <!-- Profile links -->

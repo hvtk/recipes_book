@@ -42,21 +42,21 @@ class ProfileUserController extends Controller {
     }
 
     //Show Edit Form
-    public function edit(ProfileUser $recipe) {
+    public function edit(ProfileUser $profileUser) {
 
          // Make sure logged in user is owner
-         if($profile->user_id != auth()->id()) {
+         if($profileUser->profile_user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
         
-        return view('users.profile-edit');
+        return view('users.profile-edit', ['profileUser' => $profileUser]);
     }
 
     //Update Recipe Data
     public function update(Request $request, ProfileUser $profileUser) {
 
         // Make sure logged in user is owner
-        if($profileUser->user_id != auth()->id()) {
+        if($profileUser->profile_user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
 
@@ -88,7 +88,7 @@ class ProfileUserController extends Controller {
     public function destroy(ProfileUser $profileUser) {
 
          // Make sure logged in user is owner
-         if($profileUser->user_id != auth()->id()) {
+         if($profileUser->profile_user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
 
