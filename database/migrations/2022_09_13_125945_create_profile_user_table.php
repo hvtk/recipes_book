@@ -27,6 +27,7 @@ class CreateProfileUserTable extends Migration
             $table->string('profile_user_country');
             $table->string('profile_user_birthday');
             $table->string('profile_user_image')->nullable();
+            $table->longText('profile_user_information');
             $table->timestamps();
         });
     }

@@ -68,6 +68,6 @@ class UserController extends Controller {
 
     // Show Profile Form
     public function profile() {
-        return view('users.profile');
+        return view('users.profile-show');
     }
 }

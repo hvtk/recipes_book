@@ -129,7 +129,7 @@ Route::get('/users/profile-create', [ProfileUserController::class, 'create'])
 
 //Store Profile Data
 Route::post('/users/profile-show', [ProfileUserController::class, 'store'])
-->middleware('auth');
+       ->middleware('auth');
 
 //Show Edit Profile Form
 Route::get('/users/profile/edit', [ProfileUserController::class, 'edit'])

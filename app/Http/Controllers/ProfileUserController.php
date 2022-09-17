@@ -24,6 +24,7 @@ class ProfileUserController extends Controller {
         'profile_user_city' => 'required',
         'profile_user_country' => 'required',
         'profile_user_birthday' => 'required',
+        'profile_user_information' => 'required',
        ]);
 
        if($request->hasFile('profile_user_image')) {
@@ -37,7 +38,7 @@ class ProfileUserController extends Controller {
 
        ProfileUser::create($formFieldsProfileUser);
 
-       return redirect('/users/profile')
+       return redirect('/users/profile-show')
               ->with('message', 'User profile created succesfully!');
     }
 
@@ -70,6 +71,7 @@ class ProfileUserController extends Controller {
          'profile_user_city' => 'required',
          'profile_user_country' => 'required',
          'profile_user_birthday' => 'required',
+         'profile_user_information' => 'required',
         ]);
  
         if($request->hasFile('profile_user_image')) {

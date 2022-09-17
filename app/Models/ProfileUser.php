@@ -19,6 +19,7 @@ class ProfileUser extends Model
                            'profile_user_city',
                            'profile_user_country',
                            'profile_user_birthday',
+                           'profile_user_information',
                            'profile_user_image'];
 
     // public function scopeFilter($query, array $filters) {
@@ -31,6 +32,6 @@ class ProfileUser extends Model
 
     //Relationship To User
     public function user() {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'profile_user_id');
     }
 }
