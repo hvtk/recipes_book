@@ -4,7 +4,7 @@ use App\Models\Recipe;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
-use App\Http\Controllers\ProfileUserController;
+use App\Http\Controllers\ProfileUsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,27 +124,27 @@ Route::post('/logout', [UserController::class, 'logout'])
 // ALL PROFILE USER ROUTES
 
 //Show Profile Create Form
-Route::get('/users/profile-create', [ProfileUserController::class, 'create'])
+Route::get('/users/profile-create', [ProfileUsersController::class, 'create'])
        ->middleware('auth');
 
 //Store Profile Data
-Route::post('/users/profile-show', [ProfileUserController::class, 'store'])
+Route::post('/users/profile', [ProfileUsersController::class, 'store'])
        ->middleware('auth');
 
 //Show Edit Profile Form
-Route::get('/users/profile/edit', [ProfileUserController::class, 'edit'])
+Route::get('/users/profile/edit', [ProfileUsersController::class, 'edit'])
 ->middleware('auth'); 
 
 //Update Profile
-Route::put('/users/profile-show', [ProfileUserController::class, 'update'])
+Route::put('/users/profile-show', [ProfileUsersController::class, 'update'])
 ->middleware('auth'); 
 
 //Delete Profile
-Route::delete('/users/profile-show', [ProfileUserController::class, 'destroy'])
+Route::delete('/users/profile-show', [ProfileUsersController::class, 'destroy'])
 ->middleware('auth');  
 
 //Show Profile
-Route::get('/users/profile-show', [ProfileUserController::class, 'show']);
+Route::get('/users/profile-show', [ProfileUsersController::class, 'show']);
 
 //END ALL PROFILE USER ROUTES
 

@@ -21,7 +21,7 @@
 
                             
                              <img class="hidden w-48 mr-6 md:block"
-                            src="{{$profileUser->profile_user_image ? asset('storage/' . $profileUser->profile_user_image) : asset('images/no-image.png')}}"
+                            src="{{$profileUsers->profile_users_image ? asset('storage/' . $profileUsers->profile_users_image) : asset('images/no-image.png')}}"
                             alt=""
                             /> 
 
@@ -34,7 +34,7 @@
                             </p>
                             <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                    {{ $profileUser->profile_user_information }}
+                                    {{ $profileUsers->profile_users_information }}
                             </div>  
     
                         </p>
@@ -69,7 +69,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_first_name }}
+                                        {{ $profileUsers->profile_users_first_name }}
                                     </div>
                                   
                                 </div>
@@ -84,7 +84,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_last_name }}
+                                        {{ $profileUsers->profile_users_last_name }}
                                     </div>
                                    
                     
@@ -100,7 +100,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_gender }}
+                                        {{ $profileUsers->profile_users_gender }}
                                     </div>
                     
                                 </div>
@@ -115,7 +115,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_street }}
+                                        {{ $profileUsers->profile_users_street }}
                                     </div>
                     
                                 </div>
@@ -130,7 +130,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_streetnumber }}
+                                        {{ $profileUsers->profile_users_streetnumber }}
                                     </div>
                     
                     
@@ -146,7 +146,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_postalcode }}
+                                        {{ $profileUsers->profile_users_postalcode }}
                                     </div>
                     
                                 </div>
@@ -161,7 +161,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_city }}
+                                        {{ $profileUsers->profile_users_city }}
                                     </div>
                     
                                 </div>
@@ -176,7 +176,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_country }}   
+                                        {{ $profileUsers->profile_users_country }}   
 
                                     </div>
                     
@@ -192,7 +192,7 @@
                                     </p>
                                     <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                                     
-                                        {{ $profileUser->profile_user_birthday }}   
+                                        {{ $profileUsers->profile_users_birthday }}   
                                         
                                     </div>
                     
