@@ -10,17 +10,17 @@ class ProfileUsers extends Model
     use HasFactory;
 
     protected $fillable = ['profile_users_id',
-    'profile_users_first_name',
-    'profile_users_last_name',
-    'profile_users_gender',
-    'profile_users_street',
-    'profile_users_streetnumber',
-    'profile_users_postalcode',
-    'profile_users_city',
-    'profile_users_country',
-    'profile_users_birthday',
-    'profile_users_information',
-    'profile_users_image'];
+                           'profile_users_first_name',
+                           'profile_users_last_name',
+                           'profile_users_gender',
+                           'profile_users_street',
+                           'profile_users_streetnumber',
+                           'profile_users_postalcode',
+                           'profile_users_city',
+                           'profile_users_country',
+                           'profile_users_birthday',
+                           'profile_users_information',
+                           'profile_users_image'];
 
 // public function scopeFilter($query, array $filters) {
 //     if($filters['search'] ?? false) {
@@ -30,8 +30,8 @@ class ProfileUsers extends Model
 //     }
 // }
 
-    //Relationship To User
+    // //Relationship To User
     public function user() {
-    return $this->belongsTo(User::class, 'profile_users_id');
+    return $this->belongsTo(User::class, 'users_id');
     }
 }

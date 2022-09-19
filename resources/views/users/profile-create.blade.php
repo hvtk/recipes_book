@@ -8,7 +8,7 @@
         <div class="container mx-auto my-5 p-5">
 
             <form method="POST"
-                  action="/users/profile"  
+                  action="/users/profile-show"  
                   enctype="multipart/form-data"
                 >
                 @csrf
@@ -276,7 +276,7 @@
                                             name="profile_users_country" 
                                             id="" 
                                             placeholder="Country" 
-                                            value="{{ old('profile_user_country') }}"
+                                            value="{{ old('profile_users_country') }}"
                                         /> 
                                         
                                         @error('profile_users_country')

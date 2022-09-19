@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ProfileUsers;
 use App\Models\Recipe;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -106,8 +107,8 @@ Route::get('/register', [UserController::class, 'create'])
 
 //Show Login Form (->name('login') is for the connection with middleware authenticate)
 Route::get('/login', [UserController::class, 'login'])
-->name('login')
-->middleware('guest');
+       ->name('login')
+       ->middleware('guest');
 
 //Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);    
@@ -117,31 +118,26 @@ Route::post('/users', [UserController::class, 'store']);
 
 //Log User Out
 Route::post('/logout', [UserController::class, 'logout'])
-->middleware('auth'); 
+       ->middleware('auth'); 
 
 // END ALL AUTHENTICATE ROUTES
 
 // ALL PROFILE USER ROUTES
 
 //Show Profile Create Form
-Route::get('/users/profile-create', [ProfileUsersController::class, 'create'])
-       ->middleware('auth');
-
+Route::get('/users/profile-create', [ProfileUsersController::class, 'create']);
+       
 //Store Profile Data
-Route::post('/users/profile', [ProfileUsersController::class, 'store'])
-       ->middleware('auth');
-
+Route::post('/users/profile-show', [ProfileUsersController::class, 'store']);
+       
 //Show Edit Profile Form
-Route::get('/users/profile/edit', [ProfileUsersController::class, 'edit'])
-->middleware('auth'); 
+Route::get('/users/profile/edit', [ProfileUsersController::class, 'edit']);
 
 //Update Profile
-Route::put('/users/profile-show', [ProfileUsersController::class, 'update'])
-->middleware('auth'); 
+Route::put('/users/profile-show', [ProfileUsersController::class, 'update']);
 
 //Delete Profile
-Route::delete('/users/profile-show', [ProfileUsersController::class, 'destroy'])
-->middleware('auth');  
+Route::delete('/users/profile-show', [ProfileUsersController::class, 'destroy']);
 
 //Show Profile
 Route::get('/users/profile-show', [ProfileUsersController::class, 'show']);

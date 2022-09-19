@@ -6,6 +6,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -47,8 +48,8 @@ class User extends Authenticatable
         return $this->hasMany(Recipe::class, 'user_id');
     }
 
-     //Relationship With ProfileUser
-     public function profileUsers() {
+    //Relationship With ProfileUser
+    public function profileUsers() {
         return $this->hasOne(ProfileUsers::class, 'profile_users_id');
     }
 }

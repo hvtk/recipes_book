@@ -15,6 +15,7 @@ class ProfileUsersController extends Controller
 
     //Store ProfileUser Data
     public function store(Request $request) {
+        // dd($request->all());
        $formFieldsProfileUsers = $request->validate([
         'profile_users_first_name' => 'required', 
         'profile_users_last_name' => 'required',
@@ -25,7 +26,7 @@ class ProfileUsersController extends Controller
         'profile_users_city' => 'required',
         'profile_users_country' => 'required',
         'profile_users_birthday' => 'required',
-        'profile_users_information' => 'required',
+        'profile_users_information' => 'required'
        ]);
 
        if($request->hasFile('profile_users_image')) {
@@ -72,7 +73,7 @@ class ProfileUsersController extends Controller
          'profile_users_city' => 'required',
          'profile_users_country' => 'required',
          'profile_users_birthday' => 'required',
-         'profile_users_information' => 'required',
+         'profile_users_information' => 'required'
         ]);
  
         if($request->hasFile('profile_users_image')) {
