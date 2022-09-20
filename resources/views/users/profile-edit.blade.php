@@ -9,7 +9,7 @@
             <div class="md:flex no-wrap md:-mx-2 ">
             
                 <form method="POST"
-                      action="/users"  
+                      action="/users/profile-edit"  
                       enctype="multipart/form-data"
                     >
                     @csrf
@@ -31,7 +31,7 @@
                                         id=""
                                 />
                                 <img class="hidden w-48 mr-6 md:block"
-                                src="{{$profileUsers->profile_users_image ? asset('storage/' . $profileUsers->profile_users_image) : asset('images/no-image.png')}}"
+                                src="{{$profileUser->profile_users_image ? asset('storage/' . $profileUser->profile_users_image) : asset('images/no-image.png')}}"
                                 alt=""
                                 /> 
 
@@ -55,7 +55,7 @@
                                         rows="10" 
                                         placeholder="Information about the user" 
                                         >
-                                        {{ $profileUsers->profile_users_information }}
+                                        {{ $profileUser->profile_users_information }}
                                 </textarea>  
                                 
                                 @error('profile_users_information')
@@ -103,7 +103,7 @@
                                             name="profile_users_first_name" 
                                             id="" 
                                             placeholder="First name" 
-                                            value="{{ $profileUsers->profile_users_first_name }}"
+                                            value="{{ $profileUser->profile_users_first_name }}"
                                         /> 
                                         
                                         @error('profile_users_first_name')
@@ -128,7 +128,7 @@
                                             name="profile_users_last_name" 
                                             id="" 
                                             placeholder="Last name" 
-                                            value="{{ $profileUsers->profile_users_last_name }}"
+                                            value="{{ $profileUser->profile_users_last_name }}"
                                         /> 
                                         
                                         @error('profile_users_last_name')
@@ -153,7 +153,7 @@
                                             name="profile_users_gender" 
                                             id="" 
                                             placeholder="Gender" 
-                                            value="{{ $profileUsers->profile_users_gender }}"
+                                            value="{{ $profileUser->profile_users_gender }}"
                                         /> 
                                         
                                         @error('profile_users_gender')
@@ -178,7 +178,7 @@
                                             name="profile_user_street" 
                                             id="" 
                                             placeholder="Street" 
-                                            value="{{ $profileUsers->profile_users_street }}"
+                                            value="{{ $profileUser->profile_users_street }}"
                                         /> 
                                         
                                         @error('profile_users_street')
@@ -203,7 +203,7 @@
                                             name="profile_users_streetnumber" 
                                             id="" 
                                             placeholder="Streetnumber" 
-                                            value="{{ $profileusers->profile_users_streetnumber }}"
+                                            value="{{ $profileUser->profile_users_streetnumber }}"
                                         /> 
                                         
                                         @error('profile_users_streetnumber')
@@ -228,7 +228,7 @@
                                             name="profile_users_postalcode" 
                                             id="" 
                                             placeholder="Postalcode" 
-                                            value="{{ $profileUsers->profile_users_postalcode }}"
+                                            value="{{ $profileUser->profile_users_postalcode }}"
                                         /> 
                                         
                                         @error('profile_users_postalcode')
@@ -253,7 +253,7 @@
                                             name="profile_users_city" 
                                             id="" 
                                             placeholder="City" 
-                                            value="{{ $profileUsers->profile_users_city }}"
+                                            value="{{ $profileUser->profile_users_city }}"
                                         /> 
                                         
                                         @error('profile_users_city')
@@ -278,7 +278,7 @@
                                             name="profile_users_country" 
                                             id="" 
                                             placeholder="Country" 
-                                            value="{{ $profileUsers->profile_users_country }}"
+                                            value="{{ $profileUser->profile_users_country }}"
                                         /> 
                                         
                                         @error('profile_user_country')
@@ -303,7 +303,7 @@
                                             name="profile_users_birthday" 
                                             id="" 
                                             placeholder="Birthday" 
-                                            value="{{ $profileUsers->profile_users_birthday }}"
+                                            value="{{ $profileUser->profile_users_birthday }}"
                                         /> 
                                         
                                         @error('profile_users_birthday')

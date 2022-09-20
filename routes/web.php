@@ -129,14 +129,14 @@ Route::get('/users/profile-create', [ProfileUserController::class, 'create']);
 //Store Profile Data
 Route::post('/users/profile-show', [ProfileUserController::class, 'store']);
        
-// //Show Edit Profile Form
-// Route::get('/users/profile/edit', [ProfileUserController::class, 'edit']);
+//Show Edit Profile Form
+Route::get('/users/profile-edit', [ProfileUserController::class, 'edit']);
 
-// //Update Profile
-// Route::put('/users/profile-show', [ProfileUserController::class, 'update']);
+//Update Profile
+Route::put('/users/profile-show', [ProfileUserController::class, 'update']);
 
-// //Delete Profile
-// Route::delete('/users/profile-show', [ProfileUserController::class, 'destroy']);
+//Delete Profile
+Route::delete('/users/profile-show', [ProfileUserController::class, 'destroy']);
 
 //Show Profile
 Route::get('/users/profile-show', [ProfileUserController::class, 'show']);

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProfileUser;
 use Illuminate\Http\Request;
 
 class ProfileUserController extends Controller
 {
-       //Show Create Form
-       public function create() {
+
+    //Show Create Form
+    public function create() {
         return view('users.profile-create');
     }
 
@@ -33,25 +35,25 @@ class ProfileUserController extends Controller
     //        ->store('profileUsersImage', 'public');
     //    }
 
-    //    //To connect the profile user data on an user
-    //    $formFieldsProfileUsers['profile_users_id'] = auth()->id();
+       //To connect the profile user data on an user
+        //$formFieldsProfileUsers['profile_users_id'] = auth()->id();
 
-        ProfileUsers::create($formFieldsProfileUsers);
+        ProfileUser::create($formFieldsProfileUsers);
 
         return redirect('/users/profile-show')
                ->with('message', 'User profile created succesfully!');
     }
 
     // //Show Edit Form
-    // public function edit(ProfileUsers $profileUsers) {
+     public function edit(ProfileUser $profileUser) {
 
-    //      // Make sure logged in user is owner
-    //      if($profileUsers->profile_users_id != auth()->id()) {
-    //         abort(403, 'Unauthorized Action');
-    //     }
+        //   // Make sure logged in user is owner
+        //   if($profileUser->profile_users_id != auth()->id()) {
+        //      abort(403, 'Unauthorized Action');
+        //  }
         
-    //     return view('users.profile-edit', ['profileUsers' => $profileUsers]);
-    //}
+        return view('users.profile-edit', ['profileUser' => $profileUser]);
+    }
 
     // //Update ProfileUsers Data
     // public function update(Request $request, ProfileUsers $profileUsers) {
@@ -99,10 +101,10 @@ class ProfileUserController extends Controller
     //            ->with('message', 'Profile user deleted succesfully!');   
     // }
 
-    // //Show Profile User
-    // public function show(ProfileUsers $profileUsers) {
-    //     return view('users.profile-show', [
-    //         'profileUsers' => $profileUsers
-    //     ]); 
-    // }
+    //Show Profile User
+    public function show(ProfileUser $profileUser) {
+        return view('users.profile-show', [
+         'profileUser' => $profileUser
+        ]); 
+    }
 }
