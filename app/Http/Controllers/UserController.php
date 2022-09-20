@@ -66,8 +66,8 @@ class UserController extends Controller {
                      ->onlyInput('email');
     }
 
-    // Show Profile Form
-    public function profile() {
-        return view('users.profile-show');
-    }
+    // // Show Profile Form
+    // public function profile() {
+    //     return view('users.profile-show');
+    // }
 }
