@@ -9,7 +9,7 @@ class ProfileUsers extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['profile_users_id',
+    protected $fillable = [
                            'profile_users_first_name',
                            'profile_users_last_name',
                            'profile_users_gender',
@@ -30,8 +30,8 @@ class ProfileUsers extends Model
 //     }
 // }
 
-    // //Relationship To User
-    public function user() {
-    return $this->belongsTo(User::class, 'users_id');
-    }
+    // // //Relationship To User
+    // public function user() {
+    // return $this->belongsTo(User::class, 'users_id');
+    // }
 }
