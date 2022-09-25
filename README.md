@@ -95,3 +95,151 @@ De layout voor het maken van een recept moet duidelijk en overzichtelijk zijn.
 De layout van het account moet duidelijk en overzichtelijk zijn.
 De indeling van de gebruikte layout moet opties zoals: naar homapage, naar profiel/account, ect op dezelfde en een logische plek weergeven. Alleen die opties die in een bepaalde fase van het gebruik van de website nodig kunnen zijn, moeten aanwezig zijn.
 De applicatie moet beveiligd zijn tegen misbruik.
+
+
+Kandidaatklassen  (A= associatie)
+
+Doel					irrelevant						
+Receptenboek	        irrelevant
+Info					 klasse					attribuut	A				Information
+Recept				     klasse	       A									Recipe
+Info					redundant
+Recept			  		redundant	
+Maak tijd			    klasse					attribuut      A			RecipeMakeTime		
+Houdbaarheid	        klasse					attribuut		A			RecipeShelfLife
+Allergie				klasse					attribuut		A		AllergyType	
+Hoeveel personen	    klasse			    attribuut		A			ForHowManyPersons
+Keukengerei				klasse			    attribuut		A			Kitchenware
+Ingredienten			 klasse			    attribuut		A			Ingredients
+Resultaat				klasse				A								Result
+Vinden					klasse		operatie		A					ToFind
+Recept					redundant
+Bepaalde situaties		klasse		A									CertainSituations					
+Bepaalde allergieen		klasse		A								 CertainAllergies
+Aantal personen			klasse		A									NumberOfPersons
+Omschrijven					klasse		attribuut		A				Description
+Maken							irrelevant										ToMake
+Recept						redundant
+Informatie					redudant			
+Recept						redundant
+Hoeveelheid personen	redundant
+Allergenen info			klasse			attribuut	A					AllergyInformation
+Info							redundant
+Recept						redundant
+Opgeslagen				klasse		operatie    A						Stored				
+Database				klasse			operatie   A					Database
+Recepten				klasse  operatie	A							Recipes
+Andere						irrelevant
+Gebruikers				klasse    A											Users
+In te zien					klasse		operatie  A						 RecipesToSee		
+Mits de maker dat wil		klasse		operatie  A			    	ProvidedByUser
+In te stellen					klasse		operatie  A					Configure
+Database				redundant
+Keukengereedschap	redundant
+Database				redundant
+Zoekopdracht			klasse		operatie   A			        	Search
+Recepten				redundant
+Bepaald						klasse    A									Determined		
+Keukengereedschap	redundant
+Database				redundant
+Ingredienten			redundant
+Database				redundant
+Gebruiker					redundant
+Aan te vullen			klasse			operatie   A			    ToFillIn		
+Database				redundant
+Zoekopdracht			redundant
+Recepten				redundant
+Bepaald					redundant
+Keukengereedschap	redundant
+Ingredienten			redundant
+Ingredienten			redundant
+Gewicht						klasse			attribuut   A			Weight
+Hoeveelheid		klasse			attribuut   A						Quantity
+Item		klasse			attribuut   A								Item
+Kosten per gewicht		klasse  attribuut   A					    CostPerWeight
+Kosten per hoeveelheid		klasse  attribuut   A			        CostPerQuantity
+Kosten per item		klasse  attribuut   A					        CostPerItem
+Aangeven					klasse   A									Indicate							
+Hoeveel personen		redundant									
+Bepaald recept			klasse  A									CertainRecipe								
+Informatie					redundant	
+Automatisch				klasse		operatie   A			    	Automatic
+Hoeveelheid 			klasse   A									 Quantity
+Rekenen					klasse			operatie	A			     ToCalculate
+Programma				irrelevant
+Uiteindelijke prijs		klasse			operatie	A			    FinalPrice
+Profiel						klasse   attribuut	A					Profile	
+Account					klasse		attribuut	A					Account
+Mogelijkheid			klasse			operatie	A		      	Possibility
+WhatsApp			klasse		attribuut	A					    WhatsApp
+Instagram			klasse		attribuut	A					    Instagram
+Facebook			klasse		attribuut	A					    Facebook
+Adressen			klasse		A									SocialMediaAddress
+Gebruiker			klasse		A									User
+Vrienden			klasse	A										Friends
+Andere gebruikers		klasse	A							        OtherUsers
+Optie					klasse		operatie	A				    Option
+Info 					redundant
+Aan te passen	klasse		operatie	A				            ToChange
+Recepten			redundant
+Mogelijk			redundant
+Name 	klasse		attribuut		A							    Name
+Email 	klasse		attribuut		A							    Email
+Wachtwoord 		    klasse		attribuut	A			 	        Password	
+Eenvoudige			irrelevant
+Managen				klasse		operatie	A			            ToManage	
+Verwijderen			klasse		operatie	A			            ToDelete
+Alle verwijderen		klasse  operatie	A			            ToDeleteAll
+Specifieke				redundant (search)			
+Verduidelijking			klasse		A							    Clarification								
+Afbeelding				klasse		A							    AddImage
+Bestand toevoegen       klasse 	A						            AddFile
+Onderdelen				klasse	A								    RecipeParts
+Naam						klasse    attribuut		A		        RecipeName
+Rubriek						klasse		attribuut	A			    RecipeSection
+Keukengerei				redundant
+Uitleg						klasse		attribuut	A				RecipeExplanation	 
+Stappenplan recept		klasse		attribuut	A	            	RecipeRoadmap	
+Geschatte tijd			redundant
+Houdbaarheid			redundant
+In te vriezen			klasse			attribuut	A			    RecipeToFreeze
+Commentaar			klasse			attribuut	A			        RecipeComment
+Uitbreiden					klasse		operatie	A			    ToExpend
+Velden toevoegen   klasse		operatie	A			            AddFields
+Wenselijk					irrelevant
+Zoeken						redundant
+Gebruiken				klasse	A									ToUseBy
+Laptop					klasse		attribuut	A					Laptop
+Desktop				klasse		attribuut	A						Desktop
+Tablet					klasse		attribuut	A						Tablet
+Surface				klasse		attribuut	A						Surface
+Smartphone			klasse		attribuut	A					    Smartphone
+Layout					irrelevant
+Duidelijk				irrelevant
+Overzichtelijk		irrelevant
+Indeling				irrelevant
+Homepage		irrelevant
+Logisch				irrelevant
+Fase				irrelevant
+Bepaalde		klasse	A											Particular										
+Aanwezig		klasse	A											Present						
+Beveiligd		klasse	A												Secured
+Misbruik		irrelevant							
+Recipe section option		klasse  A							    RecipeSectionOption
+Database Kitchenware		klasse	A						        DatabaseKitchenware
+Database Ingredients		klasse 	A							    DatabaseIngredients
+Authentication				klasse	A								Authentication
+Register						klasse 		operatie	A			Register
+Login						klasse  	operatie	A				Login
+Logout					klasse  	operatie	A					Logout
+																A	UserFirstName
+																A	UserLastName
+																A   UserStreet
+																A	UserStreetnumber
+																A	UserPostalcode
+																A   UserCity
+																A	UserCountry
+																A	UserBirthday
+																A   UserGender
+																A	UserPhonenumber
+
