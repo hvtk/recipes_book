@@ -244,4 +244,7 @@ Logout					klasse  	operatie	A					Logout
 																A	UserBirthday
 																A   UserGender
 																A	UserPhonenumber
+    
+    
+![class-diagram](https://user-images.githubusercontent.com/75074496/192549060-f5a09815-eda8-44f6-b1b2-ebfc4bc997c6.svg)
 
