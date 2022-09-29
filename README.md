@@ -1,3 +1,4 @@
+![class-diagram rev A](https://user-images.githubusercontent.com/75074496/193009536-e98ca33c-720c-4342-aa0b-86de8534f2dc.svg)
 # recipe_book
 An recipe book made in Laravel with MySQL on Ubuntu(Linux)
 
