@@ -1,4 +1,4 @@
-![class-diagram rev A](https://user-images.githubusercontent.com/75074496/193009536-e98ca33c-720c-4342-aa0b-86de8534f2dc.svg)
+
 # recipe_book
 An recipe book made in Laravel with MySQL on Ubuntu(Linux)
 
@@ -244,6 +244,18 @@ Logout					klasse  	operatie	A					Logout
 																A   UserGender
 																A	UserPhonenumber
     
-    
+Class-diagram frist intent:
+
 ![class-diagram](https://user-images.githubusercontent.com/75074496/192549060-f5a09815-eda8-44f6-b1b2-ebfc4bc997c6.svg)
+
+
+Class-diagram second intent:
+
+![class-diagram rev B](https://user-images.githubusercontent.com/75074496/193286548-57b10bde-5fa9-4d84-8467-43d2d30132cb.svg)
+
+
+Class-diagram third intent (for the time being the starting point for the application)
+
+![class-diagram rev A](https://user-images.githubusercontent.com/75074496/193009536-e98ca33c-720c-4342-aa0b-86de8534f2dc.svg)
+
 
