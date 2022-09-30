@@ -43,13 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //Relationship With Recipes
+    // Relationship With Recipes
     public function recipes() {
         return $this->hasMany(Recipe::class, 'user_id');
     }
 
-    // //Relationship With ProfileUser
-    // public function profileUsers() {
-    //     return $this->hasOne(ProfileUsers::class, 'profile_users_id');
-    // }
+    // Relationship With ProfileUser
+    public function profileUser() {
+        return $this->hasOne(ProfileUser::class, 'profile_users_id');
+    }
 }

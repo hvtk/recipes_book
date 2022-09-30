@@ -123,26 +123,31 @@ Route::post('/logout', [UserController::class, 'logout'])
 
 // ALL PROFILE USER ROUTES
 
-//Show Profile Also
-Route::get('/users/profile', [ProfileUserController::class, 'index']);
+//All Profiles
+Route::get('/users/profile-show', [ProfileUserController::class, 'index']);
 
 //Show Profile Create Form
-Route::get('/users/profile-create', [ProfileUserController::class, 'create']);
+Route::get('/users/profile-create', [ProfileUserController::class, 'create'])
+       ->middleware('auth');       
        
 //Store Profile Data
-Route::post('/users/profile-show', [ProfileUserController::class, 'store']);
-       
+Route::post('/users/{profileUser}', [ProfileUserController::class, 'store'])
+       ->middleware('auth');
+
 //Show Edit Profile Form
-Route::get('/users/profile-edit', [ProfileUserController::class, 'edit']);
+Route::get('/users/{profileUser}/edit', [ProfileUserController::class, 'edit'])
+       ->middleware('auth');
 
 //Update Profile
-Route::put('/users/profile-show', [ProfileUserController::class, 'update']);
+Route::put('/users/{profileUser}', [ProfileUserController::class, 'update'])
+       ->middleware('auth');
 
 //Delete Profile
-Route::delete('/users/profile-show', [ProfileUserController::class, 'destroy']);
+Route::delete('/users/{profileUser}', [ProfileUserController::class, 'destroy'])
+       ->middleware('auth');
 
 //Show Profile
-Route::get('/users/profile-show', [ProfileUserController::class, 'show']);
+Route::get('/users/{profileUser}', [ProfileUserController::class, 'show']);
 
 //END ALL PROFILE USER ROUTES
 

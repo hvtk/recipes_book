@@ -286,11 +286,7 @@
                     </div>
                     <!-- End of profile tab -->
                 </div>
-            </div>
-
-                    
-           
-                    
+            </div>  
         </div>
     </div>
 

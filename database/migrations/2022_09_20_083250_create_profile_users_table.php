@@ -15,6 +15,8 @@ class CreateProfileUsersTable extends Migration
     {
         Schema::create('profile_users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('profile_users_id')->constrained()
+                                                ->onDelete('cascade');
             $table->string('profile_users_first_name');
             $table->string('profile_users_last_name');
             $table->string('profile_users_gender');
@@ -26,6 +28,10 @@ class CreateProfileUsersTable extends Migration
             $table->string('profile_users_birthday');
             $table->string('profile_users_image')->nullable();
             $table->longText('profile_users_information');
+            $table->string('profile_users_phonenumber')->nullable();
+            $table->string('profile_users_whatsappaddress')->nullable();
+            $table->string('profile_users_instagramaddress')->nullable();
+            $table->string('profile_users_facebookaddress')->nullable();
             $table->timestamps();
         });
     }
