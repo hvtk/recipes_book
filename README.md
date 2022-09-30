@@ -26,7 +26,8 @@ Laravel From Sreatch 2022 | 4+ Hour Course  https://www.youtube.com/watch?v=MYyJ
 
 I use tailwindcss from the website, not integrated in the project. So there is a <script> in the layout.blade
 
-(The info behind is in dutch because it is a memonic for me)
+The info behind is in dutch because it is a memonic for me.
+    
 Wat moet er in een receptenboek komen (de eerste opzet):
 - het recept
 - recept rubrieken
@@ -53,7 +54,8 @@ Automatische doorrekening voor een hoeveelheid personen
 ingredientendatabase:
 Kosten per item/gewicht
 
-
+The info behind is also in dutch. It is the premise of my application.
+    
 Business requirements:
 
 Het "doel" is het maken van een receptenboek waarin alle info staat die nodig is voor het maken van een recept en andere info die je over een recept wilt weten zoals: maak tijd, houdbaarheid, allergie, voor hoeveel personen, welk keukengereedschap heb je nodig, de ingredienten ect.
