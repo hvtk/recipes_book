@@ -22,7 +22,6 @@ class ProfileUserController extends Controller
 
     //Store ProfileUser Data
     public function store(Request $request) {
-        // dd($request->all());
         $formFieldsProfileUsers = $request->validate([
             'profile_users_first_name' => 'required', 
             'profile_users_last_name' => 'required',
@@ -51,7 +50,7 @@ class ProfileUserController extends Controller
 
         ProfileUser::create($formFieldsProfileUsers);
 
-        return redirect('/users/profile_show')
+        return redirect('/users/{profileUser}')
                ->with('message', 'User profile created succesfully!');
     }
 

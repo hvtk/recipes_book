@@ -124,7 +124,8 @@ Route::post('/logout', [UserController::class, 'logout'])
 // ALL PROFILE USER ROUTES
 
 //All Profiles
-Route::get('/users/profile-show', [ProfileUserController::class, 'index']);
+Route::get('/users/{profileUser}', [ProfileUserController::class, 'index'])
+       ->middleware('auth'); 
 
 //Show Profile Create Form
 Route::get('/users/profile-create', [ProfileUserController::class, 'create'])
