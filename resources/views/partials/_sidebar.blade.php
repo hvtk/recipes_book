@@ -209,21 +209,21 @@
           <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" ">
             
             <a
-              href="/users/profile-show"
+              href="/profile"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
               >
                Show
             </a>
             <a
-              href="/users/profile-create"
+              href="/profile/create"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
               Create
             </a>
             <a
-              href="/users/profile-edit"
+              href="/profile/{profileUser}/edit"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >

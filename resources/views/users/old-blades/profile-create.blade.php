@@ -8,7 +8,7 @@
         <div class="container mx-auto my-5 p-5">
 
             <form method="POST"
-                  action="/users/{profileUser}"  
+                  action="/profile/{profileUser}"  
                   enctype="multipart/form-data"
                 >
                 @csrf

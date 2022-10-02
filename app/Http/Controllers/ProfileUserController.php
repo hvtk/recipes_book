@@ -8,16 +8,14 @@ use Illuminate\Http\Request;
 class ProfileUserController extends Controller
 {
     //Show ProfileUser
-    public function index(ProfileUser $profileUser) {
-        return view('users.profile-show', [
-            'profileUser' => $profileUser
-        ]);
+    public function index() {
+        return view('profile.profile-show');
     }
 
 
     //Show Create Form
     public function create() {
-        return view('users.profile-create');
+        return view('profile.profile-create');
     }
 
     //Store ProfileUser Data
@@ -50,7 +48,7 @@ class ProfileUserController extends Controller
 
         ProfileUser::create($formFieldsProfileUsers);
 
-        return redirect('/users/{profileUser}')
+        return redirect('/profile')
                ->with('message', 'User profile created succesfully!');
     }
 
@@ -62,7 +60,7 @@ class ProfileUserController extends Controller
              abort(403, 'Unauthorized Action');
          }
         
-        return view('users.profile-edit', ['profileUser' => $profileUser]);
+        return view('profile.profile-edit', ['profileUser' => $profileUser]);
     }
 
     //Update ProfileUsers Data
@@ -117,7 +115,7 @@ class ProfileUserController extends Controller
 
     //Show Profile User
     public function show(ProfileUser $profileUser) {
-        return view('users.profile-show', [
+        return view('profile.profile-show', [
          'profileUser' => $profileUser
         ]); 
         
