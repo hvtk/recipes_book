@@ -124,8 +124,8 @@ Route::post('/logout', [UserController::class, 'logout'])
 // ALL PROFILE USER ROUTES
 
 //All Profiles
-Route::get('/profile', [ProfileUserController::class, 'index']);
-      
+Route::get('/profile', [ProfileUserController::class, 'index'])
+       ->middleware('auth'); 
 
 //Show Profile Create Form
 Route::get('/profile/create', [ProfileUserController::class, 'create'])
@@ -148,8 +148,8 @@ Route::delete('/profile/{profileUser}', [ProfileUserController::class, 'destroy'
        ->middleware('auth');
 
 //Show Profile
-Route::get('/profile/{profileUser}', [ProfileUserController::class, 'show']);
-
+Route::get('/profile/{profileUser}', [ProfileUserController::class, 'show'])
+       ->middleware('auth');
 //END ALL PROFILE USER ROUTES
 
 
