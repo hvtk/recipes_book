@@ -9,13 +9,13 @@ class ProfileUserController extends Controller
 {
     //Show ProfileUser
     public function index() {
-        return view('profile.profile-show');
+        return view('profile.show');
     }
 
 
     //Show Create Form
     public function create() {
-        return view('profile.profile-create');
+        return view('profile.create');
     }
 
     //Store ProfileUser Data
@@ -60,7 +60,7 @@ class ProfileUserController extends Controller
              abort(403, 'Unauthorized Action');
          }
         
-        return view('profile.profile-edit', ['profileUser' => $profileUser]);
+        return view('profile.edit', ['profileUser' => $profileUser]);
     }
 
     //Update ProfileUsers Data
@@ -115,7 +115,7 @@ class ProfileUserController extends Controller
 
     //Show Profile User
     public function show(ProfileUser $profileUser) {
-        return view('profile.profile-show', [
+        return view('profile.show', [
          'profileUser' => $profileUser
         ]); 
         
