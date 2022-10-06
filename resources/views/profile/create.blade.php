@@ -44,7 +44,7 @@
                             </div>
                             <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
                             <p class="text-gray-600 font-lg text-semibold leading-6">
-                                <label for="user_information"
+                                <label for="profile_users_information"
                                     class="ml-4 text-md tracking-wide font-semibold w-50">
                                         Information about the user
                                 </label>
@@ -58,7 +58,7 @@
                                         {{ old('profile_users_information') }}
                                 </textarea>  
                                 
-                                @error('profile_user_information')
+                                @error('profile_users_information')
                                     <p class="text-red-500 text-xs mt-1">
                                         {{ $message }}
                                     </p>

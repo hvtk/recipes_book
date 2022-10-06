@@ -45,7 +45,8 @@ class RecipeController extends Controller {
        $formFieldsRecipe['user_id'] = auth()->id();
 
        Recipe::create($formFieldsRecipe);
-
+       
+       ddd($request);
        return redirect('/recipes')
               ->with('message', 'Recipe created succesfully!');
     }

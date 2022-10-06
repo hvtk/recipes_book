@@ -13,6 +13,8 @@
         <div class="container mx-auto my-5 p-5">
             <div class="md:flex no-wrap md:-mx-2 ">
 
+                @foreach($profileUser as $profileUser)
+
                 <!-- Left Side -->
                 <div class="w-full md:w-3/12 md:mx-2">
                     <!-- Profile Card -->
@@ -28,7 +30,7 @@
                            
                         </div>
                         <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
-                        <p class="text-gray-600 font-lg text-semibold leading-6">
+                        <div class="text-gray-600 font-lg text-semibold leading-6">
                             <p>
                                     Information about the user
                             </p>
@@ -37,7 +39,7 @@
                                     {{ $profileUser->profile_users_information }}
                             </div>  
     
-                        </p>
+                        </div>
                         
                     </div>
                     <!-- End of profile card -->
@@ -286,6 +288,8 @@
                     </div>
                     <!-- End of profile tab -->
                 </div>
+
+                @endforeach
             </div>  
         </div>
     </div>
