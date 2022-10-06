@@ -144,13 +144,6 @@
               Create
             </a>
             <a
-              href="/recipes/{recipe}/edit"
-              role="menuitem"
-              class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
-            >
-              Edit
-            </a>
-            <a
               href="/recipes/manage"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
