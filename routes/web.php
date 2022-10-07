@@ -136,11 +136,11 @@ Route::post('/profile', [ProfileUserController::class, 'store'])
        ->middleware('auth');
 
 //Show Edit Profile Form
-Route::get('/profile/edit', [ProfileUserController::class, 'edit'])
+Route::get('/profile/{profile}/edit', [ProfileUserController::class, 'edit'])
        ->middleware('auth');
 
 //Update Profile
-Route::put('/profile', [ProfileUserController::class, 'update'])
+Route::put('/profile/{profile}', [ProfileUserController::class, 'update'])
        ->middleware('auth');
 
 //Delete Profile

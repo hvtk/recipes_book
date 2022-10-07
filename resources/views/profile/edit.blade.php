@@ -9,7 +9,7 @@
             <div class="md:flex no-wrap md:-mx-2 ">
             
                 <form method="POST"
-                      action="/profile"  
+                      action="/profile/{{ $profileUser }}"  
                       enctype="multipart/form-data"
                     >
                     @csrf

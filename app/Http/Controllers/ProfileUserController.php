@@ -14,7 +14,6 @@ class ProfileUserController extends Controller
         ]);
     }
 
-
     //Show Create Form
     public function create() {
         return view('profile.create');
@@ -73,8 +72,6 @@ class ProfileUserController extends Controller
         //     abort(403, 'Unauthorized Action');
         // }
             
-
-
         $formFieldsProfileUsers = $request->validate([
          'profile_users_first_name' => 'required', 
          'profile_users_last_name' => 'required',

@@ -216,7 +216,7 @@
               Create
             </a>
             <a
-              href="/profile/edit"
+              href="/profile/{profile}/edit"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
