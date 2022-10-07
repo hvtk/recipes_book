@@ -46,7 +46,6 @@ class RecipeController extends Controller {
 
        Recipe::create($formFieldsRecipe);
        
-       ddd($request);
        return redirect('/recipes')
               ->with('message', 'Recipe created succesfully!');
     }

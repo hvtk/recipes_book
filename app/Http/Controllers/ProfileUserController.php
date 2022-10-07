@@ -55,23 +55,25 @@ class ProfileUserController extends Controller
     }
 
     // //Show Edit Form
-     public function edit(ProfileUser $profileUser) {
+     public function edit() {
 
-          // Make sure logged in user is owner
-          if($profileUser->profile_users_id != auth()->id()) {
-             abort(403, 'Unauthorized Action');
-         }
+        //   // Make sure logged in user is owner
+        //   if($profileUser->profile_users_id != auth()->id()) {
+        //      abort(403, 'Unauthorized Action');
+        //  }
         
-        return view('profile.edit', ['profileUser' => $profileUser]);
+        return view('profile.edit', ['profileUser' => auth()->user()->profileUser()->get()]);
     }
 
     //Update ProfileUsers Data
     public function update(Request $request, ProfileUser $profileUser) {
 
-        // Make sure logged in user is owner
-        if($profileUser->profile_users_id != auth()->id()) {
-            abort(403, 'Unauthorized Action');
-        }
+        // // Make sure logged in user is owner
+        // if($profileUser->profile_users_id != auth()->id()) {
+        //     abort(403, 'Unauthorized Action');
+        // }
+            
+
 
         $formFieldsProfileUsers = $request->validate([
          'profile_users_first_name' => 'required', 
@@ -98,7 +100,7 @@ class ProfileUserController extends Controller
  
         $profileUser->update($formFieldsProfileUsers);
  
-        return back()
+        return redirect('/profile')
                ->with('message', 'Profile user updated succesfully!');
     }
 
