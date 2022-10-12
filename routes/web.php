@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UserProfile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
@@ -119,7 +120,31 @@ Route::post('/logout', [UserController::class, 'logout'])
 
 // END ALL AUTHENTICATE ROUTES
 
+// ALLE USERPROFILE ROUTES
 
+Route::get('/userprofiles', function () {
+       return view('userProfile.userProfiles', [
+              'heading' => 'overview',
+              'userprofiles' => [
+                     [
+                            'id' => 1,
+                            'firstname' => 'Henk',
+                            'birthday' => '07-03-1968'
+                     ],
+                     [
+                            'id' => 2,
+                            'firstname' => 'Diederik',
+                            'birthday' => '07-03-1968'
+                     ],
+              ]
+       ]);
+});
+
+Route::get('/userprofiles/{id}', function($id) {
+       return view('userProfile.userProfile', [
+              'userprofile' => UserProfile::find($id) //userProfile is the value from UserProfile model
+       ]);
+});
 
 
 
