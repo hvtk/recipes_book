@@ -4,6 +4,7 @@ use App\Models\UserProfile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,29 +123,20 @@ Route::post('/logout', [UserController::class, 'logout'])
 
 // ALLE USERPROFILE ROUTES
 
-Route::get('/userprofiles', function () {
-       return view('userProfile.userProfiles', [
-              'heading' => 'overview',
-              'userprofiles' => [
-                     [
-                            'id' => 1,
-                            'firstname' => 'Henk',
-                            'birthday' => '07-03-1968'
-                     ],
-                     [
-                            'id' => 2,
-                            'firstname' => 'Diederik',
-                            'birthday' => '07-03-1968'
-                     ],
-              ]
-       ]);
-});
+// All User Profiles
+Route::get('/userprofiles', [UserProfileController::class, 'index']);
 
-Route::get('/userprofiles/{id}', function($id) {
-       return view('userProfile.userProfile', [
-              'userprofile' => UserProfile::find($id) //userProfile is the value from UserProfile model
-       ]);
-});
+ 
+// Create User Profile (show user profile form)
+Route::get('/userprofiles/create', [UserProfileController::class, 'create']);
+
+// Store User Profile Data
+Route::post('/userprofiles', [UserProfileController::class, 'store']);
+
+
+// Single User Profile
+Route::get('/userprofiles/{userProfile}', [UserProfileController::class, 'show']);
+
 
 
 
