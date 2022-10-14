@@ -1,6 +1,7 @@
 <x-layout>
 
-    {{-- @props(['recipe']) --}}
+    {{-- Compiled style from Tailwind example profile --}}
+    <link href="{{ url('/css/userProfile.css') }}" rel="stylesheet">
 
     @foreach ($userProfile as $userProfile )
  
@@ -14,106 +15,234 @@
             </a>
         </div>
     </header>
+
     
-    <!-- Information fields short -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 p-4 gap-4">
-        
-        <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-            <div class="text-center">
-                <p class="mb-4">Section recipe</p>
-                <div class="text-xl font-bold mb-4">
-                    {{ $userProfile->last_name }}
+    
+    <div class="bg-gray-100">
+
+        <a href="/recipes" class="inline-block text-black ml-4 mb-4">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back
+        </a>
+
+        <div class="container mx-auto my-5 p-5">
+            <div class="md:flex no-wrap md:-mx-2 ">
+
+                <!-- Left Side -->
+                <div class="w-full md:w-3/12 md:mx-2">
+                    <!-- Profile Card -->
+                    <div class="bg-white p-3 border-t-4 border-green-400">
+                        <div class="image overflow-hidden h-auto w-full mx-auto">
+
+                            
+                            <img class="hidden w-48 mr-6 md:block"
+                            src="{{$userProfile->image ? asset('storage/' . $userProfile->image) : asset('images/no-image.png')}}"
+                            alt=""
+                            /> 
+
+                           
+                        </div>
+                        {{-- <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1> --}}
+                        <div class="text-gray-600 font-lg text-semibold leading-6">
+                            <p>
+                                    Information about the user
+                            </p>
+                            <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                    {{ $userProfile->information }}
+                            </div>  
+    
+                        </div>
+                        
+                    </div>
+                    <!-- End of profile card -->
+                    
                 </div>
-            </div>
-        </div>
-        <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-            <div class="text-center">
-                <p class="mb-4">Kitchenware</p> 
-                <div class="text-xl font-bold mb-4">
-                    {{ $userProfile->gender }}
+                <!-- Right Side -->
+                <div class="w-full md:w-9/12 mx-2 h-64">
+                    <!-- Profile tab -->
+                    <!-- About Section -->
+                    <div class="bg-white p-3 shadow-sm rounded-sm">
+                        <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
+                            <span clas="text-green-500">
+                                <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                            </span>
+                            <span class="tracking-wide">About</span>
+                        </div>
+                        <div class="text-gray-700">
+                            <div class="grid md:grid-cols-2 text-sm">
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                       >
+                                            First name
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->first_name }}
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                        >
+                                        
+                                            Last name
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->last_name }}
+                                    </div>
+                                   
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                        >
+                                        
+                                            Gender
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->gender }}
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                        >
+                                        
+                                            Street
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->street }}
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                      >
+                                        
+                                            Streetnumber
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->streetnumber }}
+                                    </div>
+                    
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                      >
+                                        
+                                            Postalcode
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->postalcode }}
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                        >
+                                        
+                                            City
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->city }}
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                        >
+                                        
+                                            Country
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->country }}   
+
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                      >
+                                        
+                                            Birthday
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->birthday }}   
+                                        
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <div class="px-4 py-2 font-semibold"
+                                        >
+                                        
+                                            Email
+
+                                    </div>
+                                    <div class="px-4 py-2"> 
+
+                                    {{-- {{ auth()->user()->email }}  --}}
+                                    
+                                    </div>
+                    
+                                </div>
+
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!-- End of about section -->
+
+                
+                    <!-- End of profile tab -->
                 </div>
-            </div>
-        </div>
-        <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-            <div class="text-center">
-                <p class="mb-4">Ingredients</p> 
-                <div class="text-xl font-bold mb-4">
-                    {{ $userProfile->street }}
-                </div>
-            </div>
-        </div>
-        <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-            <div class="text-center">
-                <p class="mb-4">Estimated time</p> 
-                <div class="text-xl font-bold mb-4">
-                    {{ $userProfile->streetnumber }}
-                </div>
-            </div>
-        </div>
-        <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-            <div class="text-center">
-                <p class="mb-4">Shelf life</p> 
-                <div class="text-xl font-bold mb-4">
-                    {{ $userProfile->postalcode }}
-                </div>
-            </div>
+
+             
+            </div>  
         </div>
     </div>
-    <!-- Information fields short -->
-    
-    <!-- paragraph fields and image -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 p-4 gap-4">
-    
-        <!-- The steps to follow -->
-        <div class="relative flex flex-col min-w-0 mb-4 lg:mb-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-            <div class="rounded-t mb-0 px-0 border-0">
-                <div class="flex flex-wrap items-center px-4 py-2">
-                    <div class="relative w-full max-w-full flex-grow flex-1">
-                        <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">The steps to follow</h3>
-                    </div>
-                    <div class="text-xl font-bold mb-4">
-                        {{ $userProfile->city }}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- The steps to follow -->
-    
-        <!-- Recipe commentary -->
-        <div class="relative flex flex-col min-w-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-            <div class="rounded-t mb-0 px-0 border-0">
-                <div class="flex flex-wrap items-center px-4 py-2">
-                    <div class="relative w-full max-w-full flex-grow flex-1">
-                        <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Recipe commentary</h3>
-                    </div>
-                    <div class="text-xl font-bold mb-4">
-                        {{ $userProfile->country }}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Recipe commentary -->
-    
-        <!-- Recipe image -->
-        <div class="relative flex flex-col min-w-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-            <div class="rounded-t mb-0 px-0 border-0">
-                <div class="flex flex-wrap items-center px-4 py-2">
-                    <div class="relative w-full max-w-full flex-grow flex-1">
-                        <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Recipe image</h3>
-                    </div>
-                    <div class="text-xl font-bold mb-4">
-                        <img class="hidden w-48 mr-6 md:block"
-                                src="{{ $userProfile->image ? asset('storage/' . $userProfile->image) : asset('images/no-image.png') }}"
-                                alt=""
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Recipe image -->
-    
-    </div> 
 
     @endforeach
-
 </x-layout>

@@ -1,7 +1,7 @@
 <x-layout>
 
     {{-- Compiled style from Tailwind example profile --}}
-    <link href="{{ url('/css/profile.css') }}" rel="stylesheet">
+    <link href="{{ url('/css/userProfile.css') }}" rel="stylesheet">
     
     <div class="bg-gray-100">
 
@@ -9,7 +9,7 @@
 
             <form method="POST"
                   action="/userprofiles"  
-                  enctype="multipart/form-data"
+                  enctype="multipart/form-data"  
                 >
                 @csrf
 

@@ -11,6 +11,7 @@ class UserProfileController extends Controller
     public function index() {
         return view('userProfile.index', [
             'userProfile' => UserProfile::all()
+                          
         ]);
     }
 
@@ -45,11 +46,11 @@ class UserProfileController extends Controller
             'facebookaddress'
         ]);
 
-        // if($request->hasFile('image')) {
-        //    $formFieldsProfileUsers['image'] = $request
-        //    ->file('image')
-        //    ->store('userProfileImage', 'public');
-        // }
+        if($request->hasFile('image')) {
+           $formFieldsUserProfile['image'] = $request
+           ->file('image')
+           ->store('userProfileImage', 'public');
+        }
 
     //    //To connect the profile user data on an user
     //     $formFieldsProfileUsers['profile_users_id'] = auth()->id();
