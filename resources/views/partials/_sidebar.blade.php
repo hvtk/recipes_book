@@ -202,25 +202,18 @@
           <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" ">
             
             <a
-              href="/profile"
+              href="/userprofiles/manage"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
               >
-               Show
+               Manage
             </a>
             <a
-              href="/profile/create"
+              href="/userprofiles/create"
               role="menuitem"
               class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
             >
               Create
-            </a>
-            <a
-              href="/profile/{profile}/edit"
-              role="menuitem"
-              class="block p-2 text-sm flex items-center mr-4 hover:text-blue-100"
-            >
-              Edit
             </a>
            
           </div>

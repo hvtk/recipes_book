@@ -70,7 +70,7 @@ class UserProfileController extends Controller
     public function update(Request $request, UserProfile $userProfile) {
 
         // Make sure logged in user is owner
-        if($profileUser->profile_users_id != auth()->id()) {
+        if($userProfile->user_profiles_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
             
@@ -107,7 +107,7 @@ class UserProfileController extends Controller
     public function destroy(UserProfile $userProfile) {
 
     // Make sure logged in user is owner
-    if($recipe->user_id != auth()->id()) {
+    if($userProfile->user_profiles_id != auth()->id()) {
        abort(403, 'Unauthorized Action');
     }
 
@@ -115,5 +115,11 @@ class UserProfileController extends Controller
     return redirect('/userprofiles')
           ->with('message', 'User profile deleted succesfully!');   
     }
+
+    // Manage User Profiles
+    public function manage() {
+        return view('userProfile.manage', ['userProfile' => auth()->user()->userProfile()->get()]);
+    }
+
 
 }

@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\UserProfile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
@@ -178,6 +177,10 @@ Route::put('/userprofiles/{userProfile}', [UserProfileController::class, 'update
 // Delete User Profile
 Route::delete('/userprofiles/{userProfile}', [UserProfileController::class, 'destroy'])
        ->middleware('auth');
+
+//Manage User Profiles
+Route::get('/userprofiles/manage', [UserProfileController::class, 'manage'])
+       ->middleware('auth');     
 
 // Single User Profile
 Route::get('/userprofiles/{userProfile}', [UserProfileController::class, 'show']);

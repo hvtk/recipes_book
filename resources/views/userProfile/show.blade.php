@@ -27,7 +27,7 @@
 
                            
                         </div>
-                        {{-- <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1> --}}
+                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
                         <div class="text-gray-600 font-lg text-semibold leading-6">
                             <p>
                                     Information about the user

@@ -42,7 +42,7 @@
                                 @enderror
                             
                             </div>
-                            {{-- <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1> --}}
+                            <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
                             <p class="text-gray-600 font-lg text-semibold leading-6">
                                 <label for="profile_users_information"
                                     class="ml-4 text-md tracking-wide font-semibold w-50">
