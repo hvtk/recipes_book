@@ -52,4 +52,9 @@ class User extends Authenticatable
     public function profileUser() {
         return $this->hasOne(ProfileUser::class, 'profile_users_id');
     }
+
+    // Relationship With UserProfile
+    public function userProfile() {
+        return $this->hasOne(UserProfile::class, 'user_profiles_id');
+    }
 }

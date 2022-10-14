@@ -15,6 +15,8 @@ class CreateUserProfilesTable extends Migration
     {
         Schema::create('user_profiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_profiles_id')->constrained()
+                                                 ->onDelete('cascade');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('gender');

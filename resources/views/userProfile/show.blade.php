@@ -225,8 +225,30 @@
                 </div>
 
              
-            </div>  
+            </div> 
+            
+            
         </div>
+
+        <x-card class="mt-4 p-s flex space-x-6">
+            <a href="/userprofiles/{{ $userProfile->id }}/edit">
+                <i class="fa-solid fa-pencil"></i>
+                    Edit
+            </a>
+
+            <form method="POST"
+                  action="/userprofiles/{{ $userProfile->id }}"  
+                >
+                @csrf
+                @method('DELETE') 
+                <button class="text-red-500">
+                    <i class="fa-solid fa-trash">
+                    </i>
+                        Delete
+                </button>
+            </form>
+
+        </x-card>
     </div>
 
 </x-layout>

@@ -154,21 +154,35 @@ Route::get('/profile/{profileUser}', [ProfileUserController::class, 'show'])
 //END ALL PROFILE USER ROUTES
 
 
-// ALL USERPROFILE ROUTES
+// ALL USER PROFILE ROUTES
 
 // All User Profiles
 Route::get('/userprofiles', [UserProfileController::class, 'index']);
 
- 
 // Create User Profile (show user profile form)
-Route::get('/userprofiles/create', [UserProfileController::class, 'create']);
+Route::get('/userprofiles/create', [UserProfileController::class, 'create'])
+       ->middleware('auth');
 
 // Store User Profile Data
-Route::post('/userprofiles', [UserProfileController::class, 'store']);
+Route::post('/userprofiles', [UserProfileController::class, 'store'])
+       ->middleware('auth');
 
+// Show Edit User Profile Form
+Route::get('/userprofiles/{userProfile}/edit', [UserProfileController::class, 'edit'])
+       ->middleware('auth');
+
+// Update User Profile
+Route::put('/userprofiles/{userProfile}', [UserProfileController::class, 'update'])
+       ->middleware('auth');
+
+// Delete User Profile
+Route::delete('/userprofiles/{userProfile}', [UserProfileController::class, 'destroy'])
+       ->middleware('auth');
 
 // Single User Profile
 Route::get('/userprofiles/{userProfile}', [UserProfileController::class, 'show']);
+
+// END ALL USER PROFILE ROUTES
 
 
 

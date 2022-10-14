@@ -52,13 +52,68 @@ class UserProfileController extends Controller
            ->store('userProfileImage', 'public');
         }
 
-    //    //To connect the profile user data on an user
-    //     $formFieldsProfileUsers['profile_users_id'] = auth()->id();
+       //To connect the user profile data on an user
+        $formFieldsUserProfile['user_profiles_id'] = auth()->id();
 
         UserProfile::create($formFieldsUserProfile);
 
         return redirect('/userprofiles')
                ->with('message', 'User profile created succesfully!');
+    }
+
+    // Show Edit User Profile Form
+    public function edit(UserProfile $userProfile) {
+        return view('userProfile.edit', ['userProfile' => $userProfile]);
+    }
+
+    //Update User Profile
+    public function update(Request $request, UserProfile $userProfile) {
+
+        // Make sure logged in user is owner
+        if($profileUser->profile_users_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+            
+        $formFieldsUserProfile = $request->validate([
+         'first_name' => 'required', 
+         'last_name' => 'required',
+         'gender' => 'required',
+         'street' => 'required',
+         'streetnumber' => 'required',
+         'postalcode' => 'required',
+         'city' => 'required',
+         'country' => 'required',
+         'birthday' => 'required',
+         'information' => 'required',
+         'phonenumber',
+         'whatsappaddress',
+         'instagramaddress',
+         'facebookaddress'
+        ]);
+ 
+        if($request->hasFile('image')) {
+            $formFieldsUserProfile['image'] = $request
+            ->file('image')
+            ->store('userProfileImage', 'public');
+        }
+ 
+        $userProfile->update($formFieldsUserProfile);
+ 
+        return redirect('/userprofiles')
+               ->with('message', 'User profile updated succesfully!');
+    }
+
+    //Delete Recipe
+    public function destroy(UserProfile $userProfile) {
+
+    // Make sure logged in user is owner
+    if($recipe->user_id != auth()->id()) {
+       abort(403, 'Unauthorized Action');
+    }
+
+    $userProfile->delete();
+    return redirect('/userprofiles')
+          ->with('message', 'User profile deleted succesfully!');   
     }
 
 }

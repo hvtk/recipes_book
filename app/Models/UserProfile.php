@@ -10,7 +10,7 @@ class UserProfile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
+        'user_profiles_id',
         'first_name',
         'last_name',
         'gender',
@@ -27,4 +27,9 @@ class UserProfile extends Model
         'instagramaddress',
         'facebookaddress'
     ];
+
+    //Relationship To User
+    public function user() {
+        return $this->belongsTo(User::class, 'user_profiles_id');
+    }
 }

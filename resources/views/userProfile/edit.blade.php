@@ -9,13 +9,11 @@
             <div class="md:flex no-wrap md:-mx-2 ">
             
                 <form method="POST"
-                      action="/profile/{{ $profileUser }}"  
+                      action="/userprofiles/{{ $userProfile->id }}"  
                       enctype="multipart/form-data"
                     >
                     @csrf
                     @method('PUT')
-
-                    @foreach($profileUser as $profileUser)
 
                     <!-- Left Side -->
                     <div class="w-full md:w-3/12 md:mx-2">
@@ -23,44 +21,44 @@
                         <div class="bg-white p-3 border-t-4 border-green-400">
                             <div class="image overflow-hidden h-auto w-full mx-auto">
 
-                                <label for="profile_users_image"
+                                <label for="image"
                                         class="ml-4 text-md tracking-wide font-semibold w-50">
                                             Image User
                                 </label>
                                 <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                         type="file" 
-                                        name="profile_users_image" 
+                                        name="image" 
                                         id=""
                                 />
                                 <img class="hidden w-48 mr-6 md:block"
-                                src="{{$profileUser->profile_users_image ? asset('storage/' . $profileUser->profile_users_image) : asset('images/no-image.png')}}"
+                                src="{{$userProfile->image ? asset('storage/' . $userProfile->image) : asset('images/no-image.png')}}"
                                 alt=""
                                 /> 
 
-                                @error('profile_users_image')
+                                @error('image')
                                     <p class="text-red-500 text-xs mt-1">
                                         {{ $message }}
                                     </p>
                                 @enderror
                             
                             </div>
-                            <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
+                            {{-- <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1> --}}
                             <p class="text-gray-600 font-lg text-semibold leading-6">
-                                <label for="profile_user_information"
+                                <label for="information"
                                     class="ml-4 text-md tracking-wide font-semibold w-50">
                                         Information about the user
                                 </label>
                                 <textarea class="text-sm text-gray-500 hover:text-gray-600 leading-6"
                                         type="text" 
-                                        name="profile_users_information" 
+                                        name="information" 
                                         id=""
                                         rows="10" 
                                         placeholder="Information about the user" 
                                         >
-                                        {{ $profileUser->profile_users_information }}
+                                        {{ $userProfile->information }}
                                 </textarea>  
                                 
-                                @error('profile_users_information')
+                                @error('information')
                                     <p class="text-red-500 text-xs mt-1">
                                         {{ $message }}
                                     </p>
@@ -93,7 +91,7 @@
                                     
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_first_name"
+                                        <label for="first_name"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -102,13 +100,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_first_name" 
+                                            name="first_name" 
                                             id="" 
                                             placeholder="First name" 
-                                            value="{{ $profileUser->profile_users_first_name }}"
+                                            value="{{ $userProfile->first_name }}"
                                         /> 
                                         
-                                        @error('profile_users_first_name')
+                                        @error('first_name')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -118,7 +116,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_user_last_name"
+                                        <label for="last_name"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -127,13 +125,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_last_name" 
+                                            name="last_name" 
                                             id="" 
                                             placeholder="Last name" 
-                                            value="{{ $profileUser->profile_users_last_name }}"
+                                            value="{{ $userProfile->last_name }}"
                                         /> 
                                         
-                                        @error('profile_users_last_name')
+                                        @error('last_name')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -143,7 +141,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_gender"
+                                        <label for="gender"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -152,13 +150,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_gender" 
+                                            name="gender" 
                                             id="" 
                                             placeholder="Gender" 
-                                            value="{{ $profileUser->profile_users_gender }}"
+                                            value="{{ $userProfile->gender }}"
                                         /> 
                                         
-                                        @error('profile_users_gender')
+                                        @error('gender')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -168,7 +166,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_street"
+                                        <label for="street"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -177,13 +175,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_street" 
+                                            name="street" 
                                             id="" 
                                             placeholder="Street" 
-                                            value="{{ $profileUser->profile_users_street }}"
+                                            value="{{ $userProfile->street }}"
                                         /> 
                                         
-                                        @error('profile_users_street')
+                                        @error('street')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -193,7 +191,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_streetnumber"
+                                        <label for="streetnumber"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -202,13 +200,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_streetnumber" 
+                                            name="streetnumber" 
                                             id="" 
                                             placeholder="Streetnumber" 
-                                            value="{{ $profileUser->profile_users_streetnumber }}"
+                                            value="{{ $userProfile->streetnumber }}"
                                         /> 
                                         
-                                        @error('profile_users_streetnumber')
+                                        @error('streetnumber')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -218,7 +216,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_postalcode"
+                                        <label for="postalcode"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -227,13 +225,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_postalcode" 
+                                            name="postalcode" 
                                             id="" 
                                             placeholder="Postalcode" 
-                                            value="{{ $profileUser->profile_users_postalcode }}"
+                                            value="{{ $userProfile->postalcode }}"
                                         /> 
                                         
-                                        @error('profile_users_postalcode')
+                                        @error('postalcode')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -243,7 +241,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_city"
+                                        <label for="city"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -252,13 +250,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_city" 
+                                            name="city" 
                                             id="" 
                                             placeholder="City" 
-                                            value="{{ $profileUser->profile_users_city }}"
+                                            value="{{ $userProfile->city }}"
                                         /> 
                                         
-                                        @error('profile_users_city')
+                                        @error('city')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -268,7 +266,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_country"
+                                        <label for="country"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -277,13 +275,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_country" 
+                                            name="country" 
                                             id="" 
                                             placeholder="Country" 
-                                            value="{{ $profileUser->profile_users_country }}"
+                                            value="{{ $userProfile->country }}"
                                         /> 
                                         
-                                        @error('profile_user_country')
+                                        @error('country')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -293,7 +291,7 @@
 
                                     <div class="grid grid-cols-2">
                                         
-                                        <label for="profile_users_birthday"
+                                        <label for="birthday"
                                                 class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -302,13 +300,13 @@
                                         </label>
                                         <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                             type="text" 
-                                            name="profile_users_birthday" 
+                                            name="birthday" 
                                             id="" 
                                             placeholder="Birthday" 
-                                            value="{{ $profileUser->profile_users_birthday }}"
+                                            value="{{ $userProfile->birthday }}"
                                         /> 
                                         
-                                        @error('profile_users_birthday')
+                                        @error('birthday')
                                             <p class="text-red-500 text-xs mt-1">
                                                 {{ $message }}
                                             </p>
@@ -326,7 +324,7 @@
                                         </div>
                                         <div class="px-4 py-2"> 
 
-                                        {{ auth()->user()->email }} 
+                                        {{-- {{ auth()->user()->email }}  --}}
                                         
                                         </div>
                         
@@ -341,13 +339,13 @@
 
                     </div>
                     <!-- End of profile tab -->
-                    @endforeach
+                    
 
 
                     <div class="flex flex-col">
                         <button class="w-100 mt-2 py-3 px-3 rounded-lg bg-blue-600 dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                             >
-                        Update the profile
+                        Update the user profile
                         </button>
                     </div>
             
