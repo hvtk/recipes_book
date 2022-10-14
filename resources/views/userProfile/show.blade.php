@@ -20,10 +20,10 @@
                         <div class="image overflow-hidden h-auto w-full mx-auto">
 
                             
-                            {{-- <img class="hidden w-48 mr-6 md:block"
+                            <img class="hidden w-48 mr-6 md:block"
                             src="{{$userProfile->image ? asset('storage/' . $userProfile->image) : asset('images/no-image.png')}}"
                             alt=""
-                            />  --}}
+                            /> 
 
                            
                         </div>

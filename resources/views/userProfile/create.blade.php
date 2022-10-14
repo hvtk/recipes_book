@@ -31,7 +31,7 @@
                                         id=""
                                 />
                                 {{-- <img class="hidden w-48 mr-6 md:block"
-                                src="{{$user->user_image ? asset('storage/' . $user->user_image) : asset('images/no-image.png')}}"
+                                src="{{$userProfile->image ? asset('storage/' . $userProfile->image) : asset('images/no-image.png')}}"
                                 alt=""
                                 /> --}}
 
@@ -336,8 +336,6 @@
 
                         <div class="my-4"></div>
 
-                      
-                        
                         <!-- End of profile tab -->
                     </div>
                 </div>

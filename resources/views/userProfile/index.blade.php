@@ -1,15 +1,17 @@
 <x-layout>
 
     {{-- @props(['recipe']) --}}
+
+    @foreach ($userProfile as $userProfile )
  
     <header class="text-center">
         <h2 class="text-xl uppercase mb-1">
             Title from this recipe
         </h2>
         <div class="text-2xl font-bold mb-4">
-            {{-- <a href="/userprofiles/{{ $userProfile->id }}"> --}}
+            <a href="/userprofiles/{{ $userProfile->id }}">
                 {{ $userProfile->first_name }}
-            {{-- </a> --}}
+            </a>
         </div>
     </header>
     
@@ -92,7 +94,7 @@
         </div>
         <!-- Recipe commentary -->
     
-        {{-- <!-- Recipe image -->
+        <!-- Recipe image -->
         <div class="relative flex flex-col min-w-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
             <div class="rounded-t mb-0 px-0 border-0">
                 <div class="flex flex-wrap items-center px-4 py-2">
@@ -101,15 +103,17 @@
                     </div>
                     <div class="text-xl font-bold mb-4">
                         <img class="hidden w-48 mr-6 md:block"
-                                src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png') }}"
+                                src="{{ $userProfile->image ? asset('storage/' . $userProfile->image) : asset('images/no-image.png') }}"
                                 alt=""
                         />
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Recipe image --> --}}
+        <!-- Recipe image -->
     
     </div> 
+
+    @endforeach
 
 </x-layout>
