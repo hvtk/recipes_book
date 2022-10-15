@@ -1,7 +1,7 @@
 <x-layout>
 
     {{-- Compiled style from Tailwind example profile --}}
-    <link href="{{ url('/css/userProfile.css') }}" rel="stylesheet">
+    <link href="{{ url('/css/userProfile.css') }}" rel="stylesheet"/>
 
     @foreach ($userProfile as $userProfile )
  
@@ -215,6 +215,70 @@
 
                                 <div class="grid grid-cols-2">
                                     
+                                    <p class="px-4 py-2 font-semibold"
+                                      >
+                                        
+                                            Phonenumber
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->phonenumber }}   
+                                        
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                      >
+                                        
+                                            Whatsappaddress
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->whatsappaddress }}   
+                                        
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                      >
+                                        
+                                            Instagramaddress
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->instagramaddress }}   
+                                        
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
+                                    <p class="px-4 py-2 font-semibold"
+                                      >
+                                        
+                                            Facebookaddress
+
+                                    </p>
+                                    <div class="text-sm text-gray-500 hover:text-gray-600 leading-6">
+                                    
+                                        {{ $userProfile->facebookaddress }}   
+                                        
+                                    </div>
+                    
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    
                                     <div class="px-4 py-2 font-semibold"
                                         >
                                         
@@ -223,7 +287,7 @@
                                     </div>
                                     <div class="px-4 py-2"> 
 
-                                    {{-- {{ auth()->user()->email }}  --}}
+                                    {{ auth()->user()->email }} 
                                     
                                     </div>
                     
@@ -245,4 +309,5 @@
     </div>
 
     @endforeach
+
 </x-layout>

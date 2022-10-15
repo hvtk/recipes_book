@@ -316,6 +316,106 @@
 
                                     <div class="grid grid-cols-2">
                                         
+                                        <label for="phonenumber"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Phonenumber
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="phonenumber" 
+                                            id="" 
+                                            placeholder="Phonenumber" 
+                                            value="{{ $userProfile->phonenumber }}"
+                                        /> 
+                                        
+                                        @error('phonenumber')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
+                                        <label for="whatsappaddress"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Whatsappaddress
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="whatsappaddress" 
+                                            id="" 
+                                            placeholder="Whatsappaddress" 
+                                            value="{{ $userProfile->whatsappaddress }}"
+                                        /> 
+                                        
+                                        @error('whatsappaddress')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
+                                        <label for="birthday"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Instagramaddress
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="instagramaddress" 
+                                            id="" 
+                                            placeholder="Instagramaddress" 
+                                            value="{{ $userProfile->instagramaddress }}"
+                                        /> 
+                                        
+                                        @error('instagramaddress')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
+                                        <label for="facebookaddress"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Facebookaddress
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="facebookaddress" 
+                                            id="" 
+                                            placeholder="Facebookaddress" 
+                                            value="{{ $userProfile->facebookaddress }}"
+                                        /> 
+                                        
+                                        @error('facebookaddress')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
                                         <div class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -324,7 +424,7 @@
                                         </div>
                                         <div class="px-4 py-2"> 
 
-                                        {{-- {{ auth()->user()->email }}  --}}
+                                        {{ auth()->user()->email }} 
                                         
                                         </div>
                         

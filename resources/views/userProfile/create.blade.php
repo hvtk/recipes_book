@@ -1,7 +1,7 @@
 <x-layout>
 
     {{-- Compiled style from Tailwind example profile --}}
-    <link href="{{ url('/css/userProfile.css') }}" rel="stylesheet">
+    <link href="{{ url('/css/userProfile.css') }}" rel="stylesheet"/>
     
     <div class="bg-gray-100">
 
@@ -19,6 +19,7 @@
                     <div class="w-full md:w-3/12 md:mx-2">
                         <!-- Profile Card -->
                         <div class="bg-white p-3 border-t-4 border-green-400">
+                            <h1 class="ml-4 text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
                             <div class="image overflow-hidden h-auto w-full mx-auto">
 
                                 <label for="image"
@@ -42,13 +43,13 @@
                                 @enderror
                             
                             </div>
-                            <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"> {{ auth()->user()->name }} </h1>
-                            <p class="text-gray-600 font-lg text-semibold leading-6">
-                                <label for="profile_users_information"
-                                    class="ml-4 text-md tracking-wide font-semibold w-50">
+                            
+                            <div class="text-gray-600 font-lg text-semibold leading-6">
+                                <label for="information"
+                                       class="ml-4 text-md tracking-wide font-semibold w-50">
                                         Information about the user
                                 </label>
-                                <textarea class="text-sm text-gray-500 hover:text-gray-600 leading-6"
+                                <textarea class="w-100 mt-2 py-3 px-3 text-sm text-gray-500 hover:text-gray-600 leading-6 rounded-lg border border-gray-400"
                                         type="text" 
                                         name="information" 
                                         id=""
@@ -64,7 +65,8 @@
                                     </p>
                                 @enderror
             
-                            </p>
+                            </div>
+                            
                             
                         </div>
                         <!-- End of profile card -->
@@ -314,6 +316,106 @@
 
                                     <div class="grid grid-cols-2">
                                         
+                                        <label for="phonenumber"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Phonenumber
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="phonenumber" 
+                                            id="" 
+                                            placeholder="Phonenumber" 
+                                            value="{{ old('phonenumber') }}"
+                                        /> 
+                                        
+                                        @error('phonenumber')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
+                                        <label for="whatsappaddress"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Whatsappaddress
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="whatsappaddress" 
+                                            id="" 
+                                            placeholder="Whatsappaddress" 
+                                            value="{{ old('whatsappaddress') }}"
+                                        /> 
+                                        
+                                        @error('whatsappaddress')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
+                                        <label for="instagramaddress"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Instagramaddress
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="instagramaddress" 
+                                            id="" 
+                                            placeholder="Instagramaddress" 
+                                            value="{{ old('instagramaddress') }}"
+                                        /> 
+                                        
+                                        @error('instagramaddress')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
+                                        <label for="facebookaddress"
+                                                class="px-4 py-2 font-semibold"
+                                            >
+                                            
+                                                Facebookaddress
+
+                                        </label>
+                                        <input class="w-100 mt-2 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
+                                            type="text" 
+                                            name="facebookaddress" 
+                                            id="" 
+                                            placeholder="Facebookaddress" 
+                                            value="{{ old('facebookaddress') }}"
+                                        /> 
+                                        
+                                        @error('facebookaddress')
+                                            <p class="text-red-500 text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                        
+                                    </div>
+
+                                    <div class="grid grid-cols-2">
+                                        
                                         <div class="px-4 py-2 font-semibold"
                                             >
                                             
@@ -322,7 +424,7 @@
                                         </div>
                                         <div class="px-4 py-2"> 
 
-                                        {{-- {{ auth()->user()->email }}  --}}
+                                        {{ auth()->user()->email }} 
                                         
                                         </div>
                         
