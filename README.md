@@ -26,6 +26,67 @@ Laravel From Sreatch 2022 | 4+ Hour Course  https://www.youtube.com/watch?v=MYyJ
 
 I use tailwindcss from the website, not integrated in the project. So there is a <script> in the layout.blade
 
+# The basis structure for the most common recources: (also in dutch)
+
+Wanneer je uitzonderingen wilt maken en deze niet in de routes of in de controller kunt verwerken, kun je gebruik maken van "@" directives in de blades.
+
+In hoofdstuk 'creating a basic model' van de laragigs tutorial wordt goed uitgelegd hoe het verwijzen werkt.
+
+Het eerste wat je doet is een database configureren.
+
+In de config/database.php kun je aangeven van welke database je gebruik maakt. In dit project is gebruik gemaakt van mysql.
+
+In de terminal kun je een nieuwe database aanmaken. Ook kun je via de terminal de gebruikersnaam van de database aanpassen, overzicht van de database per gebruiker enz.
+
+De tables hoef je niet via de terminal aan te maken omdat je via laravel gebruik kunt maken van migrations. Om je table te maken gebruik je artisan: php artisan make:migration create_userProfiles_table
+
+Na het maken van de tables moet je de migration runnen: php artisan migrate.
+(hiermee worden alle migrations gerunt)
+
+Om snel je database te kunnen testen kun je gebruik maken van database seeding.
+In de migrations folder, submap seeders, kun je in file DatabaseSeeder.php instellingen maken.
+Met commando: php artisan db:seed worden de instellingen geactiveerd en kun je de gegevens in de database vinden.
+
+Nu ga je een model maken: php artisan make:model 
+UserProfile
+
+Je kan ook gebruik maken van factories om info in je database in te laten vullen met "faker".
+
+Hierna ga je layout view maken. Deze view wordt gebruikt als basis voor al je paginas in de applicatie.
+
+Na het maken van de view voor het weergeven van bv meerdere recepten en enkele recepten, of je profile, wordt er gekeken of je componenten kan maken.
+
+Hierna kun je kijken of je partials kunt maken.
+
+De standaard onderdeel routes:
+index - Show all listings
+show - Show single listing
+create - Show form to create new listing
+store - Store new listing
+edit - Show form to edit listing
+update - Update listing
+destroy - Delete listing
+
+Hierna maak je een controller aan met het commande: php artisan make:controller UserProfileController
+
+Nu ga je beginnen met het maken van de create form. (de index en de show page is al gemaakt)
+Voor het maken van een create form heb je ook een route nodig.
+Tevens moet er ook een functie gemaakt worden in de controller.
+
+Om een file of een image in je pagina te kunnen laden moet je in de <form> enctype="multipart/form-data" toevoegen.
+
+Ook moet je in de controller aangeven wat er moet gebeuren met de file of image.
+
+Om er voor de zorgen dat de image 'public' is, moet de storage folder gelinked worden aan de public/storage folder. Dit kun je doen met het link commande van artisan.
+
+Nu maak je de edit blade met de show edit form route en de edit function in de controller.
+
+Hierna make je de update route en de update function in de UserProfileController
+
+Wat nog rest is de delete function.
+Hiervoor moet je een route maken en een destroy(delete) function in de UserProfileController
+
+
 The info behind is in dutch because it is a memonic for me.
     
 Wat moet er in een receptenboek komen (de eerste opzet):
