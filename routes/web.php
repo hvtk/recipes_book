@@ -101,7 +101,8 @@ Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 
 //Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])
-       ->middleware('guest');
+       ->middleware('guest')
+       ->middleware('preventBackHistory');
 
 //Show Login Form (->name('login') is for the connection with middleware authenticate)
 Route::get('/login', [UserController::class, 'login'])
@@ -116,7 +117,8 @@ Route::post('/users', [UserController::class, 'store']);
 
 //Log User Out
 Route::post('/logout', [UserController::class, 'logout'])
-       ->middleware('auth'); 
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 // END ALL AUTHENTICATE ROUTES
 
