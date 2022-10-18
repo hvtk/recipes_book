@@ -2,8 +2,9 @@
 
 namespace App\Policies;
 
-use App\Models\Recipe;
 use App\Models\User;
+use App\Models\Recipe;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class RecipePolicy
@@ -59,6 +60,20 @@ class RecipePolicy
     }
 
     /**
+     * Determine whether the user can destroy the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Recipe  $recipe
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function destroy(User $user, Recipe $recipe)
+    {
+        return $user->id === $recipe->user_id
+                    ? Response::allow()
+                    : Response::deny('You do not own this recipe!');
+    }
+
+     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
@@ -69,6 +84,7 @@ class RecipePolicy
     {
         //
     }
+
 
     /**
      * Determine whether the user can restore the model.
