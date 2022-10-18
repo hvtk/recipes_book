@@ -16,19 +16,22 @@
                           action="/recipes/{{ $recipe->id }}"  
                           enctype="multipart/form-data"
                         >
+
                         @csrf
                         @method('PUT')
+
                         <div class="flex flex-col">
                             <label for="recipe_title"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Recipe title
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         Recipe title
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                type="text" 
-                                name="recipe_title" 
-                                id="" 
-                                placeholder="Recipe title" 
-                                value="{{ $recipe->recipe_title }}"
+                                   type="text" 
+                                   name="recipe_title" 
+                                   id="" 
+                                   placeholder="Recipe title" 
+                                   value="{{ $recipe->recipe_title }}"
                             /> 
                             
                             @error('recipe_title')
@@ -38,17 +41,19 @@
                             @enderror
 
                         </div>
+
                         <div class="flex flex-col">
                             <label for="recipe_section"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Recipe section
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         Recipe section
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                type="text" 
-                                name="recipe_section" 
-                                id="" 
-                                placeholder="Recipe section" 
-                                value="{{ $recipe->recipe_section }}"
+                                   type="text" 
+                                   name="recipe_section" 
+                                   id="" 
+                                   placeholder="Recipe section" 
+                                   value="{{ $recipe->recipe_section }}"
                             /> 
                             
                             @error('recipe_section')
@@ -58,17 +63,19 @@
                             @enderror
 
                         </div>
+
                         <div class="flex flex-col">
                             <label for="kitchenware"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Kitchenware
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                        Kitchenware
                             </label>
                             <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                    type="text" 
-                                    name="kitchenware" 
-                                    id="" 
-                                    rows="10"
-                                    placeholder="Kitchenware" 
+                                      type="text" 
+                                      name="kitchenware" 
+                                      id="" 
+                                      rows="10"
+                                      placeholder="Kitchenware" 
                                     >
                                     {{ $recipe->kitchenware }}
                             </textarea> 
@@ -80,17 +87,19 @@
                             @enderror
 
                         </div>
+
                         <div class="flex flex-col">
                             <label for="ingredients"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Ingredients
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         Ingredients
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                type="text" 
-                                name="ingredients" 
-                                id="" 
-                                placeholder="Ingredients" 
-                                value="{{ $recipe->ingredients }}"
+                                   type="text" 
+                                   name="ingredients" 
+                                   id="" 
+                                   placeholder="Ingredients" 
+                                   value="{{ $recipe->ingredients }}"
                             /> 
                             
                             @error('ingredients')
@@ -100,17 +109,19 @@
                             @enderror
 
                         </div>
+
                         <div class="flex flex-col">
                             <label for="recipe_the_steps_to_follow"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     The steps to follow for this recipe
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         The steps to follow for this recipe
                             </label>
                             <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                    type="text" 
-                                    name="recipe_the_steps_to_follow" 
-                                    id="" 
-                                    rows="10"
-                                    placeholder="The steps to follow for this recipe" 
+                                      type="text" 
+                                      name="recipe_the_steps_to_follow" 
+                                      id="" 
+                                      rows="10"
+                                      placeholder="The steps to follow for this recipe" 
                                     >
                                     {{ $recipe->recipe_the_steps_to_follow }}
                             </textarea> 
@@ -122,17 +133,19 @@
                             @enderror
 
                         </div>
+
                         <div class="flex flex-col">
                             <label for="recipe_estimated_time"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Estimated time for this recipe
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         Estimated time for this recipe
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                type="text" 
-                                name="recipe_estimated_time" 
-                                id="" 
-                                placeholder="Estimated time for this recipe" 
-                                value="{{ $recipe->recipe_estimated_time }}"
+                                   type="text" 
+                                   name="recipe_estimated_time" 
+                                   id="" 
+                                   placeholder="Estimated time for this recipe" 
+                                   value="{{ $recipe->recipe_estimated_time }}"
                             /> 
                             
                             @error('recipe_estimated_time')
@@ -142,10 +155,12 @@
                             @enderror
                             
                         </div> 
+
                         <div class="flex flex-col">
                             <label for="recipe_image_end_result"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Image end result from this recipe
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         Image end result from this recipe
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
                                    type="file" 
@@ -164,17 +179,19 @@
                             @enderror
                             
                         </div> 
+
                         <div class="flex flex-col">
                             <label for="recipe_shelf_life"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Recipe shelf life
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         Recipe shelf life
                             </label>
                             <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                type="text" 
-                                name="recipe_shelf_life" 
-                                id="" 
-                                placeholder="Recipe shelf life" 
-                                value="{{ $recipe->recipe_shelf_life }}"
+                                   type="text" 
+                                   name="recipe_shelf_life" 
+                                   id="" 
+                                   placeholder="Recipe shelf life" 
+                                   value="{{ $recipe->recipe_shelf_life }}"
                             /> 
                             
                             @error('recipe_shelf_life')
@@ -184,17 +201,19 @@
                             @enderror
 
                         </div>
+
                         <div class="flex flex-col">
                             <label for="recipe_commentary"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50">
-                                     Commentary by this recipe
+                                   class="ml-4 text-md tracking-wide font-semibold w-50"
+                                >
+                                         Commentary by this recipe
                             </label>
                             <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                    type="text" 
-                                    name="recipe_commentary" 
-                                    id=""
-                                    rows="10" 
-                                    placeholder="Commentary by this recipe" 
+                                      type="text" 
+                                      name="recipe_commentary" 
+                                      id=""
+                                      rows="10" 
+                                      placeholder="Commentary by this recipe" 
                                     >
                                     {{ $recipe->recipe_commentary }}
                             </textarea>  

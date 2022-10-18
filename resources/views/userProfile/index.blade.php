@@ -7,7 +7,7 @@
  
     <header class="text-center">
         <h2 class="text-xl uppercase mb-1">
-            Title from this recipe
+            This is the profile from
         </h2>
         <div class="text-2xl font-bold mb-4">
             <a href="/userprofiles/{{ $userProfile->id }}">

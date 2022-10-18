@@ -66,11 +66,13 @@ Route::get('/', function () {
 // ALL RECIPES ROUTES
 
 //All Recipes
-Route::get('/recipes', [RecipeController::class, 'index']);
+Route::get('/recipes', [RecipeController::class, 'index'])
+       ->middleware('preventBackHistory');
 
 //Show Create Form
 Route::get('/recipes/create', [RecipeController::class, 'create'])
-       ->middleware('auth');
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 //Store Recipe Data
 Route::post('/recipes', [RecipeController::class, 'store'])
@@ -78,22 +80,27 @@ Route::post('/recipes', [RecipeController::class, 'store'])
 
 //Show Edit Form
 Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit'])
-       ->middleware('auth'); 
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 //Update Recipe
 Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])
-       ->middleware('auth'); 
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 //Delete Recipe
 Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])
-       ->middleware('auth'); 
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 //Manage Recipes
 Route::get('/recipes/manage', [RecipeController::class, 'manage'])
-       ->middleware('auth'); 
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 //Single Recipe
-Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
+Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])
+       ->middleware('preventBackHistory');
 
 // END ALL RECIPES ROUTES
 
@@ -107,7 +114,8 @@ Route::get('/register', [UserController::class, 'create'])
 //Show Login Form (->name('login') is for the connection with middleware authenticate)
 Route::get('/login', [UserController::class, 'login'])
        ->name('login')
-       ->middleware('guest');
+       ->middleware('guest')
+       ->middleware('preventBackHistory');
 
 //Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);    
@@ -122,47 +130,16 @@ Route::post('/logout', [UserController::class, 'logout'])
 
 // END ALL AUTHENTICATE ROUTES
 
-// ALL PROFILE USER ROUTES
-
-//All Profiles
-Route::get('/profile', [ProfileUserController::class, 'index'])
-       ->middleware('auth'); 
-
-//Show Profile Create Form
-Route::get('/profile/create', [ProfileUserController::class, 'create'])
-       ->middleware('auth');       
-       
-//Store Profile Data
-Route::post('/profile', [ProfileUserController::class, 'store'])
-       ->middleware('auth');
-
-//Show Edit Profile Form
-Route::get('/profile/{profile}/edit', [ProfileUserController::class, 'edit'])
-       ->middleware('auth');
-
-//Update Profile
-Route::put('/profile/{profile}', [ProfileUserController::class, 'update'])
-       ->middleware('auth');
-
-//Delete Profile
-Route::delete('/profile/{profileUser}', [ProfileUserController::class, 'destroy'])
-       ->middleware('auth');
-
-//Show Profile
-Route::get('/profile/{profileUser}', [ProfileUserController::class, 'show'])
-       ->middleware('auth');
-
-//END ALL PROFILE USER ROUTES
-
-
 // ALL USER PROFILE ROUTES
 
 // All User Profiles
-Route::get('/userprofiles', [UserProfileController::class, 'index']);
+Route::get('/userprofiles', [UserProfileController::class, 'index'])
+       ->middleware('preventBackHistory');
 
 // Create User Profile (show user profile form)
 Route::get('/userprofiles/create', [UserProfileController::class, 'create'])
-       ->middleware('auth');
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 // Store User Profile Data
 Route::post('/userprofiles', [UserProfileController::class, 'store'])
@@ -170,22 +147,27 @@ Route::post('/userprofiles', [UserProfileController::class, 'store'])
 
 // Show Edit User Profile Form
 Route::get('/userprofiles/{userProfile}/edit', [UserProfileController::class, 'edit'])
-       ->middleware('auth');
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 // Update User Profile
 Route::put('/userprofiles/{userProfile}', [UserProfileController::class, 'update'])
-       ->middleware('auth');
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 // Delete User Profile
 Route::delete('/userprofiles/{userProfile}', [UserProfileController::class, 'destroy'])
-       ->middleware('auth');
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 //Manage User Profiles
 Route::get('/userprofiles/manage', [UserProfileController::class, 'manage'])
-       ->middleware('auth');     
+       ->middleware('auth')
+       ->middleware('preventBackHistory');
 
 // Single User Profile
-Route::get('/userprofiles/{userProfile}', [UserProfileController::class, 'show']);
+Route::get('/userprofiles/{userProfile}', [UserProfileController::class, 'show'])
+       ->middleware('preventBackHistory');
 
 // END ALL USER PROFILE ROUTES
 

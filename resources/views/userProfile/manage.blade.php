@@ -4,10 +4,10 @@
 
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Manage User Profiles
+                Manage User Profile
             </h2>
             <p class="mb-4">
-                To manage the user profiles (look,edit,delete)
+                To manage the user profile (look,edit,delete)
             </p>
         </header>
         

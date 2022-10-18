@@ -120,6 +120,4 @@ class UserProfileController extends Controller
     public function manage() {
         return view('userProfile.manage', ['userProfile' => auth()->user()->userProfile()->get()]);
     }
-
-
 }
