@@ -48,11 +48,6 @@ class User extends Authenticatable
         return $this->hasMany(Recipe::class, 'user_id');
     }
 
-    // Relationship With ProfileUser
-    public function profileUser() {
-        return $this->hasOne(ProfileUser::class, 'profile_users_id');
-    }
-
     // Relationship With UserProfile
     public function userProfile() {
         return $this->hasOne(UserProfile::class, 'user_profiles_id');

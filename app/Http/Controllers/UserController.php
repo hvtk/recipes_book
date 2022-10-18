@@ -65,9 +65,4 @@ class UserController extends Controller {
         return back()->withErrors(['email' => 'Invalid Credentials'])
                      ->onlyInput('email');
     }
-
-    // // Show Profile Form
-    // public function profile() {
-    //     return view('users.profile-show');
-    // }
 }
