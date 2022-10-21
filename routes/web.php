@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\RecipeSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -170,6 +171,11 @@ Route::get('/userprofiles/{userProfile}', [UserProfileController::class, 'show']
        ->middleware('preventBackHistory');
 
 // END ALL USER PROFILE ROUTES
+
+// ALL RECIPE SECTION ROUTES
+
+// Show Raw Data
+route::get('/recipesections', [RecipeSectionController::class, 'rawData']);
 
 
 
