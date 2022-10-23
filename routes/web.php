@@ -177,6 +177,12 @@ Route::get('/userprofiles/{userProfile}', [UserProfileController::class, 'show']
 // Show Raw Data
 route::get('/recipesections', [RecipeSectionController::class, 'rawData']);
 
+// Create Recipe Section (inclusif Raw Data)
+route::get('/recipesections/create', [RecipeSectionController::class, 'create']);
+
+// Store Recipe Section (inclusif Raw Data)
+route::post('/recipesections', [RecipeSectionController::class, 'store']);
+
 
 
 

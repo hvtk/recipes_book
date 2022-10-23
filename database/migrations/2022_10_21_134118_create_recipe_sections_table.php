@@ -16,7 +16,7 @@ class CreateRecipeSectionsTable extends Migration
         Schema::create('recipe_sections', function (Blueprint $table) {
             $table->id();
             $table->foreignId('recipe_sections_id')->constrained();
-            $table->string('recipe_section');
+            $table->string('recipe_section')->nullable();
             $table->timestamps();
         });
     }
