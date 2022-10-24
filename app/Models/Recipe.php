@@ -32,9 +32,4 @@ class Recipe extends Model
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
-
-    // Relationship With RecipeSection
-    public function recipeSection() {
-        return $this->hasOne(RecipeSection::class, 'recipe_sections_id');
-    }
 }
