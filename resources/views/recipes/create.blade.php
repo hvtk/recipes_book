@@ -1,5 +1,7 @@
 <x-layout>
 
+    <link href="{{ url('/css/recipes.css') }}" rel="stylesheet"/>
+
     @php
     $A = "Baking";
     $B = "Roasting";
