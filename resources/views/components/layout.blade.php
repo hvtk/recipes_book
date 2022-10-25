@@ -14,71 +14,35 @@
     />
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        laravel: "#ef3b2d",
-                    },
-                },
-            },
-        };
-    </script>
 
     <title>Recipebook</title>
 
   </head>
 
-   {{-- Compiled dark classes from Tailwind  --}}
   <link href="{{ url('/css/layout.css') }}" rel="stylesheet"/>
 
-  <div x-data="setup()" :class="{ 'dark': isDark }">
-    <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
 
-      @include('partials._sidebar')
+  <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+
+    @include('partials._sidebar')
+    
+    <div class="h-full ml-14 mt-1 mb-10 md:ml-64">
       
-      <div class="h-full ml-14 mt-1 mb-10 md:ml-64">
-        
-        <x-flash-message/>
+      <x-flash-message/>
 
-        <body>
+      <body>
 
-          <main>
-            {{-- VIEW OUTPUT --}}
-            {{ $slot }}
-          </main>
+        <main>
+          {{-- VIEW OUTPUT --}}
+          {{ $slot }}
+        </main>
 
-        </body>
-
-      </div>
+      </body>
 
     </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
   
-  <script>
-    const setup = () => {
-      const getTheme = () => {
-        if (window.localStorage.getItem('dark')) {
-          return JSON.parse(window.localStorage.getItem('dark'))
-        }
-        return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-      }
-
-      const setTheme = (value) => {
-        window.localStorage.setItem('dark', value)
-      }
-
-      return {
-        loading: true,
-        isDark: getTheme(),
-        toggleTheme() {
-          this.isDark = !this.isDark
-          setTheme(this.isDark)
-        },
-      }
-    }
-  </script>
 </html>
