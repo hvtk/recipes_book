@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout-bootstrap>
 
     @unless(count($recipes) == 0)
 
@@ -18,6 +18,6 @@
         {{ $recipes->links() }}
     </div>
 
-</x-layout>
+</x-layout-bootstrap>
 
     
