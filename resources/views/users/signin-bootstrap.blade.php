@@ -10,37 +10,41 @@
         </symbol>
     </svg>
 
-    <div class="body-signin">
+    <main  class="col align-self-center py-3">
 
-        <div class="container text-center">
-            
-            <div class="form-signin w-100 m-auto">
-                <form>
-                {{-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> --}}
-                <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#book"/></svg>
-                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <div class="body-signin">
 
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
+            <div class="container text-center">
+                
+                <div class="form-signin w-100 m-auto">
+                    <form>
+                    {{-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> --}}
+                    <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#book"/></svg>
+                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <div class="checkbox mb-3">
+                        <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+                    </form>
                 </div>
 
-                <div class="checkbox mb-3">
-                    <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-                </form>
             </div>
 
         </div>
 
-    </div>
+    </main>
 
 </x-layout-bootstrap>
