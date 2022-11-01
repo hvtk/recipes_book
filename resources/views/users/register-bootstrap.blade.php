@@ -1,7 +1,7 @@
 <x-layout-bootstrap>
 
     <!-- Custom styles for this template -->
-    <link href="{{ url('/css/signin-bootstrap.css') }}" rel="stylesheet"/>
+    <link href="{{ url('/css/register-bootstrap.css') }}" rel="stylesheet"/>
     
     <!-- Group of symbols for this template -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -12,13 +12,13 @@
 
     <main  class="col align-self-center py-3">
 
-        <div class="body-signin">
+        <div class="body-register">
 
             <div class="container text-center">
                 
-                <div class="form-signin w-100 m-auto">
+                <div class="form-register w-100 m-auto">
                     <form method="POST"
-                          action="/users/authenticate"
+                          action="/users"
                         >
                         @csrf
 
@@ -30,8 +30,29 @@
                         </svg>
 
                         <h1 class="h3 mb-3 fw-normal">
-                            Please sign in
+                            Please register
                         </h1>
+
+                        <div class="form-floating">
+
+                            <input type="name" 
+                                   name="name" 
+                                   class="form-control" 
+                                   id="floatingInput" 
+                                   placeholder="Full Name" 
+                                   value="{{ old('name') }}"
+                                >
+                            <label for="floatingInput">
+                                Full Name
+                            </label>
+
+                            @error('name')
+                            <p class="text-danger text-xs mt-1">
+                            {{ $message }}
+                            </p>
+                            @enderror 
+
+                        </div>
 
                         <div class="form-floating">
 
@@ -75,6 +96,28 @@
 
                         </div>
 
+                        <div class="form-floating">
+
+                            <input type="password" 
+                                   name="password_confirmation" 
+                                   class="form-control" 
+                                   id="floatingPasswordConfirmation" 
+                                   placeholder="Password Confirmation"
+                                   value="{{ old('password_confirmation') }}"
+                                >
+                            <label for="floatingPasswordConfirmation">
+                                Password
+                            </label>
+                            
+                            @error('password_confirmation')
+                            <p class="text-danger text-xs mt-1">
+                              {{ $message }}
+                            </p>
+                            @enderror 
+
+                        </div>
+
+
                         <div class="checkbox mb-3">
                             <label>
                             <input type="checkbox" value="remember-me"> Remember me
@@ -84,15 +127,15 @@
                         <button class="w-100 btn btn-lg btn-primary" 
                                 type="submit"
                             >
-                                    Sign in
+                                    Sign up
                         </button>
 
                         <div class="mt-8">
                             <p>
-                                Don't have an account?
-                                <a class="text-primaryblue-600"
-                                   href="/register">
-                                    Register
+                                Already have an account?
+                                <a class="text-primary"
+                                   href="/login">
+                                    Sign in
                                 </a>
                             </p>
                         </div>

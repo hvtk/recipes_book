@@ -10,7 +10,7 @@ class UserController extends Controller {
 
     //Show Register/create Form
     public function create() {
-        return view('users.register');
+        return view('users.register-bootstrap');
     }
 
     //Create New User
