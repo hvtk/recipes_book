@@ -11,7 +11,7 @@
 
     <div class="row flex-nowrap">
 
-      @include('partials._sidebar-bootstrap-new')
+      @include('partials._sidebar-bootstrap')
       
       <x-flash-message/>
 
