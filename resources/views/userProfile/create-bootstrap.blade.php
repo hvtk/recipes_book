@@ -289,17 +289,100 @@
                          
                                 </div>
                         
-                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                                {{-- <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div> --}}
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 border-right">
+
                             <div class="p-3 py-5">
-                                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
-                                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
-                                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <span class="text-right">
+                                        Social Media
+                                    </span>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    
+                                    <label class="labels"
+                                           for="whatsappaddress"  
+                                        >
+                                            Whatsappaddress
+
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control"
+                                           name="whatsappaddress"
+                                           id="inputForm"
+                                           placeholder="Whatsappaddress"
+                                           value="{{ old('whatsappaddress') }}"
+                                    />
+
+                                    @error('whatsappaddress')
+                                        <p class="text-danger text-xs mt-1">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+
+                                </div>
+            
+                                <div class="col-md-12">
+                                    
+                                    <label class="labels"
+                                           for="instagramaddress"  
+                                        >
+                                            Whatsappaddress
+
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control"
+                                           name="instagramaddress"
+                                           id="inputForm"
+                                           placeholder="Instagramaddress"
+                                           value="{{ old('instagramaddress') }}"
+                                    />
+
+                                    @error('instagramaddress')
+                                        <p class="text-danger text-xs mt-1">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    
+                                    <label class="labels"
+                                           for="facebookaddress"  
+                                        >
+                                            Facebookaddress
+
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control"
+                                           name="facebookaddress"
+                                           id="inputForm"
+                                           placeholder="Facebookaddress"
+                                           value="{{ old('facebookaddress') }}"
+                                    />
+
+                                    @error('facebookaddress')
+                                        <p class="text-danger text-xs mt-1">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+
+                                </div>
+                            
                             </div>
                         </div>
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                        <div class="p-3 text-center">
+                            <button class="btn btn-primary profile-button" 
+                                    type="button"
+                                   >
+                                        Save Profile
+                            </button>
+                        </div>
                     </div>
                    
                </form>
