@@ -24,7 +24,7 @@ class UserProfileController extends Controller
 
     //Show Create User Profile Form
     public function create() {
-        return view('userProfile.create');
+        return view('userProfile.create-bootstrap');
     }
 
     //Store User Profile Data
