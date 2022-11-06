@@ -8,7 +8,7 @@
     $C = "Cooking";
     $D = "Frying";
     $E = "Warming up";
-    @endphp;
+    @endphp
 
     <form method="POST"
         action="/recipes"  

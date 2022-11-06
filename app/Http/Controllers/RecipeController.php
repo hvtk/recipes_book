@@ -19,7 +19,7 @@ class RecipeController extends Controller {
 
     //Show Create Form
     public function create() {
-        return view('recipes.create');
+        return view('recipes.create-bootstrap');
     }
 
     //Store Recipe Data
