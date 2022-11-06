@@ -1,23 +1,34 @@
 <x-layout-bootstrap>
 
-    @unless(count($recipes) == 0)
+    <!-- Custom styles for this template -->
+    <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
-    @foreach ($recipes as $recipe)
+    <main class="col align-self-center py-3">
+        <div class="body-recipeCreate">
+            <div class="container rounded bg-white mt-5 mb-5">
 
-    <x-recipe-card :recipe="$recipe" />
+                @unless(count($recipes) == 0)
 
-    @endforeach
+                @foreach ($recipes as $recipe)
 
-    @else
-    <p> No Recipes Found </p>
+                <x-recipe-card-bootstrap :recipe="$recipe" />
 
-    @endunless  
+                @endforeach
 
-    <!-- gives the links of the pages in combination with paginate -->
-    <div class="mt-0 p-4">
-        {{ $recipes->links() }}
-    </div>
+                @else
+                <p> No Recipes Found </p>
 
+                @endunless  
+
+                <!-- gives the links of the pages in combination with paginate -->
+                <div class="mt-0 p-4">
+                    {{ $recipes->links() }}
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
 </x-layout-bootstrap>
 
     
