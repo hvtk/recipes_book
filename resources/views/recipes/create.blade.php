@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout-bootstrap>
 
     <link href="{{ url('/css/recipes.css') }}" rel="stylesheet"/>
 
@@ -327,4 +327,4 @@
     </div>
     <!-- Recipe section selection -->
 
-</x-layout>
+</x-layout-bootstrap>

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout-bootstrap>
 
     {{-- Compiled style from Tailwind example profile --}}
     <link href="{{ url('/css/userProfile.css') }}" rel="stylesheet"/>
@@ -310,4 +310,4 @@
 
     @endforeach
 
-</x-layout>
+</x-layout-bootstrap>

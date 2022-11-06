@@ -22,6 +22,24 @@
                                 <span class="text-black-50">
                                     {{ auth()->user()->email }} 
                                 </span>
+                                <label class="labels"
+                                       for="information"
+                                    >
+                                            Information
+                                </label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="information" 
+                                       id="inputForm"
+                                       placeholder="Information" 
+                                       value="{{ old('information') }}"
+                                />
+
+                                @error('information')
+                                    <p class="text-danger text-xs mt-1">
+                                        {{ $message }}
+                                    </p>
+                                @enderror
                             </div>
                         </div>
 
@@ -378,13 +396,12 @@
                         </div>
                         <div class="p-3 text-center">
                             <button class="btn btn-primary profile-button" 
-                                    type="button"
+                                    type="submit"
                                    >
                                         Save Profile
                             </button>
                         </div>
                     </div>
-                   
                </form>
             </div>
         </div>

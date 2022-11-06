@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout-bootstrap>
 
     <x-card class="p-10">  
 
@@ -69,4 +69,4 @@
 
     </x-card>
 
-</x-layout>
+</x-layout-bootstrap>
