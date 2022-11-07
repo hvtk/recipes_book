@@ -111,9 +111,8 @@
 
                 <p class="mb-4">Image end result from this recipe</p> 
                 <div>
-                    <img
-                            src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png') }}"
-                            alt=""
+                    <img src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png') }}"
+                         alt=""
                     />
                 </div>
 

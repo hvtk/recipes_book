@@ -20,10 +20,10 @@
 
                 @endunless  
 
-                <!-- gives the links of the pages in combination with paginate -->
+                {{-- <!-- gives the links of the pages in combination with paginate -->
                 <div class="mt-0 p-4">
                     {{ $recipes->links() }}
-                </div>
+                </div> --}}
 
             </div>
         </div>
