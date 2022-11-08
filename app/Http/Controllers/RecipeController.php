@@ -107,7 +107,7 @@ class RecipeController extends Controller {
 
     // Manage Recipes
     public function manage() {
-        return view('recipes.manage', ['recipes' => auth()->user()->recipes()->get()]);
+        return view('recipes.manage-bootstrap', ['recipes' => auth()->user()->recipes()->get()]);
     }
 
     //Show Single Recipe
