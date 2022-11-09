@@ -11,7 +11,7 @@
 
                 @foreach ($recipes as $recipe)
 
-                <x-recipe-card-bootstrap :recipe="$recipe" />
+                <x-recipe-card :recipe="$recipe" />
 
                 @endforeach
 

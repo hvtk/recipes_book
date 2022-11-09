@@ -1,258 +1,223 @@
 @props(['recipe'])
- 
-<header class="text-center">
-    <h2 class="text-xl uppercase mb-1">
-        Title from this recipe
-    </h2>
-    <div class="text-2xl font-bold mb-4">
-        <a href="/recipes/{{ $recipe->id }}">
-            {{ $recipe->recipe_title }}
-        </a>
-    </div>
-</header>
 
-<!-- Information fields short -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 p-4 gap-4">
-    
-    <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="text-center">
-            <p class="mb-4">Section recipe</p>
-            <div class="text-xl font-bold mb-4">
-                {{ $recipe->recipe_section }}
-            </div>
-        </div>
-    </div>
-    <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="text-center">
-            <p class="mb-4">Kitchenware</p> 
-            <div class="text-xl font-bold mb-4">
-                {{ $recipe->kitchenware }}
-            </div>
-        </div>
-    </div>
-    <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="text-center">
-            <p class="mb-4">Ingredients</p> 
-            <div class="text-xl font-bold mb-4">
-                {{ $recipe->ingredients }}
-            </div>
-        </div>
-    </div>
-    <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="text-center">
-            <p class="mb-4">Estimated time</p> 
-            <div class="text-xl font-bold mb-4">
-                {{ $recipe->recipe_estimated_time }}
-            </div>
-        </div>
-    </div>
-    <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="text-center">
-            <p class="mb-4">Shelf life</p> 
-            <div class="text-xl font-bold mb-4">
-                {{ $recipe->recipe_shelf_life }}
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Information fields short -->
+<!-- Group of symbols for this template -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="estimatedTime"
+            viewBox="0 0 16 16"
+        >
+        <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+        <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+        <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+    </symbol>
+    <symbol id="shelfLife"
+            viewBox="0 0 16 16">
+        <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+    </symbol>
+    <symbol id="finish" 
+            viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/>
+        <path d="M13 7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/>
+      </symbol>
+</svg>
 
-<!-- paragraph fields and image -->
-<div class="grid grid-cols-1 lg:grid-cols-3 p-4 gap-4">
+<div class="row">
 
-    <!-- The steps to follow -->
-    <div class="relative flex flex-col min-w-0 mb-4 lg:mb-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-        <div class="rounded-t mb-0 px-0 border-0">
-            <div class="flex flex-wrap items-center px-4 py-2">
-                <div class="relative w-full max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">The steps to follow</h3>
+    <div class="text-center fs-4 p-2">     
+            <a href="/recipes/{{ $recipe->id }}">
+                Recipe: {{ $recipe->recipe_title }}
+            </a>
+    </div>
+
+    <div class="d-flex flex-column align-items-center text-center">
+        <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+        <span class="font-weight-bold">
+            {{ auth()->user()->name }} 
+        </span>
+        <span class="text-black-50">
+            {{ auth()->user()->email }} 
+        </span>
+    </div>
+  
+    <div class="col-md-12">
+
+        <div class="p-3 py-4">
+
+            <div class="col-md-12">
+
+                <div class="d-flex flex-column align-items-center text-center"> 
+
+                    <img src="/images/section.jpg"
+                         alt="picture with cryptic section"
+                         class="img-fluid rounded-pill"
+                         width="310px"
+                         height="237px"
+                        >
+
+                    <div class="text-xl font-bold mb-4">
+                         Section recipe: {{ $recipe->recipe_section }}
+                    </div>
+
                 </div>
-                <div class="text-xl font-bold mb-4">
-                    {{ $recipe->recipe_the_steps_to_follow }}
-                </div>
+
             </div>
-        </div>
-    </div>
-    <!-- The steps to follow -->
 
-    <!-- Recipe commentary -->
-    <div class="relative flex flex-col min-w-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-        <div class="rounded-t mb-0 px-0 border-0">
-            <div class="flex flex-wrap items-center px-4 py-2">
-                <div class="relative w-full max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Recipe commentary</h3>
-                </div>
-                <div class="text-xl font-bold mb-4">
-                    {{ $recipe->recipe_commentary }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Recipe commentary -->
+            <div class="row mt-2">
 
-    <!-- Recipe image -->
-    <div class="relative flex flex-col min-w-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-        <div class="rounded-t mb-0 px-0 border-0">
-            <div class="flex flex-wrap items-center px-4 py-2">
-                <div class="relative w-full max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Recipe image</h3>
-                </div>
-                <div class="text-xl font-bold mb-4">
-                    <img class="hidden w-48 mr-6 md:block"
-                            src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png') }}"
-                            alt=""
-                    />
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Recipe image -->
+                <div class="col-md-6">
 
-</div>
-<!-- paragraph fields and image -->
+                    <div class="d-flex flex-column align-items-center text-center"> 
 
-<!-- Databases for the recipes -->
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-4 gap-4 text-black dark:text-white">
-    <div class="md:col-span-2 xl:col-span-3">
-    <h3 class="text-lg font-semibold">Databases for the recipes</h3>
-    </div>
-    <div class="md:col-span-2 xl:col-span-1">
-    <div class="rounded bg-gray-200 dark:bg-gray-800 p-3">
-        <div class="flex justify-between py-1 text-black dark:text-white">
-        <h3 class="text-sm font-semibold">Recipe section</h3>
-        </div>
-        <div class="text-sm text-black dark:text-gray-50 mt-2">
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Baking</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Roasting</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Cooking</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Frying</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Warming up</div>
-        </div>
-    </div>
-    </div>
-
-    <div class="md:col-span-2 xl:col-span-1">
-    <div class="rounded bg-gray-200 dark:bg-gray-800 p-3">
-        <div class="flex justify-between py-1 text-black dark:text-white">
-        <h3 class="text-sm font-semibold">Kitchenware</h3>
-        </div>
-        <div class="text-sm text-black dark:text-gray-50 mt-2">
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Frying pan</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Baking pan</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Casserole</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Measuring jug</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Pan</div>
-        </div>
-    </div>
-    </div>
-
-    <div class="md:col-span-2 xl:col-span-1">
-    <div class="rounded bg-gray-200 dark:bg-gray-800 p-3">
-        <div class="flex justify-between py-1 text-black dark:text-white">
-        <h3 class="text-sm font-semibold">Ingredients</h3>
-        </div>
-        <div class="text-sm text-black dark:text-gray-50 mt-2">
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Pancake mix</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Bread mix</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Herbs</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Eggs</div>
-        <div class="bg-white dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded mt-1 border-b border-gray-100 dark:border-gray-900 cursor-pointer">Butter</div>
-        </div>
-    </div>
-    </div>
-
-</div>
-<!-- Databases for the recipes -->
-
-<!-- Other Users From Recept_book Table -->
-<div class="mt-4 mx-4">
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-        <div class="w-full overflow-x-auto">
-            <table class="w-full">
-
-                <thead>
-                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                    <th class="px-4 py-3">User</th>
-                    <th class="px-4 py-3">Email</th>
-                    <th class="px-4 py-3">Facebook</th>
-                    <th class="px-4 py-3">Instagram</th>
-                </tr>
-                </thead>
-                
-                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-
-                    <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-                        <td class="px-4 py-3">
-                        <div class="flex items-center text-sm">
-                            <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                            <img class="object-cover w-full h-full rounded-full" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ" alt="" loading="lazy" />
-                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                            </div>
-                            <div>
-                            <p class="font-semibold">Hans Burger</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">10x Developer</p>
-                            </div>
+                        <img src="/images/kitchenware.jpg"
+                             alt="picture with kitchenware"
+                             class="img-fluid rounded-4"
+                             width="400px"
+                             height="305px"
+                            >
+                        <p class="mb-4">Kitchenware</p> 
+                        <div class="text-xl font-bold mb-4">
+                            {{ $recipe->kitchenware }}
                         </div>
-                        </td>
-                        <td class="px-4 py-3 text-sm">Email address</td>
-                        <td class="px-4 py-3 text-xs">
-                        <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"> facebook name </span>
-                        </td>
-                        <td class="px-4 py-3 text-sm">Instagram name</td>
-                    </tr>
-                
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-            <span class="flex items-center col-span-3"> Showing 21-30 of 100 </span>
-            <span class="col-span-2"></span>
-            
-            <!-- Pagination -->
 
-            <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-                <nav aria-label="Table navigation">
-                    <ul class="inline-flex items-center">
-                        <li>
-                        <button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple" aria-label="Previous">
-                            <svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                            <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        </li>
-                        <li>
-                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">1</button>
-                        </li>
-                        <li>
-                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">2</button>
-                        </li>
-                        <li>
-                        <button class="px-3 py-1 text-white dark:text-gray-800 transition-colors duration-150 bg-blue-600 dark:bg-gray-100 border border-r-0 border-blue-600 dark:border-gray-100 rounded-md focus:outline-none focus:shadow-outline-purple">3</button>
-                        </li>
-                        <li>
-                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">4</button>
-                        </li>
-                        <li>
-                        <span class="px-3 py-1">...</span>
-                        </li>
-                        <li>
-                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">8</button>
-                        </li>
-                        <li>
-                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">9</button>
-                        </li>
-                        <li>
-                        <button class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple" aria-label="Next">
-                            <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
-                            <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        </li>
-                    </ul>
-                </nav>
-            </span>
+                    </div>
+
+                </div>
+                
+                <div class="col-md-6">
+
+                    <div class="d-flex flex-column align-items-center text-center"> 
+
+                        <img src="/images/ingredients.jpg"
+                             alt="picture with ingredients"
+                             class="img-fluid rounded-4"
+                             width="400px"
+                             height="305px"
+                            >
+                        <p class="mb-4">Ingredients</p> 
+                        <div class="text-xl font-bold mb-4">
+                            {{ $recipe->ingredients }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row mt-2">
+
+                <div class="col-md-6">
+
+                    <div class="d-flex flex-column align-items-center text-center"> 
+
+                        <img src="/images/stepstofollow.jpg"
+                             alt="a cryptic picture"
+                             class="img-fluid rounded-4"
+                             width="400px"
+                             height="305px"
+                            >
+
+                        <p class="mb-4">The steps to follow for this recipe</p> 
+                        <div class="text-xl font-bold mb-4">
+                            {{ $recipe->recipe_the_steps_to_follow }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="d-flex flex-column align-items-center text-center"> 
+
+                        <img src="/images/commentary.jpg"
+                             alt="a cryptic picture"
+                             class="img-fluid rounded-4"
+                             width="400px"
+                             height="305px"
+                            >
+
+                        <p class="mb-4">Commentary by this recipe</p> 
+                        <div class="text-xl font-bold mb-4">
+                            {{ $recipe->recipe_commentary }}
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row mt-2">
+
+                <div class="col-md-6">
+
+                    <div class="d-flex flex-column align-items-center text-center"> 
+
+                        <svg width="32" 
+                             height="32" 
+                             fill="currentColor" 
+                             class="bi bi-clock-history" 
+                            >
+                            <use xlink:href="#estimatedTime"/>
+                        </svg>
+
+                        <p class="mb-4">Estimated time for this recipe</p> 
+                        <div class="text-xl font-bold mb-4">
+                            {{ $recipe->recipe_estimated_time }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="d-flex flex-column align-items-center text-center"> 
+
+                        <svg width="32" 
+                             height="32" 
+                             fill="currentColor" 
+                             class="bi bi-calendar-check-fill" 
+                            >
+                            <use xlink:href="#shelfLife"/>
+                        </svg>
+
+                        <p class="mb-4">Recipe shelf life</p> 
+                        <div class="text-xl font-bold mb-4">
+                            {{ $recipe->recipe_shelf_life }}
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="col-md-12">
+
+               <div class="d-flex flex-column align-items-center text-center"> 
+                
+                    <svg width="32" 
+                         height="32" 
+                         fill="currentColor" 
+                         class="bi bi-align-end" 
+                        >
+                        <use xlink:href="#finish"/>
+                    </svg>
+
+                    <p class="mb-4">Image end result from this recipe</p> 
+                    <div>
+                        <img src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png') }}"
+                             alt="picture from the recipe"
+                             class="img-fluid rounded-4"
+                             width="400px"
+                             height="305px"
+                        />
+                    </div>
+
+               </div>
+
+            </div>
+        
         </div>
     </div>
 </div>
-<!-- Other Users From Recept_book Table -->
