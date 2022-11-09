@@ -118,6 +118,6 @@ class UserProfileController extends Controller
 
     // Manage User Profiles
     public function manage() {
-        return view('userProfile.manage', ['userProfile' => auth()->user()->userProfile()->get()]);
+        return view('userProfile.manage-bootstrap', ['userProfile' => auth()->user()->userProfile()->get()]);
     }
 }
