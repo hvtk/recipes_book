@@ -9,7 +9,7 @@ class UserProfileController extends Controller
 {
     //Show All User Profiles
     public function index() {
-        return view('userProfile.index', [
+        return view('userProfile.index-bootstrap', [
             'userProfile' => UserProfile::all()
                           
         ]);
@@ -40,10 +40,10 @@ class UserProfileController extends Controller
             'country' => 'required',
             'birthday' => 'required',
             'information' => 'required',
-            'phonenumber',
-            'whatsappaddress',
-            'instagramaddress',
-            'facebookaddress'
+            'phonenumber' => 'required',
+            'whatsappaddress' => 'required',
+            'instagramaddress' => 'required',
+            'facebookaddress' => 'required'
         ]);
 
         if($request->hasFile('image')) {
@@ -63,7 +63,7 @@ class UserProfileController extends Controller
 
     // Show Edit User Profile Form
     public function edit(UserProfile $userProfile) {
-        return view('userProfile.edit', ['userProfile' => $userProfile]);
+        return view('userProfile.edit-bootstrap', ['userProfile' => $userProfile]);
     }
 
     //Update User Profile
@@ -85,10 +85,10 @@ class UserProfileController extends Controller
          'country' => 'required',
          'birthday' => 'required',
          'information' => 'required',
-         'phonenumber',
-         'whatsappaddress',
-         'instagramaddress',
-         'facebookaddress'
+         'phonenumber' => 'required',
+         'whatsappaddress' => 'required',
+         'instagramaddress' => 'required',
+         'facebookaddress' => 'required'
         ]);
  
         if($request->hasFile('image')) {
@@ -106,14 +106,14 @@ class UserProfileController extends Controller
     //Delete Recipe
     public function destroy(UserProfile $userProfile) {
 
-    // Make sure logged in user is owner
-    if($userProfile->user_profiles_id != auth()->id()) {
-       abort(403, 'Unauthorized Action');
-    }
+        // Make sure logged in user is owner
+        if($userProfile->user_profiles_id != auth()->id()) {
+        abort(403, 'Unauthorized Action');
+        }
 
-    $userProfile->delete();
-    return redirect('/userprofiles')
-          ->with('message', 'User profile deleted succesfully!');   
+        $userProfile->delete();
+        return redirect('/userprofiles')
+            ->with('message', 'User profile deleted succesfully!');   
     }
 
     // Manage User Profiles
