@@ -16,8 +16,8 @@ use App\Http\Controllers\UserProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/homepage', function () {
+    return view('homepage');
 });
 
 // //All Recipes
