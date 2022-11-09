@@ -1,4 +1,4 @@
-<x-layout-bootstrap> 
+<x-layout> 
 
     <!-- Group of symbols for this template -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -222,4 +222,4 @@
         </div>
     </div>
 
-</x-layout-bootstrap>
+</x-layout>

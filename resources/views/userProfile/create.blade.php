@@ -1,4 +1,4 @@
-<x-layout-bootstrap>
+<x-layout>
 
     <!-- Custom styles for this template -->
     <link href="{{ url('/css/userProfileCreate.css') }}" rel="stylesheet"/>
@@ -407,4 +407,4 @@
         </div>
     </main>
 
-</x-layout-bootstrap>
+</x-layout>

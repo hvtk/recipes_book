@@ -10,7 +10,7 @@ class UserController extends Controller {
 
     //Show Register/create Form
     public function create() {
-        return view('users.register-bootstrap');
+        return view('users.register');
     }
 
     //Create New User
@@ -46,7 +46,7 @@ class UserController extends Controller {
 
     // Show Login Form
     public function login() {
-        return view('users.signin-bootstrap');
+        return view('users.login');
     }
 
     // Authenticate User

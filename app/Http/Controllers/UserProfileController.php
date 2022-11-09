@@ -9,7 +9,7 @@ class UserProfileController extends Controller
 {
     //Show All User Profiles
     public function index() {
-        return view('userProfile.index-bootstrap', [
+        return view('userProfile.index', [
             'userProfile' => UserProfile::all()
                           
         ]);
@@ -24,7 +24,7 @@ class UserProfileController extends Controller
 
     //Show Create User Profile Form
     public function create() {
-        return view('userProfile.create-bootstrap');
+        return view('userProfile.create');
     }
 
     //Store User Profile Data
@@ -63,7 +63,7 @@ class UserProfileController extends Controller
 
     // Show Edit User Profile Form
     public function edit(UserProfile $userProfile) {
-        return view('userProfile.edit-bootstrap', ['userProfile' => $userProfile]);
+        return view('userProfile.edit', ['userProfile' => $userProfile]);
     }
 
     //Update User Profile
@@ -118,6 +118,6 @@ class UserProfileController extends Controller
 
     // Manage User Profiles
     public function manage() {
-        return view('userProfile.manage-bootstrap', ['userProfile' => auth()->user()->userProfile()->get()]);
+        return view('userProfile.manage', ['userProfile' => auth()->user()->userProfile()->get()]);
     }
 }
