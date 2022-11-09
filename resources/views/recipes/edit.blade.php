@@ -1,240 +1,324 @@
-<x-layout>
+<x-layout-bootstrap>
 
-    <div class="mt-8 mb-10 mx-4">
-        <div class="grid grid-cols-1 md:grid-cols-2">
-            <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
-                <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
-                     Edit a recipe
-                </h1>
-                <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
-                     Edit in the form recipe: {{ $recipe->recipe_title }}
-                </p>
-               
-            <div p-10 rounded max-w-lg mx-auto mt-24>
-                    <form class="p-6 flex flex-col justify-center"
-                          method="POST"
-                          action="/recipes/{{ $recipe->id }}"  
-                          enctype="multipart/form-data"
-                        >
+    <!-- Custom styles for this template -->
+    <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
-                        @csrf
-                        @method('PUT')
+    <main class="col align-self-center py-3">
+        <div class="body-recipeCreate">
+            <div class="container rounded bg-white mt-5 mb-5">
+              
+                @php
+                $A = "Baking";
+                $B = "Roasting";
+                $C = "Cooking";
+                $D = "Frying";
+                $E = "Warming up";
+                @endphp
 
-                        <div class="flex flex-col">
-                            <label for="recipe_title"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         Recipe title
-                            </label>
-                            <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                   type="text" 
-                                   name="recipe_title" 
-                                   id="" 
-                                   placeholder="Recipe title" 
-                                   value="{{ $recipe->recipe_title }}"
-                            /> 
-                            
-                            @error('recipe_title')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                <form method="POST"
+                      action="/recipes/{{ $recipe->id }}"  
+                      enctype="multipart/form-data"  
+                    >  
+                    @csrf
+                    @method('PUT')
 
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                <span class="font-weight-bold">
+                                    {{ auth()->user()->name }} 
+                                </span>
+                                <span class="text-black-50">
+                                    {{ auth()->user()->email }} 
+                                </span>
+                            </div>
                         </div>
 
-                        <div class="flex flex-col">
-                            <label for="recipe_section"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         Recipe section
-                            </label>
-                            <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                   type="text" 
-                                   name="recipe_section" 
-                                   id="" 
-                                   placeholder="Recipe section" 
-                                   value="{{ $recipe->recipe_section }}"
-                            /> 
-                            
-                            @error('recipe_section')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                        <div class="col-md-6">
 
+                            <div class="text-center p-2">
+                                <h4 >
+                                        Edit this recipe
+                                </h4>
+                            </div>
+
+                            <div class="p-3 py-5">
+
+                                <div class="col-md-12">
+
+                                    <label class="labels"
+                                           for="recipe_title"
+                                        >
+                                            Recipe title
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           name="recipe_title" 
+                                           id="inputEditForm"
+                                           placeholder="Recipe title" 
+                                           value="{{ $recipe->recipe_title }}"
+                                    />
+
+                                    @error('recipe_title')
+                                        <p class="text-danger text-xs mt-1">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+
+                                </div>
+
+                                <div class="col-md-12">
+
+                                    <label class="labels"
+                                           for="recipe_section" 
+                                        >
+                                            Recipe section
+                                    </label>
+                                    <select type="text" 
+                                            class="form-select" 
+                                            name="recipe_section" 
+                                            id="selectEditForm"
+                                        >
+                                            <option selected>
+                                                Open this select menu to choose the section
+                                            </option>
+                                            <option value="A"> 
+                                                {{ $A }}
+                                            </option>
+                                            <option value="A"> 
+                                                {{ $B }}
+                                            </option>
+                                            <option value="A"> 
+                                                {{ $C }}
+                                            </option>
+                                            <option value="A"> 
+                                                {{ $D }}
+                                            </option>
+                                            <option value="A"> 
+                                                {{ $E }}
+                                            </option>
+
+                                            {{ $recipe->recipe_section }}"
+
+                                    </select>
+
+                                    @error('recipe_section')
+                                        <p class="text-danger text-xs mt-1">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+
+                                </div>
+
+                                <div class="row mt-2">
+
+                                    <div class="col-md-6">
+
+                                        <label class="labels"
+                                               for="kitchenware" 
+                                            >
+                                                Kitchenware
+                                        </label>
+
+                                        <textarea type="text" 
+                                                  class="form-control"
+                                                  name="kitchenware" 
+                                                  id="textareaEditForm"                                               
+                                                  placeholder="Kitchenware"
+                                                >
+
+                                                 {{ $recipe->kitchenware }}
+
+                                        </textarea>
+
+                                        @error('kitchenware')
+                                            <p class="text-danger text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                                    
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <label class="labels"
+                                               for="ingredients" 
+                                            >
+                                                Ingredients
+                                        </label>
+
+                                        <textarea type="text" 
+                                                  class="form-control"
+                                                  name="ingredients"
+                                                  id="textareaEditForm"
+                                                  placeholder="Ingredients" 
+                                                > 
+
+                                               {{ $recipe->ingredients }}
+
+                                        </textarea>
+
+                                        @error('ingredients')
+                                            <p class="text-danger text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                                    
+                                    </div>
+
+                                </div>
+
+                                <div class="row mt-2">
+
+                                    <div class="col-md-6">
+
+                                        <label class="labels"
+                                               for="recipe_the_steps_to_follow" 
+                                            >
+                                            The steps to follow for this recipe
+                                        </label>
+
+                                        <textarea type="text" 
+                                                  class="form-control"
+                                                  name="recipe_the_steps_to_follow"
+                                                  id="textareaEditForm"
+                                                  placeholder="The steps to follow for this recipe" 
+                                                >
+
+                                                     {{ $recipe->recipe_the_steps_to_follow }}
+
+                                        </textarea>
+
+                                        @error('recipe_the_steps_to_follow')
+                                            <p class="text-danger text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                                    
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <label class="labels"
+                                               for="recipe_commentary" 
+                                            >
+                                            Commentary by this recipe
+                                        </label>
+
+                                        <textarea type="text" 
+                                                  class="form-control"
+                                                  name="recipe_commentary"
+                                                  id="textareaEditForm"
+                                                  placeholder="Commentary by this recipe" 
+                                                >
+
+                                                     {{ $recipe->recipe_commentary }}
+
+                                        </textarea>
+
+                                        @error('recipe_commentary')
+                                            <p class="text-danger text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                                    
+                                    </div>
+
+                                </div>
+
+                                <div class="row mt-2">
+
+                                    <div class="col-md-6">
+
+                                        <label class="labels"
+                                               for="recipe_estimated_time" 
+                                            >
+                                                Estimated time for this recipe
+                                        </label>
+
+                                        <input type="text" 
+                                               class="form-control"
+                                               name="recipe_estimated_time"
+                                               id="inputEditForm"
+                                               placeholder="Estimated time for this recipe" 
+                                               value="{{ $recipe->recipe_estimated_time }}"
+                                        />
+
+                                        @error('recipe_estimated_time')
+                                            <p class="text-danger text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                                    
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <label class="labels"
+                                               for="recipe_shelf_life" 
+                                            >
+                                            Recipe shelf life
+                                        </label>
+
+                                        <input type="text" 
+                                               class="form-control"
+                                               name="recipe_shelf_life"
+                                               id="inputForm"
+                                               placeholder="Recipe shelf life" 
+                                               value="{{ $recipe->recipe_shelf_life }}"
+                                        />
+
+                                        @error('recipe_shelf_life')
+                                            <p class="text-danger text-xs mt-1">
+                                                {{ $message }}
+                                            </p>
+                                        @enderror
+                                    
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12">
+
+                                    <label class="labels"
+                                           for="recipe_image_end_result" 
+                                        >
+                                        Image end result from this recipe
+                                    </label>
+
+                                    <input type="file" 
+                                           class="form-control"
+                                           name="recipe_image_end_result"
+                                           id="inputEditForm" 
+                                    />
+                                    <img src="{{$recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png')}}"
+                                         alt="Image from this recipe"
+                                    />
+
+                                    @error('recipe_image_end_result')
+                                        <p class="text-danger text-xs mt-1">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+                         
+                                </div>
+
+                            </div>
                         </div>
-
-                        <div class="flex flex-col">
-                            <label for="kitchenware"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                        Kitchenware
-                            </label>
-                            <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                      type="text" 
-                                      name="kitchenware" 
-                                      id="" 
-                                      rows="10"
-                                      placeholder="Kitchenware" 
-                                    >
-                                    {{ $recipe->kitchenware }}
-                            </textarea> 
-                            
-                            @error('kitchenware')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
-
-                        </div>
-
-                        <div class="flex flex-col">
-                            <label for="ingredients"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         Ingredients
-                            </label>
-                            <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                   type="text" 
-                                   name="ingredients" 
-                                   id="" 
-                                   placeholder="Ingredients" 
-                                   value="{{ $recipe->ingredients }}"
-                            /> 
-                            
-                            @error('ingredients')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
-
-                        </div>
-
-                        <div class="flex flex-col">
-                            <label for="recipe_the_steps_to_follow"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         The steps to follow for this recipe
-                            </label>
-                            <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                      type="text" 
-                                      name="recipe_the_steps_to_follow" 
-                                      id="" 
-                                      rows="10"
-                                      placeholder="The steps to follow for this recipe" 
-                                    >
-                                    {{ $recipe->recipe_the_steps_to_follow }}
-                            </textarea> 
-                            
-                            @error('recipe_the_steps_to_follow')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
-
-                        </div>
-
-                        <div class="flex flex-col">
-                            <label for="recipe_estimated_time"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         Estimated time for this recipe
-                            </label>
-                            <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                   type="text" 
-                                   name="recipe_estimated_time" 
-                                   id="" 
-                                   placeholder="Estimated time for this recipe" 
-                                   value="{{ $recipe->recipe_estimated_time }}"
-                            /> 
-                            
-                            @error('recipe_estimated_time')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
-                            
-                        </div> 
-
-                        <div class="flex flex-col">
-                            <label for="recipe_image_end_result"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         Image end result from this recipe
-                            </label>
-                            <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                   type="file" 
-                                   name="recipe_image_end_result" 
-                                   id=""
-                            />
-                            <img class="hidden w-48 mr-6 md:block"
-                                 src="{{$recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png')}}"
-                                 alt=""
-                                />
-
-                            @error('recipe_image_end_result')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
-                            
-                        </div> 
-
-                        <div class="flex flex-col">
-                            <label for="recipe_shelf_life"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         Recipe shelf life
-                            </label>
-                            <input class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                   type="text" 
-                                   name="recipe_shelf_life" 
-                                   id="" 
-                                   placeholder="Recipe shelf life" 
-                                   value="{{ $recipe->recipe_shelf_life }}"
-                            /> 
-                            
-                            @error('recipe_shelf_life')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
-
-                        </div>
-
-                        <div class="flex flex-col">
-                            <label for="recipe_commentary"
-                                   class="ml-4 text-md tracking-wide font-semibold w-50"
-                                >
-                                         Commentary by this recipe
-                            </label>
-                            <textarea class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                      type="text" 
-                                      name="recipe_commentary" 
-                                      id=""
-                                      rows="10" 
-                                      placeholder="Commentary by this recipe" 
-                                    >
-                                    {{ $recipe->recipe_commentary }}
-                            </textarea>  
-                            
-                            @error('recipe_commentary')
-                                <p class="text-red-500 text-xs mt-1">
-                                    {{ $message }}
-                                </p>
-                            @enderror
-
-                        </div>
-                        
-                        <div class="flex flex-col">
-                            <button class="w-100 mt-2 py-3 px-3 rounded-lg bg-blue-600 dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"
-                                >
-                            Update this recipe
+                    
+                        <div class="p-3 text-center">
+                            <button class="btn btn-primary profile-button" 
+                                    type="submit"
+                                   >
+                                        Update this recipe
                             </button>
                         </div>
-                    </form>
+                    </div>
+               </form>
             </div>
         </div>
-    </div>
+    </main>
 
-</x-layout>
+</x-layout-bootstrap>
