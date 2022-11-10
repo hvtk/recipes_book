@@ -41,7 +41,7 @@ class UserController extends Controller {
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/recipes')->with('message', 'You have been logged out!');
+        return redirect('/recipebook/homepage')->with('message', 'You have been logged out!');
     }
 
     // Show Login Form
@@ -59,7 +59,7 @@ class UserController extends Controller {
         if(auth()->attempt($formFieldsAuthenticate)) {
             $request->session()->regenerate();
 
-            return redirect('/recipes')->with('message', 'You are now logged in!');
+            return redirect('/recipebook/homepage')->with('message', 'You are now logged in!');
         }   
         
         return back()->withErrors(['email' => 'Invalid Credentials'])

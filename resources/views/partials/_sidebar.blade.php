@@ -127,6 +127,21 @@
                     </ul>
                    
                 </div>
+
+                <div>
+                    <form method="POST"
+                          action="/logout"  
+                        >
+
+                        @csrf
+
+                        <button type="submit">
+                            <span>
+                              Logout
+                            </span>
+                        </button>
+                    </form>
+                </div>
                 
             </ul>
 
