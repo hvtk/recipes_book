@@ -30,7 +30,7 @@ class UserController extends Controller {
         //Login
         auth()->login($user);
 
-        return redirect('/recipes')
+        return redirect('/recipebook/homepage')
                ->with('message', 'User created and logged in!');         
     }
 
