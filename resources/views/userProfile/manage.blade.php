@@ -1,10 +1,10 @@
 <x-layout>
 
     <!-- Custom styles for this template -->
-    <link href="{{ url('/css/userProfileCreate.css') }}" rel="stylesheet"/>
+    <link href="{{ url('/css/userProfileManage.css') }}" rel="stylesheet"/>
 
     <main class="col align-self-center py-3">
-        <div class="body-userProfileCreate">
+        <div class="body-userProfileManage">
             <div class="container rounded bg-white mt-5 mb-5">
                
                 <div class="d-flex flex-column align-items-center text-center">
