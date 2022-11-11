@@ -128,14 +128,18 @@
                    
                 </div>
 
-                <div>
+                <div class="border-top mt-5 mb-2"></div>
+
+                <div class="pb-2">
                     <form method="POST"
                           action="/logout"  
                         >
 
                         @csrf
 
-                        <button type="submit">
+                        <button type="submit"
+                                class="btn d-inline-flex align-items-center text-white rounded border-0"        
+                        >
                             <span>
                               Logout
                             </span>
