@@ -9,6 +9,7 @@
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
           crossorigin="anonymous"
         >
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
 
   <body class="container-fluid">

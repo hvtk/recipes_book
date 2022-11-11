@@ -81,7 +81,7 @@
                             </label>
                         </div>
 
-                        <button class="w-100 btn btn-lg btn-primary" 
+                        <button class="btn btn-lg btn-primary w-100" 
                                 type="submit"
                             >
                                     Sign in
