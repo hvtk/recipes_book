@@ -307,7 +307,6 @@
                          
                                 </div>
                         
-                                {{-- <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div> --}}
                             </div>
                         </div>
                         <div class="col-md-4 border-right">
@@ -395,7 +394,7 @@
                             </div>
                         </div>
                         <div class="p-3 text-center">
-                            <button class="btn btn-primary profile-button" 
+                            <button class="btn btn-primary" 
                                     type="submit"
                                    >
                                         Save Profile

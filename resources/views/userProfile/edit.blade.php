@@ -1,10 +1,10 @@
 <x-layout>
 
     <!-- Custom styles for this template -->
-    <link href="{{ url('/css/userProfileCreate.css') }}" rel="stylesheet"/>
+    <link href="{{ url('/css/userProfileEdit.css') }}" rel="stylesheet"/>
 
     <main class="col align-self-center py-3">
-        <div class="body-userProfileCreate">
+        <div class="body-userProfileEdit">
             <div class="container rounded bg-white mt-5 mb-5">
                <form method="POST"
                      action="/userprofiles/{{ $userProfile->id }}"  
@@ -396,7 +396,7 @@
                             </div>
                         </div>
                         <div class="p-3 text-center">
-                            <button class="btn btn-primary profile-button" 
+                            <button class="btn btn-primary" 
                                     type="submit"
                                    >
                                         Update User Profile

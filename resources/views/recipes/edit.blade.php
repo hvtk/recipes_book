@@ -1,10 +1,10 @@
 <x-layout>
 
     <!-- Custom styles for this template -->
-    <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
+    <link href="{{ url('/css/recipeEdit.css') }}" rel="stylesheet"/>
 
     <main class="col align-self-center py-3">
-        <div class="body-recipeCreate">
+        <div class="body-recipeEdit">
             <div class="container rounded bg-white mt-5 mb-5">
               
                 @php
@@ -309,7 +309,7 @@
                         </div>
                     
                         <div class="p-3 text-center">
-                            <button class="btn btn-primary profile-button" 
+                            <button class="btn btn-primary" 
                                     type="submit"
                                    >
                                         Update this recipe

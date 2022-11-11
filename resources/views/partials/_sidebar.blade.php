@@ -1,5 +1,5 @@
 <!-- Custom styles for this template -->
-<link href="{{ url('/css/sidebar-bootstrap.css') }}" rel="stylesheet"/>
+<link href="{{ url('/css/sidebar.css') }}" rel="stylesheet"/>
 
 <!-- Group of symbols for this template -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -19,8 +19,8 @@
             class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
             >
                 <svg class="bi pe-none me-2" 
-                    width="30" 
-                    height="24"
+                     width="30" 
+                     height="24"
                     >
                     <use xlink:href="#book"/>
                 </svg>
