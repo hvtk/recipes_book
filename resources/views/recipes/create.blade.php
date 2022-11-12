@@ -85,16 +85,16 @@
                                             <option value="A"> 
                                                 {{ $A }}
                                             </option>
-                                            <option value="A"> 
+                                            <option value="B"> 
                                                 {{ $B }}
                                             </option>
-                                            <option value="A"> 
+                                            <option value="C"> 
                                                 {{ $C }}
                                             </option>
-                                            <option value="A"> 
+                                            <option value="D"> 
                                                 {{ $D }}
                                             </option>
-                                            <option value="A"> 
+                                            <option value="E"> 
                                                 {{ $E }}
                                             </option>
 

@@ -26,7 +26,7 @@ class RecipeController extends Controller {
     public function store(Request $request) {
        $formFieldsRecipe = $request->validate([
         'recipe_title' => ['required', Rule::unique('recipes', 'recipe_title' )],
-        'recipe_section' => 'required',
+        // 'recipe_section' => 'required',
         'kitchenware' => 'required',
         'ingredients' => 'required',
         'recipe_the_steps_to_follow' => 'required',
@@ -40,6 +40,49 @@ class RecipeController extends Controller {
            ->file('recipe_image_end_result')
            ->store('recipeImages', 'public');
        }
+
+       $A = "Baking";
+       $B = "Roasting";
+       $C = "Cooking";
+       $D = "Frying";
+       $E = "Warming up";
+
+          
+       switch($request->has('recipe_section')) {
+            case($request = 'A'):
+                $formFieldsRecipe['recipe_section'] = "hhBacking";
+                break;
+            case($request = 'B'):
+                $formFieldsRecipe['recipe_section'] = "Roasting";
+                break;
+            case($request = $C):
+                $formFieldsRecipe['recipe_section'] = "Cooking";
+                break;   
+            case($request = $D):
+                $formFieldsRecipe['recipe_section'] = "Frying";
+                break;
+            case($request = $E):
+                $formFieldsRecipe['recipe_section'] = "Warming up";   
+                break;
+            default: "Not an possible option!";
+        }
+            
+
+        // if($request->has('recipe_section' -> $A)) {
+        //     $formFieldsRecipe['recipe_section'] = $request = "Backing";
+        //     }elseif('recipe_section' -> $B) {
+        //         $formFieldsRecipe['recipe_section'] = "Roasting";
+        //     }elseif('recipe_section' -> $C) {
+        //         $formFieldsRecipe['recipe_section'] = "Cooking";
+        //     }elseif('recipe_section' -> $D) {
+        //         $formFieldsRecipe['recipe_section'] = "Frying";
+        //     }elseif('recipe_section' -> $E) {
+        //         $formFieldsRecipe['recipe_section'] = "Warming up";
+        //     }else {
+        //         'Not an possible option!'; 
+        // }
+
+
 
        //To connect the recipe data on an user
        $formFieldsRecipe['user_id'] = auth()->id();
