@@ -6,14 +6,6 @@
     <main class="col align-self-center py-3">
         <div class="body-recipeCreate">
             <div class="container rounded bg-white mt-5 mb-5">
-              
-                @php
-                $A = "Baking";
-                $B = "Roasting";
-                $C = "Cooking";
-                $D = "Frying";
-                $E = "Warming up";
-                @endphp
 
                 <form method="POST"
                      action="/recipes"  
@@ -80,22 +72,22 @@
                                             id="selectForm"
                                         >
                                             <option selected>
-                                                Open this select menu to choose the section
+                                                -- Open this select menu to choose the section --
                                             </option>
-                                            <option value="A"> 
-                                                {{ $A }}
+                                            <option value="backing"> 
+                                                Backing
                                             </option>
-                                            <option value="B"> 
-                                                {{ $B }}
+                                            <option value="roasting"> 
+                                                Roasting
                                             </option>
-                                            <option value="C"> 
-                                                {{ $C }}
+                                            <option value="cooking"> 
+                                                Cooking
                                             </option>
-                                            <option value="D"> 
-                                                {{ $D }}
+                                            <option value="frying"> 
+                                                Frying
                                             </option>
-                                            <option value="E"> 
-                                                {{ $E }}
+                                            <option value="warming up"> 
+                                                Warming up
                                             </option>
 
                                             {{ old('recipe_section') }}"
