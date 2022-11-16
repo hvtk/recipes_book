@@ -1,4 +1,5 @@
 
+
 # recipe_book
 An recipe book made in Laravel with MySQL on Ubuntu(Linux)
 
@@ -321,4 +322,7 @@ Class-diagram third intent (for the time being the starting point for the applic
 
 ![class-diagram rev A](https://user-images.githubusercontent.com/75074496/193009536-e98ca33c-720c-4342-aa0b-86de8534f2dc.svg)
 
+
+Class-diagram fourh intent (for the time being the first revision from the starting point for the application)
+![class-diagram rev C](https://user-images.githubusercontent.com/75074496/201524243-a3a95a20-3332-42f7-808e-3ea17cce0448.svg)
 
