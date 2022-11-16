@@ -131,7 +131,7 @@
                                     
                                     </div>
 
-                                    <div class="col-md-6">
+                                    {{-- <div class="col-md-6">
 
                                         <label class="labels"
                                                for="ingredients" 
@@ -156,7 +156,7 @@
                                             </p>
                                         @enderror
                                     
-                                    </div>
+                                    </div> --}}
 
                                 </div>
 
@@ -291,6 +291,31 @@
                                     @enderror
                          
                                 </div>
+
+                                @for ($i=0; $i < 5; $i++)
+                                    <div class="col-md-12">
+
+                                            <label class="labels"
+                                                for="ingredients-{{ $i }}" 
+                                                >
+                                                Ingredients #{{ $i }}
+                                            </label>
+                                            
+                                            <input type="text" 
+                                                class="form-control"
+                                                name="ingredients[]"
+                                                value="{{ old('ingredients.' . $i) }}"
+                                                id="inputFormIngredients-{{ $i }}" 
+                                            />
+
+                                            @error('ingredients.' . $i)
+                                                <p class="text-danger text-xs mt-1">
+                                                    {{ $message }}
+                                                </p>
+                                            @enderror
+                            
+                                    </div>
+                                @endfor 
 
                             </div>
                         </div>
