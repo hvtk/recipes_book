@@ -22,7 +22,8 @@ class Recipe extends Model
 
     // Tells laravel to fetch text values and set them as arrays
     protected $casts = [
-        'ingredients' => 'array'
+        'ingredients' => 'array',
+        'kitchenware' => 'array'
     ];
 
     public function scopeFilter($query, array $filters) {

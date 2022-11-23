@@ -3,19 +3,6 @@
     <!-- Custom styles for this template -->
     <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
-    {{-- <script>
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            function get_data() {
-                $datae = array();
-                $datae[] = array(
-                    'Ingredients' => $_POST['ingredients'],
-            );
-            return json_encode($datae);
-            }
-        }
-    </script> --}}
-
     <main class="col align-self-center py-3">
         <div class="body-recipeCreate">
             <div class="container rounded bg-white mt-5 mb-5">
@@ -117,32 +104,55 @@
 
                                 <div class="row mt-2">
 
-                                    <div class="col-md-6">
+                                    @for ($i=0; $i < 5; $i++)
+                                        <div class="col-md-6">
 
-                                        <label class="labels"
-                                               for="kitchenware" 
-                                            >
-                                                Kitchenware
-                                        </label>
-
-                                        <textarea type="text" 
-                                                  class="form-control"
-                                                  name="kitchenware" 
-                                                  id="textareaForm"                                               
-                                                  placeholder="Kitchenware"
+                                            <label class="labels"
+                                                for="kitchenware-{{ $i }}" 
                                                 >
+                                                    Kitchenware #{{ $i }}
+                                            </label>
 
-                                                 {{ old('kitchenware') }}
+                                            <input type="text" 
+                                                class="form-control"
+                                                name="kitchenware[]" 
+                                                id="inputFormKitchenware-{{ $i }}"                                               
+                                                value="{{ old('kitchenware.' . $i) }}"
+                                            />
 
-                                        </textarea>
+                                            @error('kitchenware.' .$i)
+                                                <p class="text-danger text-xs mt-1">
+                                                    {{ $message }}
+                                                </p>
+                                            @enderror
+                                        
+                                        </div>
+                                    @endfor
 
-                                        @error('kitchenware')
-                                            <p class="text-danger text-xs mt-1">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
-                                    
-                                    </div>
+                                    @for ($i=0; $i < 5; $i++)
+                                        <div class="col-md-6">
+
+                                            <label class="labels"
+                                                for="ingredients-{{ $i }}" 
+                                                >
+                                                Ingredients #{{ $i }}
+                                            </label>
+                                            
+                                            <input type="text" 
+                                                class="form-control"
+                                                name="ingredients[]"
+                                                id="inputFormIngredients-{{ $i }}" 
+                                                value="{{ old('ingredients.' . $i) }}"
+                                            />
+
+                                            @error('ingredients.' . $i)
+                                                <p class="text-danger text-xs mt-1">
+                                                    {{ $message }}
+                                                </p>
+                                            @enderror
+                            
+                                        </div>
+                                    @endfor 
 
                                 </div>
 
@@ -277,31 +287,6 @@
                                     @enderror
                          
                                 </div>
-
-                                @for ($i=0; $i < 5; $i++)
-                                    <div class="col-md-12">
-
-                                            <label class="labels"
-                                                for="ingredients-{{ $i }}" 
-                                                >
-                                                Ingredients #{{ $i }}
-                                            </label>
-                                            
-                                            <input type="text" 
-                                                class="form-control"
-                                                name="ingredients[]"
-                                                value="{{ old('ingredients.' . $i) }}"
-                                                id="inputFormIngredients-{{ $i }}" 
-                                            />
-
-                                            @error('ingredients.' . $i)
-                                                <p class="text-danger text-xs mt-1">
-                                                    {{ $message }}
-                                                </p>
-                                            @enderror
-                            
-                                    </div>
-                                @endfor 
 
                             </div>
                         </div>

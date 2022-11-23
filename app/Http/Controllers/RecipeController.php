@@ -27,7 +27,8 @@ class RecipeController extends Controller {
        $formFieldsRecipe = $request->validate([
         'recipe_title' => ['required', Rule::unique('recipes', 'recipe_title' )],
         'recipe_section' => 'required',
-        'kitchenware' => 'required',
+        'kitchenware.*' => 'nullable|distinct',
+        'kitchenware.0' => 'required',
         'ingredients.*' => 'nullable|distinct',
         'ingredients.0' => 'required',
         'recipe_the_steps_to_follow' => 'required',

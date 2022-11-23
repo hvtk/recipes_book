@@ -75,7 +75,11 @@
                                 >
                             <p class="mb-4">Kitchenware</p> 
                             <div class="text-xl font-bold mb-4">
-                                {{ $recipe->kitchenware }}
+                                <ul>
+                                    @foreach ($recipe->kitchenware as $kitchenware)
+                                        <li> {{ $kitchenware }} </li>
+                                    @endforeach
+                                </ul>
                             </div>
 
                         </div>

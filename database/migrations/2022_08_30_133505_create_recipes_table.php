@@ -19,7 +19,7 @@ class CreateRecipesTable extends Migration
                                         ->onDelete('cascade');
             $table->string('recipe_title');
             $table->string('recipe_section');
-            $table->longText('kitchenware');
+            $table->json('kitchenware');
             $table->longText('recipe_the_steps_to_follow');
             $table->string('recipe_estimated_time');
             $table->string('recipe_image_end_result')->nullable();
