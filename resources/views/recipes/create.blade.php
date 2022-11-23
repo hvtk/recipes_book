@@ -3,6 +3,19 @@
     <!-- Custom styles for this template -->
     <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
+    {{-- <script>
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            function get_data() {
+                $datae = array();
+                $datae[] = array(
+                    'Ingredients' => $_POST['ingredients'],
+            );
+            return json_encode($datae);
+            }
+        }
+    </script> --}}
+
     <main class="col align-self-center py-3">
         <div class="body-recipeCreate">
             <div class="container rounded bg-white mt-5 mb-5">
@@ -130,33 +143,6 @@
                                         @enderror
                                     
                                     </div>
-
-                                    {{-- <div class="col-md-6">
-
-                                        <label class="labels"
-                                               for="ingredients" 
-                                            >
-                                                Ingredients
-                                        </label>
-
-                                        <textarea type="text" 
-                                                  class="form-control"
-                                                  name="ingredients"
-                                                  id="textareaForm"
-                                                  placeholder="Ingredients" 
-                                                > 
-
-                                               {{ old('ingredients') }}
-
-                                        </textarea>
-
-                                        @error('ingredients')
-                                            <p class="text-danger text-xs mt-1">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
-                                    
-                                    </div> --}}
 
                                 </div>
 

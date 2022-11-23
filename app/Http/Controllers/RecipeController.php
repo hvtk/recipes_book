@@ -28,7 +28,6 @@ class RecipeController extends Controller {
         'recipe_title' => ['required', Rule::unique('recipes', 'recipe_title' )],
         'recipe_section' => 'required',
         'kitchenware' => 'required',
-        // 'ingredients' => 'required',
         'ingredients.*' => 'nullable|distinct',
         'ingredients.0' => 'required',
         'recipe_the_steps_to_follow' => 'required',
@@ -36,17 +35,6 @@ class RecipeController extends Controller {
         'recipe_shelf_life' => 'required',
         'recipe_commentary' => 'required'
        ]);
-
-    //    $ingredients = $request->ingredients;
-
-    //    for ($i=0; $i < 5; $i++) {
-    //         $allIngredients = [
-    //             'ingredients' => $ingredients[$i]
-    //         ];
-    //    }
-
-        $ingredients = array('ingredients');
-        $allIngredients = implode(",", $ingredients);
 
 
        if($request->hasFile('recipe_image_end_result')) {
@@ -58,7 +46,7 @@ class RecipeController extends Controller {
        //To connect the recipe data on an user
        $formFieldsRecipe['user_id'] = auth()->id();
 
-       Recipe::create($formFieldsRecipe, $allIngredients);
+       Recipe::create($formFieldsRecipe);
        
        return redirect('/recipes')
               ->with('message', 'Recipe created succesfully!');

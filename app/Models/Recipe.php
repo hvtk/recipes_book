@@ -20,6 +20,11 @@ class Recipe extends Model
                            'recipe_shelf_life',
                            'recipe_commentary'];
 
+    // Tells laravel to fetch text values and set them as arrays
+    protected $casts = [
+        'ingredients' => 'array'
+    ];
+
     public function scopeFilter($query, array $filters) {
         if($filters['search'] ?? false) {
             $query->where('recipe_title', 'like', '%' . request('search') . '%')

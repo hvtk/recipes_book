@@ -94,7 +94,11 @@
                             >
                         <p class="mb-4">Ingredients</p> 
                         <div class="text-xl font-bold mb-4">
-                            {{ $recipe->ingredients }}
+                            <ul>
+                                @foreach ($recipe->ingredients as $ingredient)
+                                    <li> {{ $ingredient }} </li>
+                                @endforeach
+                            </ul>
                         </div>
 
                     </div>

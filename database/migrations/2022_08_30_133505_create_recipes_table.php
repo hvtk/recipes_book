@@ -20,12 +20,12 @@ class CreateRecipesTable extends Migration
             $table->string('recipe_title');
             $table->string('recipe_section');
             $table->longText('kitchenware');
-            $table->string('ingredients');
             $table->longText('recipe_the_steps_to_follow');
             $table->string('recipe_estimated_time');
             $table->string('recipe_image_end_result')->nullable();
             $table->string('recipe_shelf_life');
             $table->longText('recipe_commentary');
+            $table->json('ingredients');
             $table->timestamps();
         });
     }
