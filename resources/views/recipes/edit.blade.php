@@ -6,14 +6,6 @@
     <main class="col align-self-center py-3">
         <div class="body-recipeEdit">
             <div class="container rounded bg-white mt-5 mb-5">
-              
-                @php
-                $A = "Baking";
-                $B = "Roasting";
-                $C = "Cooking";
-                $D = "Frying";
-                $E = "Warming up";
-                @endphp
 
                 <form method="POST"
                       action="/recipes/{{ $recipe->id }}"  
@@ -71,6 +63,11 @@
 
                                 <div class="col-md-12">
 
+                                    <div class="text-xl font-bold mb-4">
+                                        The section for this recipe:
+                                         {{ $recipe->recipe_section }}
+                                    </div>
+
                                     <label class="labels"
                                            for="recipe_section" 
                                         >
@@ -80,28 +77,26 @@
                                             class="form-select" 
                                             name="recipe_section" 
                                             id="selectEditForm"
-                                        >
-                                            <option selected>
-                                                Open this select menu to choose the section
-                                            </option>
-                                            <option value="A"> 
-                                                {{ $A }}
-                                            </option>
-                                            <option value="A"> 
-                                                {{ $B }}
-                                            </option>
-                                            <option value="A"> 
-                                                {{ $C }}
-                                            </option>
-                                            <option value="A"> 
-                                                {{ $D }}
-                                            </option>
-                                            <option value="A"> 
-                                                {{ $E }}
-                                            </option>
-
-                                            {{ $recipe->recipe_section }}"
-
+                                        >       
+                                        <option selected>
+                                            -- Open this select menu to change the section --
+                                        </option>
+                                        <option value="backing"> 
+                                            Backing
+                                        </option>
+                                        <option value="roasting"> 
+                                            Roasting
+                                        </option>
+                                        <option value="cooking"> 
+                                            Cooking
+                                        </option>
+                                        <option value="frying"> 
+                                            Frying
+                                        </option>
+                                        <option value="warming up"> 
+                                            Warming up
+                                        </option>
+                                            
                                     </select>
 
                                     @error('recipe_section')
@@ -114,59 +109,73 @@
 
                                 <div class="row mt-2">
 
-                                    <div class="col-md-6">
+                                    <p class="mb-4">Kitchenware for this recipe</p> 
+                                    <div class="text-xl font-bold mb-4">
+                                        <ul>
+                                            @foreach ($recipe->kitchenware as $kitchenware)
+                                                <li> {{ $kitchenware }} </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
 
-                                        <label class="labels"
-                                               for="kitchenware" 
-                                            >
-                                                Kitchenware
-                                        </label>
+                                    @for ($i=0; $i < 5; $i++)
+                                        <div class="col-md-6">
 
-                                        <textarea type="text" 
-                                                  class="form-control"
-                                                  name="kitchenware" 
-                                                  id="textareaEditForm"                                               
-                                                  placeholder="Kitchenware"
+                                            <label class="labels"
+                                                for="kitchenware-{{ $i }}" 
                                                 >
+                                                    Kitchenware #{{ $i }}
+                                            </label>
 
-                                                 {{ $recipe->kitchenware }}
+                                            <input type="text" 
+                                                class="form-control"
+                                                name="kitchenware[]" 
+                                                id="inputFormKitchenware-{{ $i }}"                                               
+                                                value="{{ old('kitchenware.' . $i) }}"
+                                            />
 
-                                        </textarea>
+                                            @error('kitchenware.' .$i)
+                                                <p class="text-danger text-xs mt-1">
+                                                    {{ $message }}
+                                                </p>
+                                            @enderror
+                                        
+                                        </div>
+                                    @endfor
 
-                                        @error('kitchenware')
-                                            <p class="text-danger text-xs mt-1">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
-                                    
+                                    <p class="mb-4">Ingredients for this recipe</p> 
+                                    <div class="text-xl font-bold mb-4">
+                                        <ul>
+                                            @foreach ($recipe->ingredients as $ingredient)
+                                                <li> {{ $ingredient }} </li>
+                                            @endforeach
+                                        </ul>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    @for ($i=0; $i < 5; $i++)
+                                        <div class="col-md-6">
 
-                                        <label class="labels"
-                                               for="ingredients" 
-                                            >
-                                                Ingredients
-                                        </label>
+                                            <label class="labels"
+                                                for="ingredients-{{ $i }}" 
+                                                >
+                                                Ingredients #{{ $i }}
+                                            </label>
+                                            
+                                            <input type="text" 
+                                                class="form-control"
+                                                name="ingredients[]"
+                                                id="inputFormIngredients-{{ $i }}" 
+                                                value="{{ old('ingredients.' . $i) }}"
+                                            />
 
-                                        <textarea type="text" 
-                                                  class="form-control"
-                                                  name="ingredients"
-                                                  id="textareaEditForm"
-                                                  placeholder="Ingredients" 
-                                                > 
-
-                                               {{ $recipe->ingredients }}
-
-                                        </textarea>
-
-                                        @error('ingredients')
-                                            <p class="text-danger text-xs mt-1">
-                                                {{ $message }}
-                                            </p>
-                                        @enderror
-                                    
-                                    </div>
+                                            @error('ingredients.' . $i)
+                                                <p class="text-danger text-xs mt-1">
+                                                    {{ $message }}
+                                                </p>
+                                            @enderror
+                            
+                                        </div>
+                                    @endfor 
 
                                 </div>
 

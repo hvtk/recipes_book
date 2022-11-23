@@ -75,8 +75,10 @@ class RecipeController extends Controller {
         $formFieldsRecipe = $request->validate([
          'recipe_title' => 'required',
          'recipe_section' => 'required',
-         'kitchenware' => 'required',
-         'ingredients' => 'required',
+         'kitchenware.*' => 'nullable|distinct',
+         'kitchenware.0' => 'nullable',
+         'ingredients.*' => 'nullable|distinct',
+         'ingredients.0' => 'nullable',
          'recipe_the_steps_to_follow' => 'required',
          'recipe_estimated_time' => 'required',
          'recipe_shelf_life' => 'required',
