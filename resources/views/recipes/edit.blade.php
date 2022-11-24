@@ -63,15 +63,10 @@
 
                                 <div class="col-md-12">
 
-                                    <div class="text-xl font-bold mb-4">
-                                        The section for this recipe:
-                                         {{ $recipe->recipe_section }}
-                                    </div>
-
                                     <label class="labels"
                                            for="recipe_section" 
                                         >
-                                            Recipe section
+                                            Recipe section (old: {{ $recipe->recipe_section }})
                                     </label>
                                     <select type="text" 
                                             class="form-select" 
@@ -109,32 +104,32 @@
 
                                 <div class="row mt-2">
 
-                                    <p class="mb-4">Kitchenware for this recipe</p> 
+                                    {{-- <p class="mb-4">Kitchenware for this recipe</p> 
                                     <div class="text-xl font-bold mb-4">
                                         <ul>
                                             @foreach ($recipe->kitchenware as $kitchenware)
                                                 <li> {{ $kitchenware }} </li>
                                             @endforeach
                                         </ul>
-                                    </div>
+                                    </div> --}}
 
-                                    @for ($i=0; $i < 5; $i++)
+                                    @for ($i=0; $i < count($recipe->kitchenware); $i++)
                                         <div class="col-md-6">
 
                                             <label class="labels"
-                                                for="kitchenware-{{ $i }}" 
+                                                for="kitchenware-{{ $recipe->kitchenware[$i] }}" 
                                                 >
-                                                    Kitchenware #{{ $i }}
+                                                    Kitchenware (old: {{ $recipe->kitchenware[$i] }})
                                             </label>
 
                                             <input type="text" 
                                                 class="form-control"
                                                 name="kitchenware[]" 
-                                                id="inputFormKitchenware-{{ $i }}"                                               
-                                                value="{{ old('kitchenware.' . $i) }}"
+                                                id="inputFormKitchenware-{{ $recipe->kitchenware[$i] }}"                                               
+                                                value="{{ $recipe->kitchenware[$i] }}"
                                             />
 
-                                            @error('kitchenware.' .$i)
+                                            @error('kitchenware.' .$recipe->kitchenware[$i])
                                                 <p class="text-danger text-xs mt-1">
                                                     {{ $message }}
                                                 </p>
@@ -143,32 +138,32 @@
                                         </div>
                                     @endfor
 
-                                    <p class="mb-4">Ingredients for this recipe</p> 
+                                    {{-- <p class="mb-4">Ingredients for this recipe</p> 
                                     <div class="text-xl font-bold mb-4">
                                         <ul>
                                             @foreach ($recipe->ingredients as $ingredient)
                                                 <li> {{ $ingredient }} </li>
                                             @endforeach
                                         </ul>
-                                    </div>
+                                    </div> --}}
 
-                                    @for ($i=0; $i < 5; $i++)
+                                    @for ($i=0; $i < count($recipe->ingredients); $i++)
                                         <div class="col-md-6">
 
                                             <label class="labels"
-                                                for="ingredients-{{ $i }}" 
+                                                for="ingredients-{{ $recipe->ingredients[$i] }}" 
                                                 >
-                                                Ingredients #{{ $i }}
+                                                Ingredients (old: {{ $recipe->ingredients[$i] }})
                                             </label>
                                             
                                             <input type="text" 
                                                 class="form-control"
                                                 name="ingredients[]"
-                                                id="inputFormIngredients-{{ $i }}" 
-                                                value="{{ old('ingredients.' . $i) }}"
+                                                id="inputFormIngredients-{{ $recipe->ingredients[$i] }}" 
+                                                value="{{ $recipe->ingredients[$i] }}"
                                             />
 
-                                            @error('ingredients.' . $i)
+                                            @error('ingredients.' . $recipe->ingredients[$i])
                                                 <p class="text-danger text-xs mt-1">
                                                     {{ $message }}
                                                 </p>
