@@ -59,7 +59,7 @@
 
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mt-2">
 
                                     <label class="labels"
                                            for="recipe_section" 
@@ -102,58 +102,82 @@
 
                                 </div>
 
-                                <div class="row mt-2">
+                                <div class="d-flex flex-row mt-2 gap-4">
 
-                                    @for ($i=0; $i < 5; $i++)
-                                        <div class="col-md-6">
+                                    <div class="row">
 
-                                            <label class="labels"
-                                                for="kitchenware-{{ $i }}" 
-                                                >
-                                                    Kitchenware #{{ $i }}
-                                            </label>
+                                        <div class="text-center mt-2">
+                                            <p>
+                                                Kitchenware for this recipe
+                                            </p>
+                                        </div>
 
-                                            <input type="text" 
-                                                class="form-control"
-                                                name="kitchenware[]" 
-                                                id="inputFormKitchenware-{{ $i }}"                                               
-                                                value="{{ old('kitchenware.' . $i) }}"
-                                            />
-
-                                            @error('kitchenware.' .$i)
-                                                <p class="text-danger text-xs mt-1">
-                                                    {{ $message }}
-                                                </p>
-                                            @enderror
+                                        @for ($i=0; $i < 5; $i++)
                                         
+                                            <div class="col-md-12">
+
+                                                <label class="labels"
+                                                    for="kitchenware-{{ $i }}" 
+                                                    >
+                                                        Kitchenware #{{ $i }}
+                                                </label>
+
+                                                <input type="text" 
+                                                    class="form-control"
+                                                    name="kitchenware[]" 
+                                                    id="inputFormKitchenware-{{ $i }}"                                               
+                                                    value="{{ old('kitchenware.' . $i) }}"
+                                                />
+
+                                                @error('kitchenware.' .$i)
+                                                    <p class="text-danger text-xs mt-1">
+                                                        {{ $message }}
+                                                    </p>
+                                                @enderror
+
+                                            </div>
+
+                                        @endfor
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="text-center mt-2">
+                                            <p>
+                                                Ingredients for this recipe
+                                            </p>
                                         </div>
-                                    @endfor
 
-                                    @for ($i=0; $i < 5; $i++)
-                                        <div class="col-md-6">
+                                        @for ($i=0; $i < 5; $i++)
 
-                                            <label class="labels"
-                                                for="ingredients-{{ $i }}" 
-                                                >
-                                                Ingredients #{{ $i }}
-                                            </label>
-                                            
-                                            <input type="text" 
-                                                class="form-control"
-                                                name="ingredients[]"
-                                                id="inputFormIngredients-{{ $i }}" 
-                                                value="{{ old('ingredients.' . $i) }}"
-                                            />
+                                            <div class="col-md-12">
 
-                                            @error('ingredients.' . $i)
-                                                <p class="text-danger text-xs mt-1">
-                                                    {{ $message }}
-                                                </p>
-                                            @enderror
-                            
-                                        </div>
-                                    @endfor 
+                                                <label class="labels"
+                                                    for="ingredients-{{ $i }}" 
+                                                    >
+                                                    Ingredients #{{ $i }}
+                                                </label>
+                                                
+                                                <input type="text" 
+                                                    class="form-control"
+                                                    name="ingredients[]"
+                                                    id="inputFormIngredients-{{ $i }}" 
+                                                    value="{{ old('ingredients.' . $i) }}"
+                                                />
 
+                                                @error('ingredients.' . $i)
+                                                    <p class="text-danger text-xs mt-1">
+                                                        {{ $message }}
+                                                    </p>
+                                                @enderror
+                                
+                                            </div>
+
+                                        @endfor 
+
+                                    </div>
+                                    
                                 </div>
 
                                 <div class="row mt-2">
@@ -266,7 +290,7 @@
 
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mt-2">
 
                                     <label class="labels"
                                            for="recipe_image_end_result" 
