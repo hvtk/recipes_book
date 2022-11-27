@@ -1,5 +1,8 @@
 <x-layout>
 
+    <!-- Javascript file for recipe-create-kitchenware -->
+    <script src="recipe-create-kitchenware.js"></script>
+
     <!-- Custom styles for this template -->
     <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
@@ -138,6 +141,38 @@
                                             </div>
 
                                         @endfor
+
+                                        {{-- <form id="recipe-create-kitchenware">
+                                            <div class="col-md-12"
+                                                 id="row1"    
+                                            >
+
+                                                <label class="labels"
+                                                    for="kitchenware" 
+                                                    >
+                                                        Kitchenware
+                                                </label>
+
+                                                <input type="text" 
+                                                    class="form-control"
+                                                    name="kitchenware" 
+                                                    id="inputFormKitchenware"                                               
+                                                    value="{{ old('kitchenware') }}"
+                                                />
+
+                                                @error('kitchenware')
+                                                    <p class="text-danger text-xs mt-1">
+                                                        {{ $message }}
+                                                    </p>
+                                                @enderror
+
+                                            </div>  
+                                        </form> 
+                                        <button class="btn btn-primary"          
+                                                onclick="add_more_kitchenware_fields()"
+                                            >
+                                                Add more fields
+                                        </button> --}}
 
                                     </div>
 
