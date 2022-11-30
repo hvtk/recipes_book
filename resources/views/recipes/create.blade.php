@@ -1,18 +1,21 @@
 <x-layout>
 
-    <!-- Javascript file for recipe-create-kitchenware -->
-    <script src="recipe-create-kitchenware.js"></script>
-
     <!-- Custom styles for this template -->
     <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
+
+    <!-- Javascript file for recipe-create-kitchenware -->
+    <script src="recipeCreateKitchenware.js"></script>
+
+    <!-- PHP file for recipe-create-kitchenware -->
+    <script src="recipes/kitchenware.php"></script>
 
     <main class="col align-self-center py-3">
         <div class="body-recipeCreate">
             <div class="container rounded bg-white mt-5 mb-5">
 
                 <form method="POST"
-                     action="/recipes"  
-                     enctype="multipart/form-data"  
+                      action="/recipes"  
+                      enctype="multipart/form-data"  
                     >  
                     @csrf
                     <div class="row">
@@ -115,7 +118,7 @@
                                             </p>
                                         </div>
 
-                                        @for ($i=0; $i < 5; $i++)
+                                        {{-- @for ($i=0; $i < 5; $i++)
                                         
                                             <div class="col-md-12">
 
@@ -140,39 +143,39 @@
 
                                             </div>
 
-                                        @endfor
+                                        @endfor --}}
 
-                                        {{-- <form id="recipe-create-kitchenware">
-                                            <div class="col-md-12"
-                                                 id="row1"    
+                                        <table class="col-md-12"
+                                               id="kitchenware_dynamic_field" 
                                             >
+                                            <tr> 
+                                                <td>
+                                                    <input type="text"
+                                                           name="kitchenware[]"
+                                                           placeholder="Enter kitchenware to use" 
+                                                        />
+                                                </td>
+                                                <td>
+                                                    <button type="button"
+                                                            name="add"
+                                                            id="add"
+                                                            class="btn btn-primary"
+                                                        >
+                                                                Add more
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="button"
+                                                            name="remove"
+                                                            id="remove"
+                                                            class="btn btn-danger"
+                                                        >
+                                                                Remove
+                                                    </button>
+                                                </td>
 
-                                                <label class="labels"
-                                                    for="kitchenware" 
-                                                    >
-                                                        Kitchenware
-                                                </label>
-
-                                                <input type="text" 
-                                                    class="form-control"
-                                                    name="kitchenware" 
-                                                    id="inputFormKitchenware"                                               
-                                                    value="{{ old('kitchenware') }}"
-                                                />
-
-                                                @error('kitchenware')
-                                                    <p class="text-danger text-xs mt-1">
-                                                        {{ $message }}
-                                                    </p>
-                                                @enderror
-
-                                            </div>  
-                                        </form> 
-                                        <button class="btn btn-primary"          
-                                                onclick="add_more_kitchenware_fields()"
-                                            >
-                                                Add more fields
-                                        </button> --}}
+                                            </tr>
+                                        </table>
 
                                     </div>
 
