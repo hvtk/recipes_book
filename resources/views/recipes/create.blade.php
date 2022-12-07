@@ -4,10 +4,58 @@
     <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
     <!-- Javascript file for recipe-create-kitchenware -->
-    <script src="recipeCreateKitchenware.js"></script>
+    <script>
+
+        function add(addElement) {
+        // let displayButton = document.querySelector("form button");
+
+        if(addElement.previousElementSibling.value.trim() === "") {
+            return false;
+        }
+
+        let table = document.createElement("table");
+        table.setAttribute("id", "kitchenware_dynamic_field");
+
+        let kitchenware_dynamic_field = document.createElement("input");
+        kitchenware_dynamic_field.setAttribute("type", "text");
+        kitchenware_dynamic_field.setAttribute("name", "kitchenware[]");
+        kitchenware_dynamic_field.setAttribute("placeholder", "Enter kitchenware to use");
+
+        let add = document.createElement("button");
+        add.setAttribute("id", "add");
+        let addText = document.createTextNode("Add more");
+        add.appendChild(addText);
+
+        let remove = document.createElement("button");
+        remove.setAttribute("id", "remove");
+        let removeText = document.createTextNode("Remove");
+        remove.appendChild(removeText);
+
+        table.appendChild(kitchenware_dynamic_field);
+        table.appendChild(add);
+        table.appendChild(remove);
+        }
+
+    </script>
 
     <!-- PHP file for recipe-create-kitchenware -->
-    <script src="recipes/kitchenware.php"></script>
+    <script>
+
+        define (DB_USERNAME, "root");
+        define (DB_PASSWORD, "TuT5&K5mfrC8GV");
+        define (DB_DATABASE, "recipe_book");
+        define (DB_HOST, "127.0.0.1");
+        $mysqli = new mysqli(DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_HOST);
+
+        if(!empty($_POST["kitchenware"])) {
+
+            foreach ($_POST["kitchenware"] as $key => $value) {
+                $sql = "INSERT INTO recipes(kitchenware) VALUES ('".$value."')";
+                $mysqli->query($sql);
+            }
+        }
+
+    </script>
 
     <main class="col align-self-center py-3">
         <div class="body-recipeCreate">
@@ -112,71 +160,48 @@
 
                                     <div class="row">
 
-                                        <div class="text-center mt-2">
-                                            <p>
-                                                Kitchenware for this recipe
-                                            </p>
-                                        </div>
-
-                                        {{-- @for ($i=0; $i < 5; $i++)
-                                        
-                                            <div class="col-md-12">
-
-                                                <label class="labels"
-                                                    for="kitchenware-{{ $i }}" 
-                                                    >
-                                                        Kitchenware #{{ $i }}
-                                                </label>
-
-                                                <input type="text" 
-                                                    class="form-control"
-                                                    name="kitchenware[]" 
-                                                    id="inputFormKitchenware-{{ $i }}"                                               
-                                                    value="{{ old('kitchenware.' . $i) }}"
-                                                />
-
-                                                @error('kitchenware.' .$i)
-                                                    <p class="text-danger text-xs mt-1">
-                                                        {{ $message }}
-                                                    </p>
-                                                @enderror
-
-                                            </div>
-
-                                        @endfor --}}
-
-                                        <table class="col-md-12"
-                                               id="kitchenware_dynamic_field" 
+                                        <table class="table col-md-12"
+                                               id="kitchenwareAddRemove" 
                                             >
-                                            <tr> 
-                                                <td>
-                                                    <input type="text"
-                                                           name="kitchenware[]"
-                                                           placeholder="Enter kitchenware to use" 
-                                                        />
-                                                </td>
-                                                <td>
-                                                    <button type="button"
-                                                            name="add"
-                                                            id="add"
-                                                            class="btn btn-primary"
-                                                        >
-                                                                Add more
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button type="button"
-                                                            name="remove"
-                                                            id="remove"
-                                                            class="btn btn-danger"
-                                                        >
-                                                                Remove
-                                                    </button>
-                                                </td>
-
-                                            </tr>
+                                            <thead>
+                                                <tr>
+                                                   <th>
+                                                    Kitchenware for this recipe
+                                                   </th>
+                                                   <th>
+                                                    Action
+                                                   </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="text"
+                                                               name="moreFields[0][kitchenware]" 
+                                                               placeholder="Enter kitchenware"
+                                                               class="form-control"
+                                                               value="{{ old('moreFields[][kitchenware]') }}"
+                                                            />
+                                                        @error('moreFields[][kitchenware]')
+                                                            <p class="text-danger text-xs mt-1">
+                                                                {{ $message }}
+                                                            </p>
+                                                        @enderror
+                                                    </td>
+                                                    <td>
+                                                        <button type="button"
+                                                                name="add"
+                                                                id="add-button"
+                                                                class="btn btn-success"
+                                                            >
+                                                                Add extra input field.
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            </tfoot>
                                         </table>
-
                                     </div>
 
                                     <div class="row">
@@ -365,5 +390,12 @@
             </div>
         </div>
     </main>
+
+    <script type="text/javascript">
+    var i = 0;
+    document.querySelector("add-button").addEventListener("click", (event) => {
+        ++i;
+        
+    })
 
 </x-layout>
