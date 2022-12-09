@@ -3,7 +3,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
-    <!-- Javascript file for recipe-create-kitchenware -->
+    {{-- <!-- Javascript file for recipe-create-kitchenware -->
     <script>
 
         function add(addElement) {
@@ -55,7 +55,7 @@
             }
         }
 
-    </script>
+    </script> --}}
 
     <main class="col align-self-center py-3">
         <div class="body-recipeCreate">
@@ -173,16 +173,16 @@
                                                    </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
+                                            <tbody id="tbody-kitchenwareAddRemove">
+                                                <tr id="tr-kitchenwareAddRemove">
+                                                    <td id="td-kitchenwareAddRemove">
                                                         <input type="text"
-                                                               name="moreFields[0][kitchenware]" 
+                                                               name="[kitchenware][0]" 
                                                                placeholder="Enter kitchenware"
                                                                class="form-control"
-                                                               value="{{ old('moreFields[][kitchenware]') }}"
+                                                               value="{{ old('[kitchenware][0]') }}"
                                                             />
-                                                        @error('moreFields[][kitchenware]')
+                                                        @error('[][kitchenware]')
                                                             <p class="text-danger text-xs mt-1">
                                                                 {{ $message }}
                                                             </p>
@@ -393,9 +393,29 @@
 
     <script type="text/javascript">
     var i = 0;
-    document.querySelector("add-button").addEventListener("click", (event) => {
-        ++i;
-        
-    })
+    
+    const kitchenwareField = document.querySelector("#add-button")
+    kitchenwareField.addEventListener("click", () => {   
+    ++i;
+    var table = document.createElement("table");
+    table.setAttribute("id", "kitchenwareAddRemove");
+    document.getElementById("kitchenwareAddRemove").appendChild(table);
+    var tbody = document.createElement("tbody");
+    tbody.setAttribute("id", "tbody-kitchenwareAddRemove");
+    document.getElementById("tbody-kitchenwareAddRemove").appendChild(tbody);
+    var tr = document.createElement("tr");
+    tr.setAttribute("id", "tr-kitchenwareAddRemove");
+    document.getElementById("tbody-kitchenwareAddRemove").appendChild(tr);
+    var td = document.createElement("td");
+    td.setAttribute("id", "td-kitchenwareAddRemove");
+    document.getElementById("tr-kitchenwareAddRemove").appendChild(td);
+    var input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("name", "[kitchenware]['+i+']");
+    input.setAttribute("placeholder", "Enter kitchenware");
+    input.setAttribute("class", "form-control");
+    document.getElementById("td-kitchenwareAddRemove").appendChild(input);
+    });
+    </script>
 
 </x-layout>

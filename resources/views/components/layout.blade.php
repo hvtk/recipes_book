@@ -14,11 +14,15 @@
 
   <body class="container-fluid">
 
-    <div class="row flex-nowrap">
+    <x-flash-message/>
+
+    <div class=" d-flex flex-nowrap row">
+
+        
 
         @include('partials._sidebar')
 
-        <x-flash-message/>
+       
 
         {{-- VIEW OUTPUT --}}
         {{ $slot }}
