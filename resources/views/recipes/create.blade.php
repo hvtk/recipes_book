@@ -3,60 +3,6 @@
     <!-- Custom styles for this template -->
     <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
 
-    {{-- <!-- Javascript file for recipe-create-kitchenware -->
-    <script>
-
-        function add(addElement) {
-        // let displayButton = document.querySelector("form button");
-
-        if(addElement.previousElementSibling.value.trim() === "") {
-            return false;
-        }
-
-        let table = document.createElement("table");
-        table.setAttribute("id", "kitchenware_dynamic_field");
-
-        let kitchenware_dynamic_field = document.createElement("input");
-        kitchenware_dynamic_field.setAttribute("type", "text");
-        kitchenware_dynamic_field.setAttribute("name", "kitchenware[]");
-        kitchenware_dynamic_field.setAttribute("placeholder", "Enter kitchenware to use");
-
-        let add = document.createElement("button");
-        add.setAttribute("id", "add");
-        let addText = document.createTextNode("Add more");
-        add.appendChild(addText);
-
-        let remove = document.createElement("button");
-        remove.setAttribute("id", "remove");
-        let removeText = document.createTextNode("Remove");
-        remove.appendChild(removeText);
-
-        table.appendChild(kitchenware_dynamic_field);
-        table.appendChild(add);
-        table.appendChild(remove);
-        }
-
-    </script>
-
-    <!-- PHP file for recipe-create-kitchenware -->
-    <script>
-
-        define (DB_USERNAME, "root");
-        define (DB_PASSWORD, "TuT5&K5mfrC8GV");
-        define (DB_DATABASE, "recipe_book");
-        define (DB_HOST, "127.0.0.1");
-        $mysqli = new mysqli(DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_HOST);
-
-        if(!empty($_POST["kitchenware"])) {
-
-            foreach ($_POST["kitchenware"] as $key => $value) {
-                $sql = "INSERT INTO recipes(kitchenware) VALUES ('".$value."')";
-                $mysqli->query($sql);
-            }
-        }
-
-    </script> --}}
-
     <main class="col align-self-center py-3">
         <div class="body-recipeCreate">
             <div class="container rounded bg-white mt-5 mb-5">
@@ -391,30 +337,31 @@
         </div>
     </main>
 
+    <!-- Javascript for dynamic fields kitchenware -->
     <script type="text/javascript">
     var i = 0;
     
     const kitchenwareField = document.querySelector("#add-button")
     kitchenwareField.addEventListener("click", () => {   
-    ++i;
-    var table = document.createElement("table");
-    table.setAttribute("id", "kitchenwareAddRemove");
-    document.getElementById("kitchenwareAddRemove").appendChild(table);
-    var tbody = document.createElement("tbody");
-    tbody.setAttribute("id", "tbody-kitchenwareAddRemove");
-    document.getElementById("tbody-kitchenwareAddRemove").appendChild(tbody);
-    var tr = document.createElement("tr");
-    tr.setAttribute("id", "tr-kitchenwareAddRemove");
-    document.getElementById("tbody-kitchenwareAddRemove").appendChild(tr);
-    var td = document.createElement("td");
-    td.setAttribute("id", "td-kitchenwareAddRemove");
-    document.getElementById("tr-kitchenwareAddRemove").appendChild(td);
-    var input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.setAttribute("name", "kitchenware['+i+']");
-    input.setAttribute("placeholder", "Enter kitchenware");
-    input.setAttribute("class", "form-control");
-    document.getElementById("td-kitchenwareAddRemove").appendChild(input);
+        i = i + 1;
+        var table = document.createElement("table");
+        table.setAttribute("id", "kitchenwareAddRemove");
+        document.getElementById("kitchenwareAddRemove").appendChild(table);
+        var tbody = document.createElement("tbody");
+        tbody.setAttribute("id", "tbody-kitchenwareAddRemove");
+        document.getElementById("tbody-kitchenwareAddRemove").appendChild(tbody);
+        var tr = document.createElement("tr");
+        tr.setAttribute("id", "tr-kitchenwareAddRemove");
+        document.getElementById("tbody-kitchenwareAddRemove").appendChild(tr);
+        var td = document.createElement("td");
+        td.setAttribute("id", "td-kitchenwareAddRemove");
+        document.getElementById("tr-kitchenwareAddRemove").appendChild(td);
+        var input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("name", "kitchenware[]");
+        input.setAttribute("placeholder", "Enter kitchenware");
+        input.setAttribute("class", "form-control");
+        document.getElementById("td-kitchenwareAddRemove").appendChild(input);
     });
     </script>
 

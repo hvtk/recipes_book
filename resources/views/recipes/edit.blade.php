@@ -104,15 +104,6 @@
 
                                 <div class="row mt-2">
 
-                                    {{-- <p class="mb-4">Kitchenware for this recipe</p> 
-                                    <div class="text-xl font-bold mb-4">
-                                        <ul>
-                                            @foreach ($recipe->kitchenware as $kitchenware)
-                                                <li> {{ $kitchenware }} </li>
-                                            @endforeach
-                                        </ul>
-                                    </div> --}}
-
                                     @for ($i=0; $i < count($recipe->kitchenware); $i++)
                                         <div class="col-md-6">
 
@@ -137,15 +128,6 @@
                                         
                                         </div>
                                     @endfor
-
-                                    {{-- <p class="mb-4">Ingredients for this recipe</p> 
-                                    <div class="text-xl font-bold mb-4">
-                                        <ul>
-                                            @foreach ($recipe->ingredients as $ingredient)
-                                                <li> {{ $ingredient }} </li>
-                                            @endforeach
-                                        </ul>
-                                    </div> --}}
 
                                     @for ($i=0; $i < count($recipe->ingredients); $i++)
                                         <div class="col-md-6">
