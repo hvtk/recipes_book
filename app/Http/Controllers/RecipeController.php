@@ -24,6 +24,13 @@ class RecipeController extends Controller {
 
     //Store Recipe Data
     public function store(Request $request) {
+
+       $addKitchenware = [];
+
+       foreach($request->input('kitchenware') as $key => $value) {
+        $addKitchenware["kitchenware.{$key}"] = 'required';
+       }
+
        $formFieldsRecipe = $request->validate([
         'recipe_title' => ['required', Rule::unique('recipes', 'recipe_title' )],
         'recipe_section' => 'required',
@@ -35,8 +42,9 @@ class RecipeController extends Controller {
         'recipe_estimated_time' => 'required',
         'recipe_shelf_life' => 'required',
         'recipe_commentary' => 'required'
-       ]);
+       ], $addKitchenware);
 
+       
 
        if($request->hasFile('recipe_image_end_result')) {
            $formFieldsRecipe['recipe_image_end_result'] = $request

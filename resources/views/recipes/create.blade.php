@@ -177,12 +177,12 @@
                                                 <tr id="tr-kitchenwareAddRemove">
                                                     <td id="td-kitchenwareAddRemove">
                                                         <input type="text"
-                                                               name="[kitchenware][0]" 
+                                                               name="kitchenware[]" 
                                                                placeholder="Enter kitchenware"
                                                                class="form-control"
-                                                               value="{{ old('[kitchenware][0]') }}"
+                                                               value="{{ old('kitchenware[]') }}"
                                                             />
-                                                        @error('[][kitchenware]')
+                                                        @error('kitchenware[]')
                                                             <p class="text-danger text-xs mt-1">
                                                                 {{ $message }}
                                                             </p>
@@ -411,7 +411,7 @@
     document.getElementById("tr-kitchenwareAddRemove").appendChild(td);
     var input = document.createElement("input");
     input.setAttribute("type", "text");
-    input.setAttribute("name", "[kitchenware]['+i+']");
+    input.setAttribute("name", "kitchenware['+i+']");
     input.setAttribute("placeholder", "Enter kitchenware");
     input.setAttribute("class", "form-control");
     document.getElementById("td-kitchenwareAddRemove").appendChild(input);
