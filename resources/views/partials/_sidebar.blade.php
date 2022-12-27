@@ -7,7 +7,7 @@
     </symbol>
 </svg>
 
-<div class="fixed-top col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary"
+<div class="fixed-top px-sm-4 bg-primary"
      style="width: 250px" 
     >
     <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
