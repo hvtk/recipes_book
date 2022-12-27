@@ -1,10 +1,10 @@
 <x-layout>
 
     <!-- Custom styles for this template -->
-    <link href="{{ url('/css/recipeCreate.css') }}" rel="stylesheet"/>
+    <link href="{{ url('/css/homepage.css') }}" rel="stylesheet"/>
 
-    <main class="col align-self-center py-3">
-        <div class="body-recipeCreate">
+    <main class="container py-3">
+        <div class="body-homepage">
             <div class="container rounded bg-white mt-5 mb-5">
 
                 <div class="row">
