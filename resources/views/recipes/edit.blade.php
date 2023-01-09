@@ -281,7 +281,7 @@
                                     />
                                     <img src="{{$recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png')}}"
                                          alt="Image from this recipe"
-                                    />
+                                    >
 
                                     @error('recipe_image_end_result')
                                         <p class="text-danger text-xs mt-1">

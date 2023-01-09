@@ -213,15 +213,14 @@
                     </svg>
 
                     <p class="mb-4">Image end result from this recipe</p> 
-                    <div>
-                        <img src="{{ $recipe->recipe_image_end_result ? asset('storage/' . $recipe->recipe_image_end_result) : asset('images/no-image.png') }}"
-                             alt="picture from the recipe"
-                             class="img-fluid rounded-4"
-                             width="400px"
-                             height="305px"
-                        />
-                    </div>
-
+                    
+                    <img src="{{ $recipe->recipe_image_end_result ? asset('/storage/' . $recipe->recipe_image_end_result) : asset('/images/no-image.png') }}"
+                         alt="picture from the recipe"
+                         class="img-fluid rounded-4"
+                         width="400px"
+                         height="305px"
+                    >
+                    
                </div>
 
             </div>
