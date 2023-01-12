@@ -1,7 +1,7 @@
 <x-layout>
 
     <!-- Custom styles for this template -->
-    <link href="{{ url('/css/signin-bootstrap.css') }}" rel="stylesheet"/>
+    <link href="{{ url('/css/login.css') }}" rel="stylesheet"/>
     
     <!-- Group of symbols for this template -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -10,13 +10,13 @@
         </symbol>
     </svg>
 
-    <main  class="col align-self-center py-3">
+    <main  class="d-flex justify-content-center align-items-center col align-self-center py-3">
 
-        <div class="body-signin">
+        <div class="body-login">
 
             <div class="container text-center">
                 
-                <div class="form-signin w-100 m-auto">
+                <div class="form-control w-50 m-auto">
                     <form method="POST"
                           action="/users/authenticate"
                         >
@@ -33,7 +33,7 @@
                             Please sign in
                         </h1>
 
-                        <div class="form-floating">
+                        <div class="form-control">
 
                             <input type="email" 
                                    name="email" 
@@ -54,7 +54,7 @@
 
                         </div>
 
-                        <div class="form-floating">
+                        <div class="form-control">
 
                             <input type="password" 
                                    name="password" 
@@ -81,7 +81,7 @@
                             </label>
                         </div>
 
-                        <button class="btn btn-lg btn-primary w-100" 
+                        <button class="btn btn-lg btn-primary" 
                                 type="submit"
                             >
                                     Sign in

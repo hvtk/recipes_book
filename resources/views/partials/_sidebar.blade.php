@@ -7,13 +7,13 @@
     </symbol>
 </svg>
 
-<div class="fixed-top px-sm-4 bg-primary"
-     style="width: 250px" 
+<div class="d-flex flex-column fixed-top px-sm-2 bg-primary"
+     style="width: 200px"
     >
-    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+    <div class="justify-content-start align-items-center px-3 pt-2 min-vh-100">
         <nav>
             <a href="/recipebook/homepage" 
-            class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+            class="align-items-center pb-3 mb-md-0 me-md-auto text-white"
             >
                 <svg class="bi pe-none me-2" 
                      width="30" 
@@ -28,7 +28,7 @@
 
                 <div class="dropdown pb-2">
                     
-                    <button class="btn btn-toggle d-inline-flex align-items-center text-white rounded border-0 dropdown-toggle"
+                    <button class="btn btn-toggle text-white rounded border-0 dropdown-toggle"
                             id="dropdownAuthenticate"
                             data-bs-toggle="dropdown" 
                             aria-expanded="true"
@@ -65,7 +65,7 @@
 
                 <div class="dropdown pb-2">
 
-                    <button class="btn btn-toggle d-inline-flex align-items-center text-white rounded border-0 dropdown-toggle" 
+                    <button class="btn btn-toggle align-items-center text-white rounded border-0 dropdown-toggle" 
                             id="dropdownRecipe"
                             data-bs-toggle="dropdown" 
                             aria-expanded="true"
@@ -96,7 +96,7 @@
                 
                 <div class="dropdown pb-2">
                 
-                    <button class="btn btn-toggle d-inline-flex align-items-center text-white rounded border-0 dropdown-toggle" 
+                    <button class="btn btn-toggle align-items-center text-white rounded border-0 dropdown-toggle" 
                             id="dropdownUserprofile"
                             data-bs-toggle="dropdown" 
                             aria-expanded="true"
@@ -135,7 +135,7 @@
                         @csrf
 
                         <button type="submit"
-                                class="btn d-inline-flex align-items-center text-white rounded border-0"        
+                                class="btn align-items-center text-white rounded border-0"        
                         >
                             <span>
                               Logout

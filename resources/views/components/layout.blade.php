@@ -12,11 +12,11 @@
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
 
-  <body class="container-fluid">
+  <body class="d-md-flex flex-row">
 
     <x-flash-message/>
 
-    <div class=" d-flex flex-nowrap row">
+    <div>
 
         
 
