@@ -12,17 +12,13 @@
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
 
-  <body class="d-md-flex flex-row">
+  <body class="container-fluid">
 
-    <x-flash-message/>
+    <div class="row">
 
-    <div>
-
-        
+      <x-flash-message/>
 
         @include('partials._sidebar')
-
-       
 
         {{-- VIEW OUTPUT --}}
         {{ $slot }}
@@ -33,6 +29,7 @@
             integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
             crossorigin="anonymous">
     </script>
+
   </body>
 
 </html>

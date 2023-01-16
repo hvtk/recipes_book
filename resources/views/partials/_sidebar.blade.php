@@ -7,17 +7,16 @@
     </symbol>
 </svg>
 
-<div class="d-flex flex-column fixed-top px-sm-2 bg-primary"
-     style="width: 200px"
+<div class="col-1 fixed-top bg-primary"
     >
-    <div class="justify-content-start align-items-center px-3 pt-2 min-vh-100">
+    <div class="justify-content-start align-items-center min-vh-100">
         <nav>
             <a href="/recipebook/homepage" 
             class="align-items-center pb-3 mb-md-0 me-md-auto text-white"
             >
                 <svg class="bi pe-none me-2" 
-                     width="30" 
-                     height="24"
+                    width="30" 
+                    height="24"
                     >
                     <use xlink:href="#book"/>
                 </svg>
@@ -75,18 +74,18 @@
                     </button>
 
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                      >
+                    >
                         <li>
                             <a href="/recipes/create" 
-                               class="dropdown-item d-inline-flex text-decoration-none rounded"
-                              >
+                            class="dropdown-item d-inline-flex text-decoration-none rounded"
+                            >
                                     Create
                             </a>
                         </li>
                         <li>
                             <a href="/recipes/manage" 
-                               class="dropdown-item d-inline-flex text-decoration-none rounded"
-                              >
+                            class="dropdown-item d-inline-flex text-decoration-none rounded"
+                            >
                                     Manage
                             </a>
                         </li>
@@ -100,36 +99,36 @@
                             id="dropdownUserprofile"
                             data-bs-toggle="dropdown" 
                             aria-expanded="true"
-                           >
+                        >
                                 User Profile
                     </button>
 
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                       >
+                    >
                         <li>
                             <a href="/userprofiles/manage" 
-                               class="dropdown-item d-inline-flex text-decoration-none rounded"
-                              >
+                            class="dropdown-item d-inline-flex text-decoration-none rounded"
+                            >
                                     Manage
                             </a>
                         </li>
                         <li>
                             <a href="/userprofiles/create" 
-                               class="dropdown-item d-inline-flex text-decoration-none rounded"
-                              >
+                            class="dropdown-item d-inline-flex text-decoration-none rounded"
+                            >
                                     Create
                             </a>
                         </li>
 
                     </ul>
-                   
+                
                 </div>
 
                 <div class="border-top mt-5 mb-2"></div>
 
                 <div class="pb-2">
                     <form method="POST"
-                          action="/logout"  
+                        action="/logout"  
                         >
 
                         @csrf
@@ -138,7 +137,7 @@
                                 class="btn align-items-center text-white rounded border-0"        
                         >
                             <span>
-                              Logout
+                            Logout
                             </span>
                         </button>
                     </form>
