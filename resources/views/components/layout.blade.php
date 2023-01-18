@@ -14,7 +14,7 @@
 
   <body class="container-fluid">
 
-    <div class="row">
+    <div class="row m-3">
 
       <x-flash-message/>
 
