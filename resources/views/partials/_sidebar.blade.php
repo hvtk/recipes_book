@@ -17,24 +17,24 @@
             <nav>
                 <div class="d-flex justify-content-center align-items-center m-2">
                     <svg class="bi pe-none" 
-                        width="30" 
-                        height="24"
+                         width="30" 
+                         height="24"
                         >
                             <use xlink:href="#book"/>
                     </svg>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
                     <a href="/recipebook/homepage" 
-                    >
+                      >
                         <h5 class="text-white">Recipebook</h5>
                     </a>
                 </div>
 
-                <ul class="list-unstyled ps-0">
+                <ul class="list-unstyled">
 
                     <div class="dropdown pb-2">
                         
-                        <button class="btn btn-toggle text-white rounded border-0 dropdown-toggle"
+                        <button class="btn btn-toggle text-white border-0 dropdown-toggle"
                                 id="dropdownAuthenticate"
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="true"
@@ -46,21 +46,21 @@
                         >
                             <li>
                                 <a href="/register" 
-                                class="dropdown-item d-inline-flex text-decoration-none rounded"
+                                   class="dropdown-item text-decoration-none rounded"
                                 >
                                     Register
                                 </a>
                             </li>
                             <li>
                                 <a href="/login" 
-                                class="dropdown-item d-inline-flex text-decoration-none rounded"
+                                   class="dropdown-item text-decoration-none rounded"
                                 >
                                     Login
                                 </a>
                             </li>
                             <li>
                                 <a href="#" 
-                                class="dropdown-item d-inline-flex text-decoration-none rounded"
+                                   class="dropdown-item text-decoration-none rounded"
                                 >
                                     Reset password
                                 </a>
@@ -71,7 +71,7 @@
 
                     <div class="dropdown pb-2">
 
-                        <button class="btn btn-toggle align-items-center text-white rounded border-0 dropdown-toggle" 
+                        <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
                                 id="dropdownRecipe"
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="true"
@@ -84,14 +84,14 @@
                         >
                             <li>
                                 <a href="/recipes/create" 
-                                class="dropdown-item d-inline-flex text-decoration-none rounded"
+                                   class="dropdown-item text-decoration-none rounded"
                                 >
                                         Create
                                 </a>
                             </li>
                             <li>
                                 <a href="/recipes/manage" 
-                                class="dropdown-item d-inline-flex text-decoration-none rounded"
+                                   class="dropdown-item text-decoration-none rounded"
                                 >
                                         Manage
                                 </a>
@@ -102,7 +102,7 @@
                     
                     <div class="dropdown pb-2">
                     
-                        <button class="btn btn-toggle align-items-center text-white rounded border-0 dropdown-toggle" 
+                        <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
                                 id="dropdownUserprofile"
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="true"
@@ -114,14 +114,14 @@
                         >
                             <li>
                                 <a href="/userprofiles/manage" 
-                                class="dropdown-item d-inline-flex text-decoration-none rounded"
+                                   class="dropdown-item text-decoration-none rounded"
                                 >
                                         Manage
                                 </a>
                             </li>
                             <li>
                                 <a href="/userprofiles/create" 
-                                class="dropdown-item d-inline-flex text-decoration-none rounded"
+                                   class="dropdown-item text-decoration-none rounded"
                                 >
                                         Create
                                 </a>
@@ -135,13 +135,13 @@
 
                     <div class="pb-2">
                         <form method="POST"
-                            action="/logout"  
+                              action="/logout"  
                             >
 
                             @csrf
 
                             <button type="submit"
-                                    class="btn align-items-center text-white rounded border-0"        
+                                    class="btn text-white border-0"        
                             >
                                 <span>
                                 Logout
