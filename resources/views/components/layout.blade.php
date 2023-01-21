@@ -12,16 +12,16 @@
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
 
-  <body class="container-fluid">
+  <body class="container-fluid g-0">
 
-    <div class="row m-3">
+    <div class="row">
 
       <x-flash-message/>
 
-        @include('partials._sidebar')
+      @include('partials._sidebar')
 
-        {{-- VIEW OUTPUT --}}
-        {{ $slot }}
+      {{-- VIEW OUTPUT --}}
+      {{ $slot }}
 
     </div>
 

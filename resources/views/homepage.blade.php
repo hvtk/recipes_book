@@ -12,71 +12,70 @@
             </h4>
         </div>
 
-                  
-            <div class="row">
+        <div class="row justify-content-center align-items-center min-vh-100">
 
-                <div class="col-4">
+            <div class="col-4">
 
-                    <div class="align-items-center text-center"> 
+                <div class="align-items-center text-center"> 
 
-                        <img src="/images/recipebooks.jpg"
-                                alt="picture with recipebooks"
-                                class="img-fluid rounded py-3"
-                                width="372px"
-                                height="600px"
-                            >
-
-                    </div>
+                    <img src="/images/recipebooks.jpg"
+                            alt="picture with recipebooks"
+                            class="img-fluid rounded py-3"
+                            width="372px"
+                            height="600px"
+                        >
 
                 </div>
 
-                <div class="col-4">
+            </div>
 
-                    <div class="align-items-center text-center"> 
+            <div class="col-4">
 
-                        <img src="/images/ingredients-baking.jpg"
-                                alt="picture with ingredients for baking"
-                                class="img-fluid rounded py-3"
-                                width="372px"
-                                height="600px"
-                            >
+                <div class="align-items-center text-center"> 
 
-                        <img src="/images/ingredients-cook.jpg"
-                                alt="picture with ingredients for cooking"
-                                class="img-fluid rounded py-3"
-                                width="372px"
-                                height="600px"
-                            >    
+                    <img src="/images/ingredients-baking.jpg"
+                            alt="picture with ingredients for baking"
+                            class="img-fluid rounded py-3"
+                            width="372px"
+                            height="600px"
+                        >
 
-                    </div>
+                    <img src="/images/ingredients-cook.jpg"
+                            alt="picture with ingredients for cooking"
+                            class="img-fluid rounded py-3"
+                            width="372px"
+                            height="600px"
+                        >    
 
                 </div>
 
-                <div class="col-4">
+            </div>
 
-                    <div class="align-items-center text-center"> 
+            <div class="col-4">
 
-                        <img src="/images/image-making-bread.jpg"
-                                alt="picture with making bread"
-                                class="py-3"
-                                width="372px"
-                                height="300px"
-                            >
+                <div class="align-items-center text-center"> 
 
-                        <img src="/images/image-food.jpg"
-                                alt="picture with food"
-                                class="py-3"
-                                width="372px"
-                                height="300px"
-                            >    
+                    <img src="/images/image-making-bread.jpg"
+                            alt="picture with making bread"
+                            class="py-3"
+                            width="372px"
+                            height="300px"
+                        >
 
-                    </div>
+                    <img src="/images/image-food.jpg"
+                            alt="picture with food"
+                            class="py-3"
+                            width="372px"
+                            height="300px"
+                        >    
 
                 </div>
 
             </div>
 
         </div>
+
+        
 
     </main>
     
