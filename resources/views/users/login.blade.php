@@ -87,12 +87,8 @@
                             </p>
                         </x-card-center>
 
-                        <x-card-center> 
+                        <x-card-copyright /> 
                               
-                            <p> &copy; 2023 </p> 
-                        
-                        </x-card-center>
-
                     </form>
 
                 </div>

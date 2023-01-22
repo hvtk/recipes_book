@@ -13,6 +13,8 @@
                         >
                         @csrf
 
+                        <x-book-image-card />
+
                         <x-card-center class="h2">
                             Please register
                         </x-card-center>
