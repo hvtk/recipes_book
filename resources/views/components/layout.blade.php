@@ -12,9 +12,9 @@
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
 
-  <body class="container-fluid g-0">
+  <body>
 
-    <div class="row">
+    <div class="container-fluid g-0">
 
       <x-flash-message/>
 

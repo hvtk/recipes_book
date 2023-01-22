@@ -7,148 +7,152 @@
     </symbol>
 </svg>
 
-<div class="col-sm-1 fixed-top bg-primary min-vh-100"
-    >
-    
-    <nav>
-        <div class="d-flex justify-content-center align-items-center m-2">
-            <svg class="bi pe-none" 
-                    width="30" 
-                    height="24"
-                >
-                    <use xlink:href="#book"/>
-            </svg>
-        </div>
-        <div class="d-flex justify-content-center align-items-center">
-            <a href="/recipebook/homepage" 
-                >
-                <h5 class="text-white">Recipebook</h5>
-            </a>
-        </div>
+<div class="row">
 
-        <ul class="list-unstyled">
-
-            <div class="dropdown pb-2">
-                
-                <button class="btn btn-toggle text-white border-0 dropdown-toggle"
-                        id="dropdownAuthenticate"
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="true"
+    <div class="col-1 fixed-top bg-primary min-vh-100"
+        >
+        
+        <nav>
+            <div class="d-flex justify-content-center align-items-center m-2">
+                <svg class="bi pe-none" 
+                        width="30" 
+                        height="24"
                     >
-                            Authenticate
-                </button>
-                
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                >
-                    <li>
-                        <a href="/register" 
-                            class="dropdown-item text-decoration-none rounded"
-                        >
-                            Register
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/login" 
-                            class="dropdown-item text-decoration-none rounded"
-                        >
-                            Login
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" 
-                            class="dropdown-item text-decoration-none rounded"
-                        >
-                            Reset password
-                        </a>
-                    </li>
-                </ul>
-                
+                        <use xlink:href="#book"/>
+                </svg>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="/recipebook/homepage" 
+                    >
+                    <h5 class="text-white">Recipebook</h5>
+                </a>
             </div>
 
-            <div class="dropdown pb-2">
+            <ul class="list-unstyled">
 
-                <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
-                        id="dropdownRecipe"
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="true"
-                    >
-                            Recipe
-
-                </button>
-
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                >
-                    <li>
-                        <a href="/recipes/create" 
-                            class="dropdown-item text-decoration-none rounded"
+                <div class="dropdown pb-2">
+                    
+                    <button class="btn btn-toggle text-white border-0 dropdown-toggle"
+                            id="dropdownAuthenticate"
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="true"
                         >
-                                Create
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/recipes/manage" 
-                            class="dropdown-item text-decoration-none rounded"
-                        >
-                                Manage
-                        </a>
-                    </li>
-                </ul>
-                
-            </div>
-            
-            <div class="dropdown pb-2">
-            
-                <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
-                        id="dropdownUserprofile"
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="true"
-                    >
-                            User Profile
-                </button>
-
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                >
-                    <li>
-                        <a href="/userprofiles/manage" 
-                            class="dropdown-item text-decoration-none rounded"
-                        >
-                                Manage
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/userprofiles/create" 
-                            class="dropdown-item text-decoration-none rounded"
-                        >
-                                Create
-                        </a>
-                    </li>
-
-                </ul>
-            
-            </div>
-
-            <div class="border-top mt-5 mb-2"></div>
-
-            <div class="pb-2">
-                <form method="POST"
-                        action="/logout"  
-                    >
-
-                    @csrf
-
-                    <button type="submit"
-                            class="btn text-white border-0"        
-                    >
-                        <span>
-                        Logout
-                        </span>
+                                Authenticate
                     </button>
-                </form>
-            </div>
-            
-        </ul>
+                    
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
+                    >
+                        <li>
+                            <a href="/register" 
+                                class="dropdown-item text-decoration-none rounded"
+                            >
+                                Register
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/login" 
+                                class="dropdown-item text-decoration-none rounded"
+                            >
+                                Login
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" 
+                                class="dropdown-item text-decoration-none rounded"
+                            >
+                                Reset password
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </div>
 
-    </nav>
+                <div class="dropdown pb-2">
+
+                    <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
+                            id="dropdownRecipe"
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="true"
+                        >
+                                Recipe
+
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
+                    >
+                        <li>
+                            <a href="/recipes/create" 
+                                class="dropdown-item text-decoration-none rounded"
+                            >
+                                    Create
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/recipes/manage" 
+                                class="dropdown-item text-decoration-none rounded"
+                            >
+                                    Manage
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="dropdown pb-2">
+                
+                    <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
+                            id="dropdownUserprofile"
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="true"
+                        >
+                                User Profile
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
+                    >
+                        <li>
+                            <a href="/userprofiles/manage" 
+                                class="dropdown-item text-decoration-none rounded"
+                            >
+                                    Manage
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/userprofiles/create" 
+                                class="dropdown-item text-decoration-none rounded"
+                            >
+                                    Create
+                            </a>
+                        </li>
+
+                    </ul>
+                
+                </div>
+
+                <div class="border-top mt-5 mb-2"></div>
+
+                <div class="pb-2">
+                    <form method="POST"
+                            action="/logout"  
+                        >
+
+                        @csrf
+
+                        <button type="submit"
+                                class="btn text-white border-0"        
+                        >
+                            <span>
+                            Logout
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                
+            </ul>
+
+        </nav>
+        
+    </div>
 
 </div>
             
