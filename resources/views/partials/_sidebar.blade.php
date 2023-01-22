@@ -7,12 +7,12 @@
             
             <x-book-image-card />
             
-            <div class="d-flex justify-content-center align-items-center">
+            <x-card-center>
                 <a href="/recipebook/homepage" 
                     >
                     <h5 class="text-white">Recipebook</h5>
                 </a>
-            </div>
+            </x-card-center>
 
             <ul class="list-unstyled">
 
