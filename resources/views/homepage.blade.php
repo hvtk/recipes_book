@@ -7,11 +7,11 @@
 
             <div class="row min-vh-100">
 
-                <div class="row justify-content-center align-items-end">
+                <div class="row justify-content-center align-items-end text-center">
 
-                    <div class="col-4">
+                    <div class="col-4 ">
 
-                        <h4 class="text-center p-3">
+                        <h4 class="p-3">
                             Create your own recipe book
                         </h4>
 
@@ -19,64 +19,52 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row row-cols-4 justify-content-evenly">
 
-                    <div class="col-4">
+                    <div class="col">
 
-                        <div class="align-items-center text-center"> 
-
-                            <img src="/images/recipebooks.jpg"
-                                    alt="picture with recipebooks"
-                                    class="img-fluid rounded py-3"
-                                    width="372px"
-                                    height="600px"
-                                >
-
-                        </div>
+                        <img src="/images/recipebooks.jpg"
+                                alt="picture with recipebooks"
+                                class=""
+                                width="372px"
+                                height="600px"
+                            >
 
                     </div>
 
-                    <div class="col-4">
-
-                        <div class="align-items-center text-center"> 
-
-                            <img src="/images/ingredients-baking.jpg"
-                                    alt="picture with ingredients for baking"
-                                    class="img-fluid rounded py-3"
-                                    width="372px"
-                                    height="600px"
-                                >
-
-                            <img src="/images/ingredients-cook.jpg"
-                                    alt="picture with ingredients for cooking"
-                                    class="img-fluid rounded py-3"
-                                    width="372px"
-                                    height="600px"
-                                >    
-
-                        </div>
+                    <div class="col">
+                        
+                        <img src="/images/ingredients-baking.jpg"
+                                alt="picture with ingredients for baking"
+                                class=""
+                                width="372px"
+                                height="275px"
+                            >
+                    
+                        <img src="/images/ingredients-cook.jpg"
+                                alt="picture with ingredients for cooking"
+                                class="mt-5"
+                                width="372px"
+                                height="275px"
+                            > 
 
                     </div>
+                   
+                    <div class="col">
 
-                    <div class="col-4">
+                        <img src="/images/image-making-bread.jpg"
+                                alt="picture with making bread"
+                                class=""
+                                width="372px"
+                                height="275px"
+                            >
 
-                        <div class="align-items-center text-center"> 
-
-                            <img src="/images/image-making-bread.jpg"
-                                    alt="picture with making bread"
-                                    class="py-3"
-                                    width="372px"
-                                    height="300px"
-                                >
-
-                            <img src="/images/image-food.jpg"
-                                    alt="picture with food"
-                                    class="py-3"
-                                    width="372px"
-                                    height="300px"
-                                >    
-
-                        </div>
+                        <img src="/images/image-food.jpg"
+                                alt="picture with food"
+                                class="mt-5"
+                                width="372px"
+                                height="275px"
+                            >    
 
                     </div>
 
