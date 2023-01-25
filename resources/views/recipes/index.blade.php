@@ -9,14 +9,15 @@
 
                 @unless(count($recipes) == 0)
 
-                @foreach ($recipes as $recipe)
+                    @foreach ($recipes as $recipe)
 
-                <x-recipe-card :recipe="$recipe" />
+                        <x-recipe :recipe="$recipe" />
 
-                @endforeach
+                    @endforeach
 
-                @else
-                <p> No Recipes Found </p>
+                    @else
+                    
+                    <p> No Recipes Found </p>
 
                 @endunless  
 

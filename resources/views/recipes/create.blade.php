@@ -13,7 +13,7 @@
                     >  
                     @csrf
 
-                    <div class="row min-vh-100">
+                    <div class="row align-items-center min-vh-100">
 
                         <div class="col-3">
                             <div class="d-flex flex-column align-items-center text-center p-3 py-5">

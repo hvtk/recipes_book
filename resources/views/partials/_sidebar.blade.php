@@ -1,11 +1,11 @@
-<div class="row">
+<div class="row g-0">
 
     <div class="col-1 fixed-top bg-primary min-vh-100"
         >
         
         <nav>
             
-            <x-book-image-card />
+            <x-card-book-image/>
             
             <x-card-center>
                 <a href="/recipebook/homepage" 
@@ -16,7 +16,7 @@
 
             <ul class="list-unstyled">
 
-                <div class="dropdown pb-2">
+                <x-card-center class="dropdown pb-2">
                     
                     <button class="btn btn-toggle text-white border-0 dropdown-toggle"
                             id="dropdownAuthenticate"
@@ -51,9 +51,9 @@
                         </li>
                     </ul>
                     
-                </div>
+                </x-card-center>
 
-                <div class="dropdown pb-2">
+                <x-card-center class="dropdown pb-2">
 
                     <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
                             id="dropdownRecipe"
@@ -82,9 +82,9 @@
                         </li>
                     </ul>
                     
-                </div>
+                </x-card-center>
                 
-                <div class="dropdown pb-2">
+                <x-card-center class="dropdown pb-2">
                 
                     <button class="btn btn-toggle text-white border-0 dropdown-toggle" 
                             id="dropdownUserprofile"
@@ -113,11 +113,11 @@
 
                     </ul>
                 
-                </div>
+                </x-card-center>
 
                 <div class="border-top mt-5 mb-2"></div>
 
-                <div class="pb-2">
+                <x-card-center class="pb-2">
                     <form method="POST"
                             action="/logout"  
                         >
@@ -132,7 +132,7 @@
                             </span>
                         </button>
                     </form>
-                </div>
+                </x-card-center>
                 
             </ul>
 
