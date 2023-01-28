@@ -29,11 +29,11 @@
 
                         <div class="col-6">
 
-                            <div class="text-center p-2">
+                            <x-card-center class="p-2">
                                 <h4 >
                                         Create a new recipe
                                 </h4>
-                            </div>
+                            </x-card-center>
 
                             <div class="col-12">
 
@@ -65,15 +65,16 @@
                                     >
                                         Recipe section
                                 </label>
-                                <select type="text" 
-                                        class="form-select" 
+                                <select class="form-select" 
                                         name="recipe_section" 
                                         id="selectForm"
+                                        value="{{ old('recipe_section') }}"
                                     >
                                         <option selected>
                                             -- Open this select menu to choose the section --
                                         </option>
-                                        <option value="backing"> 
+                                        <option value="backing">
+                                               
                                             Backing
                                         </option>
                                         <option value="roasting"> 
@@ -88,9 +89,7 @@
                                         <option value="warming up"> 
                                             Warming up
                                         </option>
-
-                                        {{ old('recipe_section') }}"
-
+                                        
                                 </select>
 
                                 @error('recipe_section')
