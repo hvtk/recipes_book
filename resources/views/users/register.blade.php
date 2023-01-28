@@ -13,7 +13,7 @@
                         >
                         @csrf
 
-                        <x-book-image-card />
+                        <x-card-book-image />
 
                         <x-card-center class="h2">
                             Please register
