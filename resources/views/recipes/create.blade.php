@@ -63,18 +63,16 @@
                                 <label class="labels"
                                     for="recipe_section" 
                                     >
-                                        Recipe section
+                                        Recipe section -- already choosen: {{ old('recipe_section' ) }}
                                 </label>
                                 <select class="form-select" 
                                         name="recipe_section" 
                                         id="selectForm"
-                                        value="{{ old('recipe_section') }}"
                                     >
                                         <option selected>
                                             -- Open this select menu to choose the section --
                                         </option>
                                         <option value="backing">
-                                               
                                             Backing
                                         </option>
                                         <option value="roasting"> 
@@ -121,10 +119,11 @@
                                             <tr id="tr-kitchenwareAddRemove">
                                                 <td id="td-kitchenwareAddRemove">
                                                     <input type="text"
-                                                        name="kitchenware[]" 
-                                                        placeholder="Enter kitchenware"
-                                                        class="form-control"
-                                                        value="{{ old('kitchenware[]') }}"
+                                                           name="kitchenware[]" 
+                                                           placeholder="Enter kitchenware"
+                                                           class="form-control"
+                                                           id="inputFormKitchenware[]"
+                                                           value="{{ old('kitchenware[]') }}"
                                                         />
                                                     @error('kitchenware[]')
                                                         <p class="text-danger text-xs mt-1">
@@ -167,10 +166,10 @@
                                             </label>
                                             
                                             <input type="text" 
-                                                class="form-control"
-                                                name="ingredients[]"
-                                                id="inputFormIngredients-{{ $i }}" 
-                                                value="{{ old('ingredients.' . $i) }}"
+                                                   class="form-control"
+                                                   name="ingredients[]"
+                                                   id="inputFormIngredients-{{ $i }}" 
+                                                   value="{{ old('ingredients.' . $i) }}"
                                             />
 
                                             @error('ingredients.' . $i)
@@ -198,10 +197,10 @@
                                     </label>
 
                                     <textarea type="text" 
-                                            class="form-control"
-                                            name="recipe_the_steps_to_follow"
-                                            id="textareaForm"
-                                            placeholder="The steps to follow for this recipe" 
+                                              class="form-control"
+                                              name="recipe_the_steps_to_follow"
+                                              id="textareaForm"
+                                              placeholder="The steps to follow for this recipe" 
                                             >
 
                                                 {{ old('recipe_the_steps_to_follow') }}
@@ -219,16 +218,16 @@
                                 <div class="col-6">
 
                                     <label class="labels"
-                                        for="recipe_commentary" 
+                                           for="recipe_commentary" 
                                         >
                                         Commentary by this recipe
                                     </label>
 
                                     <textarea type="text" 
-                                            class="form-control"
-                                            name="recipe_commentary"
-                                            id="textareaForm"
-                                            placeholder="Commentary by this recipe" 
+                                              class="form-control"
+                                              name="recipe_commentary"
+                                              id="textareaForm"
+                                              placeholder="Commentary by this recipe" 
                                             >
 
                                                 {{ old('recipe_commentary') }}
@@ -256,11 +255,11 @@
                                     </label>
 
                                     <input type="text" 
-                                        class="form-control"
-                                        name="recipe_estimated_time"
-                                        id="inputForm"
-                                        placeholder="Estimated time for this recipe" 
-                                        value="{{ old('recipe_estimated_time') }}"
+                                           class="form-control"
+                                           name="recipe_estimated_time"
+                                           id="inputForm"
+                                           placeholder="Estimated time for this recipe" 
+                                           value="{{ old('recipe_estimated_time') }}"
                                     />
 
                                     @error('recipe_estimated_time')
@@ -280,11 +279,11 @@
                                     </label>
 
                                     <input type="text" 
-                                        class="form-control"
-                                        name="recipe_shelf_life"
-                                        id="inputForm"
-                                        placeholder="Recipe shelf life" 
-                                        value="{{ old('recipe_shelf_life') }}"
+                                           class="form-control"
+                                           name="recipe_shelf_life"
+                                           id="inputForm"
+                                           placeholder="Recipe shelf life" 
+                                           value="{{ old('recipe_shelf_life') }}"
                                     />
 
                                     @error('recipe_shelf_life')
@@ -302,13 +301,13 @@
                                 <label class="labels"
                                     for="recipe_image_end_result" 
                                     >
-                                    Image end result from this recipe
+                                    Image end result from this recipe -- it is not possible to hold the selected file in the create-blade
                                 </label>
 
                                 <input type="file" 
-                                    class="form-control"
-                                    name="recipe_image_end_result"
-                                    id="inputForm" 
+                                       class="form-control"
+                                       name="recipe_image_end_result"
+                                       id="inputForm" 
                                 />
 
                                 @error('recipe_image_end_result')
