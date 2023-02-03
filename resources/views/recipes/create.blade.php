@@ -61,9 +61,9 @@
                             <div class="col-12 mt-2">
 
                                 <label class="labels"
-                                    for="recipe_section" 
+                                       for="recipe_section" 
                                     >
-                                        Recipe section -- already choosen: {{ old('recipe_section' ) }}
+                                        Recipe section 
                                 </label>
                                 <select class="form-select" 
                                         name="recipe_section" 
@@ -72,19 +72,19 @@
                                         <option selected>
                                             -- Open this select menu to choose the section --
                                         </option>
-                                        <option value="backing">
+                                        <option value="backing"  {{ old ('recipe_section') == "backing" ? 'selected' : ''}}>
                                             Backing
                                         </option>
-                                        <option value="roasting"> 
+                                        <option value="roasting" {{ old ('recipe_section') == "roasting" ? 'selected' : ''}}> 
                                             Roasting
                                         </option>
-                                        <option value="cooking"> 
+                                        <option value="cooking" {{ old ('recipe_section') == "cooking" ? 'selected' : ''}}> 
                                             Cooking
                                         </option>
-                                        <option value="frying"> 
+                                        <option value="frying" {{ old ('recipe_section') == "frying" ? 'selected' : ''}}> 
                                             Frying
                                         </option>
-                                        <option value="warming up"> 
+                                        <option value="warming up" {{ old ('recipe_section') == "warming-up" ? 'selected' : ''}}> 
                                             Warming up
                                         </option>
                                         
@@ -118,18 +118,21 @@
                                         <tbody id="tbody-kitchenwareAddRemove">
                                             <tr id="tr-kitchenwareAddRemove">
                                                 <td id="td-kitchenwareAddRemove">
-                                                    <input type="text"
-                                                           name="kitchenware[]" 
-                                                           placeholder="Enter kitchenware"
-                                                           class="form-control"
-                                                           id="inputFormKitchenware[]"
-                                                           value="{{ old('kitchenware[]') }}"
-                                                        />
-                                                    @error('kitchenware[]')
-                                                        <p class="text-danger text-xs mt-1">
-                                                            {{ $message }}
-                                                        </p>
-                                                    @enderror
+                                                    {{-- @if(old('kitchenware'))
+                                                        @for( $i = 0; $i < count(old('kitchenware')); $i++)  --}}
+                                                            <input type="text"
+                                                                name="kitchenware[]" 
+                                                                placeholder="Enter kitchenware"
+                                                                class="form-control"
+                                                                id="inputFormKitchenware[]"
+                                                                />
+                                                            @error('kitchenware[]')
+                                                                <p class="text-danger text-xs mt-1">
+                                                                    {{ $message }}
+                                                                </p>
+                                                            @enderror
+                                                        {{-- @endfor
+                                                    @endif --}}
                                                 </td>
                                                 <td>
                                                     <button type="button"
@@ -360,6 +363,7 @@
         input.setAttribute("name", "kitchenware[]");
         input.setAttribute("placeholder", "Enter kitchenware");
         input.setAttribute("class", "form-control");
+        input.setAttribute("id", "inputFormKitchenware[]");
         document.getElementById("td-kitchenwareAddRemove").appendChild(input);
     });
     </script>
