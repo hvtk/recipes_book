@@ -72,19 +72,19 @@
                                         <option selected>
                                             -- Open this select menu to choose the section --
                                         </option>
-                                        <option value="backing"  {{ old ('recipe_section') == "backing" ? 'selected' : ''}}>
+                                        <option value="backing"  {{ old('recipe_section') == "backing" ? 'selected' : ''}}>
                                             Backing
                                         </option>
-                                        <option value="roasting" {{ old ('recipe_section') == "roasting" ? 'selected' : ''}}> 
+                                        <option value="roasting" {{ old('recipe_section') == "roasting" ? 'selected' : ''}}> 
                                             Roasting
                                         </option>
-                                        <option value="cooking" {{ old ('recipe_section') == "cooking" ? 'selected' : ''}}> 
+                                        <option value="cooking" {{ old('recipe_section') == "cooking" ? 'selected' : ''}}> 
                                             Cooking
                                         </option>
-                                        <option value="frying" {{ old ('recipe_section') == "frying" ? 'selected' : ''}}> 
+                                        <option value="frying" {{ old('recipe_section') == "frying" ? 'selected' : ''}}> 
                                             Frying
                                         </option>
-                                        <option value="warming up" {{ old ('recipe_section') == "warming-up" ? 'selected' : ''}}> 
+                                        <option value="warming up" {{ old('recipe_section') == "warming-up" ? 'selected' : ''}}> 
                                             Warming up
                                         </option>
                                         
@@ -118,21 +118,20 @@
                                         <tbody id="tbody-kitchenwareAddRemove">
                                             <tr id="tr-kitchenwareAddRemove">
                                                 <td id="td-kitchenwareAddRemove">
-                                                    {{-- @if(old('kitchenware'))
-                                                        @for( $i = 0; $i < count(old('kitchenware')); $i++)  --}}
-                                                            <input type="text"
-                                                                name="kitchenware[]" 
-                                                                placeholder="Enter kitchenware"
-                                                                class="form-control"
-                                                                id="inputFormKitchenware[]"
-                                                                />
-                                                            @error('kitchenware[]')
-                                                                <p class="text-danger text-xs mt-1">
-                                                                    {{ $message }}
-                                                                </p>
-                                                            @enderror
-                                                        {{-- @endfor
-                                                    @endif --}}
+                                                   
+                                                    <input type="text"
+                                                        name="kitchenware[]" 
+                                                        placeholder="Enter kitchenware"
+                                                        class="form-control"
+                                                        id="inputFormKitchenware[]"
+                                                        value="{{ old('kitchenware.0') }}"
+                                                        />
+                                                    @error('kitchenware.0')
+                                                        <p class="text-danger text-xs mt-1">
+                                                            {{ $message }}
+                                                        </p>
+                                                    @enderror
+                                                      
                                                 </td>
                                                 <td>
                                                     <button type="button"
